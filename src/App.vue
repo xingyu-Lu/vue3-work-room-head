@@ -50,7 +50,16 @@
 
 <style>
 	/* :root {
-		--el-color-primary: red;
+		--el-color-primary: #ff0000;
+		--el-color-primary-light-1: #ff0000e6;
+		--el-color-primary-light-2: #ff0000cf;
+		--el-color-primary-light-3: #ff0000c4;
+		--el-color-primary-light-4: #ff0000bd;
+		--el-color-primary-light-5: #ff0000b5;
+		--el-color-primary-light-6: #ff0000ab;
+		--el-color-primary-light-7: #ff0000a6;
+		--el-color-primary-light-8: #ff000096;
+		--el-color-primary-light-9: #ff00007a;
 	} */
 </style>
 

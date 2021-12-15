@@ -31,21 +31,27 @@
 				</template>
 			</el-table-column>
 
-			<el-table-column label="操作" width="100">
+			<el-table-column label="操作" width="200">
 				<template #default="scope">
 					<el-button type="text" size="small" @click="handleEdit(scope.row.goodsId)">修改</el-button>
-					<el-button type="text" size="small" v-if="scope.row.goodsSellStatus == 0" @click="handleStatus(scope.row.goodsId, 1)">下架</el-button>
-					<el-button type="text" size="small" v-else @click="handleStatus(scope.row.goodsId, 0)">上架</el-button>
+					<el-button type="text" size="small" @click="handleDialogEdit(scope.row.goodsId)">dialog修改
+					</el-button>
+					<el-button type="text" size="small" v-if="scope.row.goodsSellStatus == 0"
+						@click="handleStatus(scope.row.goodsId, 1)">下架</el-button>
+					<el-button type="text" size="small" v-else @click="handleStatus(scope.row.goodsId, 0)">上架
+					</el-button>
 				</template>
 			</el-table-column>
 		</el-table>
 		<!--总数超过一页，再展示分页器-->
-		<el-pagination style="margin-top: 20px;" background layout="prev, pager, next" :total="total" :page-size="pageSize"
-			:current-page="currentPage" @current-change="changePage" />
+		<el-pagination style="margin-top: 20px;" background layout="prev, pager, next" :total="total"
+			:page-size="pageSize" :current-page="currentPage" @current-change="changePage" />
 	</el-card>
+	<DialogAddGood ref='addGood' :reload="getIndex" :type="type" :configType="configType" />
 </template>
 
 <script>
+	import DialogAddGood from '@/components/DialogAddGood.vue'
 	import {
 		Plus,
 		Timer
@@ -63,11 +69,15 @@
 	import {
 		useRouter
 	} from 'vue-router'
-	
+
 	export default {
-		components: { Timer },
+		components: {
+			Timer,
+			DialogAddGood
+		},
 		name: 'Good',
 		setup() {
+			const addGood = ref(null)
 			const multipleTable = ref(null)
 			const router = useRouter()
 			const state = reactive({
@@ -76,7 +86,9 @@
 				multipleSelection: [], // 选中项
 				total: 0, // 总条数
 				currentPage: 1, // 当前页
-				pageSize: 2 // 分页大小
+				pageSize: 2, // 分页大小
+				type: 'add', // 操作类型
+				configType: 3,
 			})
 			onMounted(() => {
 				getGoodList()
@@ -109,6 +121,26 @@
 					}
 				})
 			}
+			// 修改商品
+			const handleDialogEdit = (id) => {
+			    state.type = 'edit'
+			    addGood.value.open(id)
+			}
+			// 首页热销商品列表
+			const getIndex = () => {
+				state.loading = true
+				axios.get('/good_list.php', {
+					params: {
+						pageNumber: state.currentPage,
+						pageSize: state.pageSize
+					}
+				}).then(res => {
+					state.tableData = res.list
+					state.total = res.totalCount
+					state.currentPage = res.currPage
+					state.loading = false
+				})
+			}
 			// 选择项
 			const handleSelectionChange = (val) => {
 				state.multipleSelection = val
@@ -135,6 +167,9 @@
 				changePage,
 				handleStatus,
 				Plus,
+				getIndex,
+				handleDialogEdit,
+				addGood,
 			}
 		}
 	}
