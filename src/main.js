@@ -2,6 +2,9 @@ import {
 	createApp
 } from 'vue'
 import {
+	ElEmpty,
+	ElBreadcrumb,
+	ElCarousel,
 	ElIcon,
 	ElCollapseTransition,
 	ElRow,
@@ -46,7 +49,7 @@ import router from './router/index.js'
 const app = createApp(App)
 
 app.use(router)
-app.use(ElIcon).use(ElCollapseTransition).use(ElRow)
+app.use(ElEmpty).use(ElBreadcrumb).use(ElCarousel).use(ElIcon).use(ElCollapseTransition).use(ElRow)
 	.use(ElCol)
 	.use(ElLink)
 	.use(ElImage)

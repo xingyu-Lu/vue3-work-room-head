@@ -44,7 +44,7 @@
 					</el-icon>
 				</el-upload>
 			</el-form-item> -->
-			<el-form-item required label="商品主图" prop="goodsCoverImg">
+			<el-form-item label="商品主图" prop="goodsCoverImg">
 				<el-upload ref="uploadRef" :action="uploadImgServer" :limit="2" list-type="picture-card"
 					thumbnail-mode=true :headers="{ token: token }" :before-upload="handleBeforeUpload"
 					:on-success="handleUrlSuccess" :auto-upload="true" :file-list="goodForm.fileList">
@@ -140,33 +140,33 @@
 					tag: '',
 					fileList: [],
 				},
-				rules: {
-					goodsCoverImg: [{
-						required: 'true',
-						message: '请上传主图',
-						trigger: ['change']
-					}],
-					goodsName: [{
-						required: 'true',
-						message: '请填写商品名称',
-						trigger: ['change']
-					}],
-					originalPrice: [{
-						required: 'true',
-						message: '请填写商品价格',
-						trigger: ['change']
-					}],
-					sellingPrice: [{
-						required: 'true',
-						message: '请填写商品售价',
-						trigger: ['change']
-					}],
-					stockNum: [{
-						required: 'true',
-						message: '请填写商品库存',
-						trigger: ['change']
-					}],
-				},
+				// rules: {
+				// 	goodsCoverImg: [{
+				// 		required: 'true',
+				// 		message: '请上传主图',
+				// 		trigger: ['change']
+				// 	}],
+				// 	goodsName: [{
+				// 		required: 'true',
+				// 		message: '请填写商品名称',
+				// 		trigger: ['change']
+				// 	}],
+				// 	originalPrice: [{
+				// 		required: 'true',
+				// 		message: '请填写商品价格',
+				// 		trigger: ['change']
+				// 	}],
+				// 	sellingPrice: [{
+				// 		required: 'true',
+				// 		message: '请填写商品售价',
+				// 		trigger: ['change']
+				// 	}],
+				// 	stockNum: [{
+				// 		required: 'true',
+				// 		message: '请填写商品库存',
+				// 		trigger: ['change']
+				// 	}],
+				// },
 				categoryId: '',
 				category: {
 					lazy: true,

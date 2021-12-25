@@ -29,7 +29,25 @@ export const uploadImgsServer = 'http://backend-api-02.newbee.ltd/manage-api/v1/
 
 export const pathMap = {
 	login: '登录',
-	introduce: '系统介绍',
+	introduce: '宜宾市第三人民医院',
+	// 医院概况
+	yyjj: '医院简介',
+	ldtd: '领导团队',
+	yywh: '医院文化',
+	lsyg: '历史沿革',
+	zzjg: '组织机构',
+	yyry: '医院荣誉',
+	wlzw: '未来展望',
+	// 新闻动态
+	yyxw: '医院新闻',
+	spxw: '视频新闻',
+	yygg: '医院公告',
+	// 科室介绍
+	ksjs: '科室介绍',
+	// 专家介绍
+	zjjs: '专家介绍',
+	czxx: '出诊信息',
+	
 	api_test: 'api 测试',
 	good: '商品列表',
 	add_good: '添加商品',
