@@ -278,11 +278,11 @@
 							stockNum: state.goodForm.stockNum,
 							tag: state.goodForm.tag
 						}
-						if (hasEmoji(params.goodsIntro) || hasEmoji(params.goodsName) || hasEmoji(params
-								.tag) || hasEmoji(params.goodsDetailContent)) {
-							ElMessage.error('不要输入表情包，再输入就打死你个龟孙儿~')
-							return
-						}
+						// if (hasEmoji(params.goodsIntro) || hasEmoji(params.goodsName) || hasEmoji(params
+						// 		.tag) || hasEmoji(params.goodsDetailContent)) {
+						// 	ElMessage.error('不要输入表情包，再输入就打死你个龟孙儿~')
+						// 	return
+						// }
 						if (params.goodsName.length > 128) {
 							ElMessage.error('商品名称不能超过128个字符')
 							return

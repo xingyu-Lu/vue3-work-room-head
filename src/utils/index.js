@@ -29,6 +29,7 @@ export const uploadImgsServer = 'http://backend-api-02.newbee.ltd/manage-api/v1/
 
 export const pathMap = {
 	login: '登录',
+	register: '注册',
 	introduce: '宜宾市第三人民医院',
 	// 医院概况
 	yyjj: '医院简介',
@@ -47,6 +48,43 @@ export const pathMap = {
 	// 专家介绍
 	zjjs: '专家介绍',
 	czxx: '出诊信息',
+	// 科研教学
+	kyjx: '科研动态',
+	// 患者服务
+	mzlc: '门诊流程',
+	zylc: '住院流程',
+	czxx: '出诊信息',
+	jcxz: '检查须知',
+	jcxz_detail: '检查须知',
+	jktj: '健康体检',
+	jktj_detail: '健康体检',
+	ybzn: '医保指南',
+	ybzn_detail: '医保指南',
+	azb: '艾滋病',
+	lyfb: '楼宇分布',
+	lxwm: '联系我们',
+	hlyd: '护理园地',
+	hlyd_detail: '护理园地',
+	jkcj: '健康促进',
+	jkcj_detail: '健康促进',
+	// 党建之窗
+	dwgl: '党务管理',
+	dwgl_detail: '党务管理',
+	dyjy: '党员教育',
+	dyjy_detail: '党员教育',
+	dflz: '党风廉政',
+	dflz_detail: '党风廉政',
+	ygzj: '员工之家',
+	ygzj_detail: '员工之家',
+	ydyf_detail: '医德医风',
+	qnjyz: '青年加油站',
+	qnjyz_detail: '青年加油站',
+	// 人才招聘
+	zpxx: '招聘信息',
+	zpxx_detail: '招聘信息',
+	yplc: '应聘流程',
+	update_log: '更新记录',
+	
 	
 	api_test: 'api 测试',
 	good: '商品列表',

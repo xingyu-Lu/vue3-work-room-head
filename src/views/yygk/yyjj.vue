@@ -9,7 +9,7 @@
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
 		<el-breadcrumb-item>医院简介</el-breadcrumb-item>
 	</el-breadcrumb>
-
+	
 	<p>&nbsp; &nbsp; &nbsp; 宜宾市第三人民医院成立于1951年，是宜宾市的一所非营利性的国家三级乙等综合医院和国家级爱婴医院，由院本部（A区、B区）、李庄院区组成。&nbsp;</p>
 	<p style="line-height:2;">&nbsp; &nbsp; &nbsp;
 		医院集医疗、急救、教学、科研任务于一体。目前是同济大学教学医院，西南医科大学继续教育学院、四川卫生康复职业学院、华西卫校、宜宾市卫生学校的临床教学实习基地，西南医科大学成人高等教育宜宾直属班，上海市同济医院医疗集团理事单位，上海市肺科医院专科联盟成员单位。&nbsp;
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+
 </script>
 
 <style>

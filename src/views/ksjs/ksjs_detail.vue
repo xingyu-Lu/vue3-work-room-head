@@ -149,7 +149,7 @@
 				</el-col>
 				<el-col :md="4">
 					<el-card :body-style="{ padding: '0px', height: '550px' }" shadow="hover">
-						<img src="	https://www.ybssyy.com/uploadfiles/2015/0525/10245153/image/20210202145401_7668.jpg"
+						<img src="https://www.ybssyy.com/uploadfiles/2015/0525/10245153/image/20210202145401_7668.jpg"
 							style="width: 100%;" />
 						<div style="padding: 14px; line-height: 36px; font-size: 14px;">
 							<span style="color: #DC8C00;">郭云</span>
@@ -253,7 +253,7 @@
 				</el-col>
 				<el-col :md="4">
 					<el-card :body-style="{ padding: '0px', height: '550px' }" shadow="hover">
-						<img src="	https://www.ybssyy.com/uploadfiles/2015/0525/10245153/image/20210202145401_7668.jpg"
+						<img src="https://www.ybssyy.com/uploadfiles/2015/0525/10245153/image/20210202145401_7668.jpg"
 							style="width: 100%;" />
 						<div style="padding: 14px; line-height: 36px; font-size: 14px;">
 							<span style="color: #DC8C00;">郭云</span>

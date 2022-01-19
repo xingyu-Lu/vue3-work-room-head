@@ -1,10 +1,10 @@
 <template>
 	<el-row style="min-height: 100%;" justify="space-around" align="middle">
-		<el-col :span="20">
+		<el-col :md="8">
 			<el-card>
-				<div style="justify-content: center; display: flex;">vue3-vite-demo</div>
+				<div style="justify-content: center; display: flex;">宜宾市第三人民医院</div>
 				<el-form label-position="top" :rules="rules" :model="loginModel" ref="loginRef">
-					<el-form-item label="账号" prop="username">
+					<el-form-item label="手机号" prop="username">
 						<el-input type="text" v-model.trim="loginModel.username" autocomplete="off"></el-input>
 					</el-form-item>
 					<el-form-item label="密码" prop="password">
@@ -12,14 +12,14 @@
 					</el-form-item>
 					<el-form-item>
 						<div>登录表示您已同意<a>《服务条款》</a></div>
-						<el-button style="width: 100%" type="primary" @click="submitForm">立即登录</el-button>
+						<el-button style="width: 100%" type="primary">立即登录</el-button>
 					</el-form-item>
-					<el-form-item>
+					<!-- <el-form-item>
 						<el-checkbox v-model="checked" @change="!checked">下次自动登录</el-checkbox>
-					</el-form-item>
-					<el-form-item>
+					</el-form-item> -->
+					<!-- <el-form-item>
 						<el-button type="primary" native-type="reset" @click="resetForm">重置</el-button>
-					</el-form-item>
+					</el-form-item> -->
 				</el-form>
 			</el-card>
 		</el-col>
@@ -90,7 +90,5 @@
 </script>
 
 <style scoped>
-	body {
-		margin: 0px;
-	}
+
 </style>

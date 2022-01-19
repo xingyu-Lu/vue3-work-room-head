@@ -128,7 +128,7 @@
 	<el-row :gutter="20" style="margin-bottom: 20px;">
 		<el-col :md="4">
 			<el-card :body-style="{ padding: '0px', height: '500px' }" shadow="hover">
-				<img src="	https://www.ybssyy.com/uploadfiles/2015/0604/10210045/image/20210126113354_0244.jpg"
+				<img src="https://www.ybssyy.com/uploadfiles/2015/0604/10210045/image/20210126113354_0244.jpg"
 					style="width: 100%;" />
 				<div style="padding: 14px; line-height: 36px; font-size: 14px;">
 					<span style="color: #DC8C00;">徐良</span>

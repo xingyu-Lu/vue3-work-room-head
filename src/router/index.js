@@ -116,16 +116,198 @@ const router = createRouter({
 		name: 'czxx',
 		component: () => import('../views/zjjs/czxx.vue')
 	},
+	// 科研教学
+	{
+		path: '/kyjx',
+		name: 'kyjx',
+		component: () => import('../views/kyjx/kyjx.vue')
+	},
+	{
+		path: '/kyjx_detail',
+		name: 'kyjx_detail',
+		component: () => import('../views/kyjx/kyjx_detail.vue')
+	},
+	// 患者服务
+	{
+		path: '/mzlc',
+		name: 'mzlc',
+		component: () => import('../views/hzfw/mzlc.vue')
+	},
+	{
+		path: '/zylc',
+		name: 'zylc',
+		component: () => import('../views/hzfw/zylc.vue')
+	},
+	{
+		path: '/czxx',
+		name: 'czxx',
+		component: () => import('../views/hzfw/czxx.vue')
+	},
+	{
+		path: '/jcxz',
+		name: 'jcxz',
+		component: () => import('../views/hzfw/jcxz.vue')
+	},
+	{
+		path: '/jcxz_detail',
+		name: 'jcxz_detail',
+		component: () => import('../views/hzfw/jcxz_detail.vue')
+	},
+	{
+		path: '/jktj',
+		name: 'jktj',
+		component: () => import('../views/hzfw/jktj.vue')
+	},
+	{
+		path: '/jktj_detail',
+		name: 'jktj_detail',
+		component: () => import('../views/hzfw/jktj_detail.vue')
+	},
+	{
+		path: '/ybzn',
+		name: 'ybzn',
+		component: () => import('../views/hzfw/ybzn.vue')
+	},
+	{
+		path: '/ybzn_detail',
+		name: 'ybzn_detail',
+		component: () => import('../views/hzfw/ybzn_detail.vue')
+	},
+	{
+		path: '/azb',
+		name: 'azb',
+		component: () => import('../views/hzfw/azb.vue')
+	},
+	{
+		path: '/lyfb',
+		name: 'lyfb',
+		component: () => import('../views/hzfw/lyfb.vue')
+	},
+	{
+		path: '/lxwm',
+		name: 'lxwm',
+		component: () => import('../views/hzfw/lxwm.vue')
+	},
+	{
+		path: '/hlyd',
+		name: 'hlyd',
+		component: () => import('../views/hzfw/hlyd.vue')
+	},
+	{
+		path: '/hlyd_detail',
+		name: 'hlyd_detail',
+		component: () => import('../views/hzfw/hlyd_detail.vue')
+	},
+	{
+		path: '/jkcj',
+		name: 'jkcj',
+		component: () => import('../views/hzfw/jkcj.vue')
+	},
+	{
+		path: '/jkcj_detail',
+		name: 'jkcj_detail',
+		component: () => import('../views/hzfw/jkcj_detail.vue')
+	},
+	{
+		path: '/dwgl',
+		name: 'dwgl',
+		component: () => import('../views/djzc/dwgl.vue')
+	},
+	{
+		path: '/dwgl_detail',
+		name: 'dwgl_detail',
+		component: () => import('../views/djzc/dwgl_detail.vue')
+	},
+	{
+		path: '/dyjy',
+		name: 'dyjy',
+		component: () => import('../views/djzc/dyjy.vue')
+	},
+	{
+		path: '/dyjy_detail',
+		name: 'dyjy_detail',
+		component: () => import('../views/djzc/dyjy_detail.vue')
+	},
+	{
+		path: '/dflz',
+		name: 'dflz',
+		component: () => import('../views/djzc/dflz.vue')
+	},
+	{
+		path: '/dflz_detail',
+		name: 'dflz_detail',
+		component: () => import('../views/djzc/dflz_detail.vue')
+	},
+	{
+		path: '/ygzj',
+		name: 'ygzj',
+		component: () => import('../views/djzc/ygzj.vue')
+	},
+	{
+		path: '/ygzj_detail',
+		name: 'ygzj_detail',
+		component: () => import('../views/djzc/ygzj_detail.vue')
+	},
+	{
+		path: '/ydyf',
+		name: 'ydyf',
+		component: () => import('../views/djzc/ydyf.vue')
+	},
+	{
+		path: '/ydyf_detail',
+		name: 'ydyf_detail',
+		component: () => import('../views/djzc/ydyf_detail.vue')
+	},
+	{
+		path: '/qnjyz',
+		name: 'qnjyz',
+		component: () => import('../views/djzc/qnjyz.vue')
+	},
+	{
+		path: '/qnjyz_detail',
+		name: 'qnjyz_detail',
+		component: () => import('../views/djzc/qnjyz_detail.vue')
+	},
+	{
+		path: '/zpxx',
+		name: 'zpxx',
+		component: () => import('../views/rczp/zpxx.vue')
+	},
+	{
+		path: '/zpxx_detail',
+		name: 'zpxx_detail',
+		component: () => import('../views/rczp/zpxx_detail.vue')
+	},
+	{
+		path: '/yplc',
+		name: 'yplc',
+		component: () => import('../views/rczp/yplc.vue')
+	},
+	
+	// 登录
+	{
+		path: '/login',
+		name: 'login',
+		component: () => import('../views/login.vue')
+	},
+	// 注册
+	{
+		path: '/register',
+		name: 'register',
+		component: () => import('../views/register.vue')
+	},
+	// 更新记录
+	{
+		path: '/update_log',
+		name: 'update_log',
+		component: () => import('../views/update_log.vue')
+	},
+	
 	
 	{
 		path: '/api_test',
 		name: 'api_test',
 		component: () => import('../views/ApiTest.vue'),
-	},
-	{
-		path: '/login',
-		name: 'login',
-		component: () => import('../views/login.vue')
 	},
 	{
 		path: '/good',

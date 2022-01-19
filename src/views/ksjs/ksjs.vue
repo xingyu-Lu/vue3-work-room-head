@@ -1,7 +1,7 @@
 <template>
 	<el-row style="margin-bottom: 20px;">
 		<el-col>
-			<el-image style="width: 100%;" src="https://www.ybssyy.com/images/images/ad_07.jpg" lazy></el-image>
+			<el-image style="width: 100%;" src="https://www.ybssyy.com/images/images/ad_05.jpg" lazy></el-image>
 		</el-col>
 	</el-row>
 	
