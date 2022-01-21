@@ -10,6 +10,8 @@
 	</el-row> -->
 
 	<h2>v1版本：功能优先，尽快跑起来</h2>
+	<h3>前端地址：<el-link type="primary" :underline="false" target="_blank" href="http://120.26.124.151">http://120.26.124.151</el-link></h3>
+	<h3>后台地址：<el-link type="primary" :underline="false" target="_blank" href="http://120.26.124.151:8000">http://120.26.124.151:8000</el-link></h3>
 	<h3>更新记录</h3>
 
 	<div class="block">
@@ -33,7 +35,11 @@
 			const state = reactive({
 				update_log: [
 					{
-						content: '前端架构思考，前端首页修改，生产医院ico，图片存储本地，图片待ps操作',
+						content: '前端fix，后台前端建代码仓库、前端框架搭建，一些问题优化',
+						timestamp: '2022-01-20',
+					},
+					{
+						content: '前端架构思考，前端首页修改，生产医院ico，图片存储本地，图片待ps操作，轮播图图片待后端接口',
 						timestamp: '2022-01-19',
 					},
 				]

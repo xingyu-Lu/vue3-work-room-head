@@ -1,7 +1,7 @@
 <template>
 	<el-container v-if="showMenu">
-		<el-image style="width: 78%; margin: 0 auto;" src="/src/assets/img/public_head_bg.jpg" lazy></el-image>
-		
+		<img style="width: 78%; margin: 0 auto;" src="/src/assets/img/public_head_bg.png" lazy />
+
 		<el-header style="width: 100%; margin: 0 auto;">
 			<el-menu :default-active="currentPath" :router=true mode="horizontal">
 				<el-menu-item index="/introduce">首页</el-menu-item>
@@ -61,34 +61,30 @@
 					<el-menu-item index="/zpxx">招聘信息</el-menu-item>
 					<el-menu-item index="/yplc">应聘流程</el-menu-item>
 				</el-sub-menu>
-				<div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+				<!-- <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;"> -->
 					<!-- <el-input placeholder="请输入~" class="input-with-select">
 						<template #append>
 							<el-button :icon="Search"></el-button>
 						</template>
 					</el-input> -->
-				</div>
-				<el-menu-item index="/login">登录注册</el-menu-item>
+				<!-- </div> -->
 				<el-menu-item index="/register">员工之声</el-menu-item>
+				<el-menu-item index="/login">登录</el-menu-item>
+				<el-menu-item index="/register">注册</el-menu-item>
 				<el-menu-item index="/update_log">更新记录</el-menu-item>
-				<div style="margin-top: 10px; margin-left: 10px; width: 320px;">
-					<el-input
-					      v-model="input3"
-					      placeholder="请输入关键词"
-					      class="input-with-select"
-						  size="large"
-					    >
-					      <template #prepend>
-					        <el-select v-model="select" placeholder="请选择~" style="width: 110px">
-					          <el-option label="新闻" value="1"></el-option>
-					          <el-option label="医生" value="2"></el-option>
-					          <el-option label="视频" value="3"></el-option>
-					        </el-select>
-					      </template>
-					      <template #append>
-					        <el-button :icon="Search"></el-button>
-					      </template>
-					    </el-input>
+				<div style="margin-top: 10px; margin-left: 10px; width: 260px;">
+					<el-input v-model="input3" placeholder="请输入关键词" class="input-with-select" size="large">
+						<template #prepend>
+							<el-select v-model="select" placeholder="请选择" style="width: 90px">
+								<el-option label="新闻" value="1"></el-option>
+								<el-option label="医生" value="2"></el-option>
+								<el-option label="视频" value="3"></el-option>
+							</el-select>
+						</template>
+						<template #append>
+					  <el-button :icon="Search"></el-button>
+						</template>
+					</el-input>
 				</div>
 				<!-- <el-menu-item index="/api_test">api-test</el-menu-item>
 				<el-menu-item index="/good">good</el-menu-item>
@@ -115,25 +111,37 @@
 				<el-col>
 					<el-space wrap>
 						<strong>友情链接：</strong>
-						<el-link href="http://www.nhc.gov.cn/" type="info" target="_blank" :underline="false">中华人民共和国国家卫生健康委员会</el-link>
-						<el-link href="http://wsjkw.sc.gov.cn/" type="info" target="_blank" :underline="false">四川省卫生健康委员会</el-link>
-						<el-link href="http://www.scredcross.org.cn/" type="info" target="_blank" :underline="false">四川省红十字会</el-link>
-						<el-link href="https://www.cma.org.cn/" type="info" target="_blank" :underline="false">中华医学会</el-link>
-						<el-link href="http://www.sma.org.cn/index.asp" type="info" target="_blank" :underline="false">四川省医学会</el-link>
-						<el-link href="http://edu.zgkw.cn/" type="info" target="_blank" :underline="false">全国百姓放心示范医院大讲堂</el-link>
-						<el-link href="http://202.61.90.26:8089/cmntedu/" type="info" target="_blank" :underline="false">四川省继续医学教育网</el-link>
-					  </el-space>
+						<el-link href="http://www.nhc.gov.cn/" type="info" target="_blank" :underline="false">
+							中华人民共和国国家卫生健康委员会</el-link>
+						<el-link href="http://wsjkw.sc.gov.cn/" type="info" target="_blank" :underline="false">
+							四川省卫生健康委员会</el-link>
+						<el-link href="http://www.scredcross.org.cn/" type="info" target="_blank" :underline="false">
+							四川省红十字会</el-link>
+						<el-link href="https://www.cma.org.cn/" type="info" target="_blank" :underline="false">中华医学会
+						</el-link>
+						<el-link href="http://www.sma.org.cn/index.asp" type="info" target="_blank" :underline="false">
+							四川省医学会</el-link>
+						<el-link href="http://edu.zgkw.cn/" type="info" target="_blank" :underline="false">全国百姓放心示范医院大讲堂
+						</el-link>
+						<el-link href="http://202.61.90.26:8089/cmntedu/" type="info" target="_blank"
+							:underline="false">四川省继续医学教育网</el-link>
+					</el-space>
 				</el-col>
 			</el-row>
 
 			<el-row :gutter="20" style="background: #516071; color: #CCC;">
 				<el-col :md="3" style="display: flex; justify-content: center; align-items: center;">
 					<div>
-						<a href="http://bszs.conac.cn/sitename?method=show&id=1354A7487A5C32CFE053012819ACA802" target="_blank">
-							<img style="height: 70px; margin-right: 20px;" src="/src/assets/img/qualification.png" alt="">
+						<a href="http://bszs.conac.cn/sitename?method=show&id=1354A7487A5C32CFE053012819ACA802"
+							target="_blank">
+							<img style="height: 70px; margin-left: 60px;" src="/src/assets/img/qualification.png"
+								alt="">
 						</a>
-						<a href="http://bszs.conac.cn/sitename?method=show&id=1354A7487A5C32CFE053012819ACA802" target="_blank">
-							<img style="height: 70px;" src="/src/assets/img/police.png" alt="">
+					</div>
+					<div>
+						<a href="http://bszs.conac.cn/sitename?method=show&id=1354A7487A5C32CFE053012819ACA802"
+							target="_blank">
+							<img style="height: 70px; margin-left: 20px;" src="/src/assets/img/police.png" alt="">
 						</a>
 					</div>
 				</el-col>
@@ -150,9 +158,12 @@
 					<ul style="list-style: none; line-height: 36px;">
 						<li>版权所有：@宜宾市第三人民医院</li>
 						<li>蜀ICP备12031661号-1</li>
-						<li><a href="https://beian.miit.gov.cn/" type="info" target="_blank" style="color: #ccc; text-decoration: none;">宜网备案号：51150002020011</a></li>
-						<li><img style="width: 20px; height: 20px;" src="/src/assets/img/c_police.png"
-								alt=""><a href="http://www.beian.gov.cn/portal/registerSy%20stemInfo?%20recordcode=51150202000042" target="_blank" style="color: #ccc; text-decoration: none;">川公网安备51150202000042号</a></li>
+						<li><a href="https://beian.miit.gov.cn/" type="info" target="_blank"
+								style="color: #ccc; text-decoration: none;">宜网备案号：51150002020011</a></li>
+						<li><img style="width: 20px; height: 20px;" src="/src/assets/img/c_police.png" alt=""><a
+								href="http://www.beian.gov.cn/portal/registerSy%20stemInfo?%20recordcode=51150202000042"
+								target="_blank" style="color: #ccc; text-decoration: none;">川公网安备51150202000042号</a>
+						</li>
 					</ul>
 				</el-col>
 				<el-col :md="7" style="display: flex; justify-content: center; align-items: center;">
@@ -164,14 +175,14 @@
 					</ul>
 				</el-col>
 				<el-col :md="7" style="display: flex; justify-content: center; align-items: center;">
-						<div>
-							<img style="height: 100px; margin-right: 20px;" src="/src/assets/img/wxgzh.png" alt="">
-							<p style="margin-left: 20px;">官方微信</p>
-						</div>
-						<div>
-							<img style="height: 100px; margin-right: 20px;" src="/src/assets/img/wb.png" alt="">
-							<p style="margin-left: 20px;">官方微博</p>
-						</div>
+					<div>
+						<img style="height: 100px; margin-right: 20px;" src="/src/assets/img/wxgzh.png" alt="">
+						<p style="margin-left: 20px;">官方微信</p>
+					</div>
+					<div>
+						<img style="height: 100px; margin-right: 20px;" src="/src/assets/img/wb.png" alt="">
+						<p style="margin-left: 20px;">官方微博</p>
+					</div>
 				</el-col>
 			</el-row>
 		</el-footer>
@@ -184,13 +195,16 @@
 </template>
 
 <style>
-	html, body, #app {
+	html,
+	body,
+	#app {
 		height: 100%;
 	}
-	
+
 	section {
 		min-height: 100%;
 	}
+
 	/* :root {
 		--el-color-primary: #303133;
 		--el-color-primary-light-1: #606266;
