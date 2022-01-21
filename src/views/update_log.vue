@@ -35,6 +35,10 @@
 			const state = reactive({
 				update_log: [
 					{
+						content: '服务器问题：docker-compose和MySQL导致内存溢出解决，后端接口仓库搭建',
+						timestamp: '2022-01-21',
+					},
+					{
 						content: '前端fix，后台前端建代码仓库、前端框架搭建，一些问题优化',
 						timestamp: '2022-01-20',
 					},
