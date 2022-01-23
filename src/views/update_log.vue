@@ -12,6 +12,9 @@
 	<h2>v1版本：功能优先，尽快跑起来</h2>
 	<h3>前端地址：<el-link type="primary" :underline="false" target="_blank" href="http://120.26.124.151">http://120.26.124.151</el-link></h3>
 	<h3>后台地址：<el-link type="primary" :underline="false" target="_blank" href="http://120.26.124.151:8000">http://120.26.124.151:8000</el-link></h3>
+	<h3>前端代码仓库：<el-link type="primary" :underline="false" target="_blank" href="https://github.com/xingyu-Lu/vue3-vite-demo">https://github.com/xingyu-Lu/vue3-vite-demo</el-link></h3>
+	<h3>后台代码仓库：<el-link type="primary" :underline="false" target="_blank" href="https://github.com/xingyu-Lu/vue3-hospital-admin">https://github.com/xingyu-Lu/vue3-hospital-admin</el-link></h3>
+	<h3>api代码仓库：<el-link type="primary" :underline="false" target="_blank" href="https://github.com/xingyu-Lu/hospital_api">https://github.com/xingyu-Lu/hospital_api</el-link></h3>
 	<h3>更新记录</h3>
 
 	<div class="block">

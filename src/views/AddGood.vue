@@ -1,6 +1,18 @@
 <template>
 	<el-card>
 		<el-form :model="goodForm" :rules="rules" ref="goodRef" label-width="100px" class="goodForm">
+			<el-form-item label="复选框">
+				<el-form-item>
+					<!-- <p>多个复选框：</p> -->
+					  <input type="checkbox" id="runoob" value="1" v-model="checkedNames">
+					  <label for="runoob">Runoob</label>
+					  <input type="checkbox" id="google" value="2" v-model="checkedNames">
+					  <label for="google">Google</label>
+					  <input type="checkbox" id="taobao" value="3" v-model="checkedNames">
+					  <label for="taobao">taobao</label>
+				</el-form-item>
+			</el-form-item>
+			
 			<el-form-item required label="商品分类">
 				<el-cascader :placeholder="defaultCate" style="width: 300px" :props="category"
 					@change="handleChangeCate"></el-cascader>
@@ -124,6 +136,7 @@
 				id
 			} = route.query
 			const state = reactive({
+				checkedNames: [1,2],
 				disabled: false,
 				uploadImgServer,
 				token: localGet('token') || '',
