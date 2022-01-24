@@ -39,6 +39,14 @@
 			const state = reactive({
 				update_log: [
 					{
+						content: '部署我服务器，后台管理员管理模块，菜单管理部分',
+						timestamp: '2022-01-24',
+					},
+					{
+						content: '前后端登录jwt、基础处理等等',
+						timestamp: '2022-01-23',
+					},
+					{
 						content: '服务器问题：docker-compose和MySQL导致内存溢出解决，后端接口仓库搭，后台部署自己服务器',
 						timestamp: '2022-01-21',
 					},
