@@ -1,6 +1,6 @@
 <template>
 	<el-container v-if="showMenu">
-		<el-image style="width: 100%; margin: 0 auto;" src="/src/assets/img/public_head_bg.png" lazy></el-image>
+		<img style="width: 100%; margin: 0 auto;" src="/src/assets/img/public_head_bg.png" />
 
 		<el-header style="width: 100%; margin: 0 auto;">
 			<el-menu :default-active="currentPath" :router=true mode="horizontal">
