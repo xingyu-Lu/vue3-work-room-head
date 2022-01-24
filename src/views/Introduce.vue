@@ -4,7 +4,7 @@
 			<el-carousel height="600px">
 				<el-carousel-item v-for="item in carousel_arr" :key="item">
 					<!-- <img :src=item.url alt="" style="width: 100%; height: 100%; cursor: pointer;" @click="go_detail(item.click_url)"> -->
-					<img :src=item.url alt="" style="width: 100%; height: 100%; cursor: pointer;" />
+					<el-image style="width: 100%; height: 100%" :key=item.url :src=item.url></el-image>
 				</el-carousel-item>
 			</el-carousel>
 		</el-col>
@@ -978,10 +978,12 @@
 		Plus
 	} from '@element-plus/icons-vue'
 	import {
+		onMounted,
 		ref,
 		reactive,
 		toRefs
 	} from 'vue'
+	import axios from '@/utils/axios'
 	export default {
 		name: 'Introduce',
 		setup() {
@@ -991,28 +993,17 @@
 				window.open('https://juejin.cn/book/6933939264455442444', 'target')
 			}
 			const state = reactive({
-				carousel_arr: [{
-						// url: 'https://www.ybssyy.com/uploadfiles/2021/1018/08545069/image/20220104163512_8809.jpg',
-						url: ('/src/assets/img/lunbo2.png'),
-						// click_url: '/yyjj',
-					},
-					{
-						// url: 'https://www.ybssyy.com/uploadfiles/2021/1018/08545069/image/20220104163512_8809.jpg',
-						url: ('/src/assets/img/lunbo1.png'),
-						// click_url: '/ldtd',
-					},
-					{
-						// url: 'https://www.ybssyy.com/uploadfiles/2021/1018/08545069/image/20220104163512_8809.jpg',
-						url: '/src/assets/img/lunbo3.png',
-						// click_url: '/yywh',
-					},
-					{
-						// url: 'https://www.ybssyy.com/uploadfiles/2021/1018/08545069/image/20220104163512_8809.jpg',
-						url: '/src/assets/img/lunbo4.png',
-						// click_url: '/wlzw',
-					},
-				]
+				carousel_arr: []
 			})
+
+			onMounted(() => {
+				get_lunbo()
+			})
+
+			const get_lunbo = async () => {
+				const lunbo_arr = await axios.get('/api/head/rotates')
+				state.carousel_arr = lunbo_arr
+			}
 
 			const go_detail = (url) => {
 				window.open(url, 'target')
