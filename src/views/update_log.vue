@@ -39,6 +39,10 @@
 			const state = reactive({
 				update_log: [
 					{
+						content: '菜单管理完善，首页轮播图，修改密码，退出登录，医院简介',
+						timestamp: '2022-01-25',
+					},
+					{
 						content: '部署我服务器，后台管理员管理模块，菜单管理部分',
 						timestamp: '2022-01-24',
 					},
