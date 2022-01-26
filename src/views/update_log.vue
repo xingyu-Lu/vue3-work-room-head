@@ -39,6 +39,10 @@
 			const state = reactive({
 				update_log: [
 					{
+						content: '领导团队，医院文化，历史沿革，历任院长，历史照片，组织机构，开发中问题解决处理',
+						timestamp: '2022-01-26',
+					},
+					{
 						content: '菜单管理完善，首页轮播图，修改密码，退出登录，医院简介',
 						timestamp: '2022-01-25',
 					},
