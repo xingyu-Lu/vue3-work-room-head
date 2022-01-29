@@ -39,6 +39,10 @@
 			const state = reactive({
 				update_log: [
 					{
+						content: '科室设置（科室动态，科室医生），科室门诊思考建表等等',
+						timestamp: '2022-01-29',
+					},
+					{
 						content: '新闻动态加附件功能，上传文件记录文件大小兆，科室设置（科室列表，科室介绍）等等',
 						timestamp: '2022-01-28',
 					},
