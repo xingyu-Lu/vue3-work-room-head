@@ -39,6 +39,10 @@
 			const state = reactive({
 				update_log: [
 					{
+						content: '专家介绍，科研动态，患者服务，党建之窗，人才招聘，员工之声，优化等等',
+						timestamp: '2022-01-31',
+					},
+					{
 						content: '科室设置（科室门诊，科室特色医疗，科室图片，科室健康科普），加搜索等等',
 						timestamp: '2022-01-30',
 					},
