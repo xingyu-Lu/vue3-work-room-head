@@ -1,13 +1,17 @@
 <template>
-	<el-row style="margin-bottom: 20px;">
+	<el-row v-if="flag" style="margin-bottom: 20px;">
 		<el-col :md="24">
 			<el-carousel height="600px">
 				<el-carousel-item v-for="item in carousel_arr" :key="item">
 					<!-- <img :src=item.url alt="" style="width: 100%; height: 100%; cursor: pointer;" @click="go_detail(item.click_url)"> -->
-					<el-image style="width: 100%; height: 100%" :key=item.url :src=item.url></el-image>
+					<el-image style="width: 100%; height: 100%" :key="item.url" :src="item.url">
+					</el-image>
 				</el-carousel-item>
 			</el-carousel>
 		</el-col>
+	</el-row>
+	<el-row v-else>
+		<el-skeleton :rows="5" animated />
 	</el-row>
 	<!-- <el-card class="account-container">
 		<el-row>
@@ -111,7 +115,7 @@
 			<li>QQ技术交流群：932227898、707779034</li>
 		</ul>
 	</el-card> -->
-	<el-row :gutter="20" style="margin-bottom: 20px;" justify="space-around">
+	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="space-around">
 		<el-col :md="24">
 			<el-card class="box-card" shadow="hover">
 				<template #header>
@@ -122,100 +126,111 @@
 					</div>
 				</template>
 
-				<ul style="color: #409EFF; line-height: 38px; display: flex; justify-content: space-between;">
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ksjs_detail" target="_blank" type="primary"
-								:underline="false">
-								肾病内科、风湿免疫科</el-link>
-						</div>
+				<el-row v-for="(item,index) in office_arr" justify="space-around"
+					style="color: #409EFF; line-height: 38px; list-style: none;">
+					<li v-for="(item_1, index_1) in item">
+						<el-button>
+							<el-link :href="'/ksjs_detail?id=' + item_1.id" target="_blank" :underline="false">
+								{{ item_1.name }}</el-link>
+						</el-button>
 					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ksjs_detail" target="_blank" type="primary"
-								:underline="false">
-								神经内科、内分泌科</el-link>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ksjs_detail" target="_blank" type="primary"
-								:underline="false">
-								呼吸与危重症医学科</el-link>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ksjs_detail" target="_blank" type="primary"
-								:underline="false">
-								重症医学科</el-link>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ksjs_detail" target="_blank" type="primary"
-								:underline="false">
-								中医·老年病科</el-link>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ksjs_detail" target="_blank" type="primary"
-								:underline="false">
-								感染科</el-link>
-						</div>
-					</li>
-				</ul>
-				<ul style="color: #409EFF; line-height: 38px; display: flex; justify-content: space-between;">
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ksjs_detail" target="_blank" type="primary"
-								:underline="false">
-								肾病内科、风湿免疫科</el-link>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ksjs_detail" target="_blank" type="primary"
-								:underline="false">
-								神经内科、内分泌科</el-link>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ksjs_detail" target="_blank" type="primary"
-								:underline="false">
-								呼吸与危重症医学科</el-link>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ksjs_detail" target="_blank" type="primary"
-								:underline="false">
-								重症医学科</el-link>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ksjs_detail" target="_blank" type="primary"
-								:underline="false">
-								中医·老年病科</el-link>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ksjs_detail" target="_blank" type="primary"
-								:underline="false">
-								感染科</el-link>
-						</div>
-					</li>
-				</ul>
+				</el-row>
 			</el-card>
 		</el-col>
 	</el-row>
+	<el-row v-else>
+		<el-skeleton :rows="5" animated />
+	</el-row>
 
-	<el-row :gutter="20" style="margin-bottom: 20px;" justify="space-around">
+	<el-card v-if="flag" shadow="hover" style="margin-bottom: 20px;">
+		<template #header>
+			<div class="card-header">
+				<strong>专家团队</strong>
+				<el-link style="font-size: 12px;" href="/zjjs" target="_blank" type="primary" :underline="false"
+					:icon="Plus">更多</el-link>
+			</div>
+		</template>
+		<el-row v-for="(item,index) in expert_arr" :gutter="20" justify="space-around">
+			<el-col v-for="(item_1, index_1) in item" :md="4">
+				<el-link :href="'/zjjs_detail?id=' + item_1.id" :underline="false" target="_blank">
+					<el-card :body-style="{ padding: '10px'}" shadow="never">
+						<div class="img" style="overflow: hidden;">
+							<img :src="item_1.img_url" />
+						</div>
+
+						<div style="padding: 14px; line-height: 36px; font-size: 14px;">
+							<span style="color: #DC8C00;">{{ item_1.name }}</span>
+							<div style="display: flex; justify-content: space-around;">
+								<div style="list-style: none;">
+									<!-- <li v-for="(item_2, index_2) in item_1.position">{{ item_2 }}</li> -->
+									<li v-for="(item_3, index_3) in item_1.professional">{{ item_3 }}</li>
+								</div>
+								<el-link style="font-size: 12px;" :href="'/zjjs_detail?id=' + item_1.id" target="_blank"
+									type="primary" :underline="false" :icon="Plus">详细信息</el-link>
+							</div>
+						</div>
+					</el-card>
+				</el-link>
+			</el-col>
+		</el-row>
+	</el-card>
+	<el-row v-else>
+		<el-skeleton :rows="5" animated />
+	</el-row>
+
+	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="space-around">
 		<el-col :md="24">
+			<el-card class="box-card" shadow="hover">
+				<template #header>
+					<div class="card-header">
+						<strong>医院新闻</strong>
+						<el-link style="font-size: 12px;" href="/yyxw" target="_blank" type="primary" :underline="false"
+							:icon="Plus">更多</el-link>
+					</div>
+				</template>
+				<el-row :gutter="20">
+					<el-col :md="8">
+						<el-carousel height="250px">
+							<el-carousel-item v-for="item in news_rotate" :key="item" indicator-position="none" :label="item.title">
+								<el-image style="width: auto; cursor: pointer;" fit="fill" :key=item.img_url :src=item.img_url @click="go_detail('/yyxw_detail?id=' + item.id)">
+								</el-image>
+							</el-carousel-item>
+						</el-carousel>
+					</el-col>
+					<el-col :md="16">
+						<el-row :gutter="20" v-for="(item,index) in news_xw" style="margin-bottom: 10px;" justify="space-around" align="middle">
+							<el-col :md="12" v-for="(item_1, index_1) in item">
+								<div style="display: flex; justify-content: flex-start; cursor: pointer;" @click="go_detail('/yyxw_detail?id=' + item_1.id)">
+										<el-image v-if="item_1.img_url" style="width: 30%; height: auto;" :src="item_1.img_url"
+											:key="item_1.img_url">
+										</el-image>
+									<div style="line-height: 50px; margin-left: 40px;">
+										<div>
+											<el-link :underline="false" :href="'/yyxw_detail?id=' + item_1.id" target="_blank">
+												{{ item_1.title }}</el-link>
+										</div>
+										<div>
+											<el-link :underline="false" :href="'/yyxw_detail?id=' + item_1.id" target="_blank">
+												{{ item_1.release_time }}</el-link>
+										</div>
+									</div>
+								</div>
+							</el-col>
+							<!-- <el-col :md="8">
+								
+							</el-col> -->
+						</el-row>
+					</el-col>
+				</el-row>
+			</el-card>
+		</el-col>
+	</el-row>
+	<el-row v-else>
+		<el-skeleton :rows="5" animated />
+	</el-row>
+
+	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="space-around">
+		<el-col :md="12">
 			<el-card class="box-card" shadow="hover">
 				<template #header>
 					<div class="card-header">
@@ -224,445 +239,57 @@
 							:icon="Plus">更多</el-link>
 					</div>
 				</template>
-				<ul style="color: #409EFF; line-height: 38px;">
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
+				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in news_gg" justify="space-between" align="middle">
+					<el-col :md="4" v-if="item.img_url">
+						<div style="display: flex; justify-content: space-around;">
+							<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">
+								<el-image v-if="item.img_url" style="width: 100%;" :src="item.img_url" :key="item.img_url">
+								</el-image>
+							</el-link>
 						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
+					</el-col>
+					<el-col :md="20">
+						<div style="line-height: 50px; margin-left: 20px; display: flex; justify-content: space-between;">
+								<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">{{ item.title }}</el-link>
+								<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">{{ item.release_time }}</el-link>
 						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-				</ul>
+					</el-col>
+				</el-row>
 			</el-card>
 		</el-col>
-		<!-- <el-col :md="8">
-			<el-card class="box-card">
-				<template #header>
-					<div class="card-header">
-						<span ref="bigref">医院新闻</span>
-						<el-link style="font-size: 12px;" href="/yyxw" target="_blank" type="primary"
-							:underline="false" :icon="Plus">更多</el-link>
-					</div>
-				</template>
-				<ul style="color: #409EFF; line-height: 38px;">
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yyxw_detail" target="_blank" type="primary" :underline="false">
-								68岁白内障患者重见光明：...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yyxw_detail" target="_blank" type="primary" :underline="false">
-								68岁白内障患者重见光明：...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yyxw_detail" target="_blank" type="primary" :underline="false">
-								68岁白内障患者重见光明：...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yyxw_detail" target="_blank" type="primary" :underline="false">
-								68岁白内障患者重见光明：...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yyxw_detail" target="_blank" type="primary" :underline="false">
-								68岁白内障患者重见光明：...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yyxw_detail" target="_blank" type="primary" :underline="false">
-								68岁白内障患者重见光明：...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yyxw_detail" target="_blank" type="primary" :underline="false">
-								68岁白内障患者重见光明：...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yyxw_detail" target="_blank" type="primary" :underline="false">
-								68岁白内障患者重见光明：...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yyxw_detail" target="_blank" type="primary" :underline="false">
-								68岁白内障患者重见光明：...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yyxw_detail" target="_blank" type="primary" :underline="false">
-								68岁白内障患者重见光明：...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-				</ul>
-			</el-card>
-		</el-col>
-		<el-col :md="8">
-			<el-card class="box-card">
-				<template #header>
-					<div class="card-header">
-						<span>视频新闻</span>
-						<el-link style="font-size: 12px;" href="/spxw" target="_blank" type="primary"
-							:underline="false" :icon="Plus">更多</el-link>
-					</div>
-				</template>
-				<ul style="color: #409EFF; line-height: 38px;">
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="spxw_detail" target="_blank" type="primary" :underline="false">
-								宜宾市第三人民医院儿科...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="spxw_detail" target="_blank" type="primary" :underline="false">
-								宜宾市第三人民医院儿科...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="spxw_detail" target="_blank" type="primary" :underline="false">
-								宜宾市第三人民医院儿科...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="spxw_detail" target="_blank" type="primary" :underline="false">
-								宜宾市第三人民医院儿科...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="spxw_detail" target="_blank" type="primary" :underline="false">
-								宜宾市第三人民医院儿科...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="spxw_detail" target="_blank" type="primary" :underline="false">
-								宜宾市第三人民医院儿科...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="spxw_detail" target="_blank" type="primary" :underline="false">
-								宜宾市第三人民医院儿科...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="spxw_detail" target="_blank" type="primary" :underline="false">
-								宜宾市第三人民医院儿科...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="spxw_detail" target="_blank" type="primary" :underline="false">
-								宜宾市第三人民医院儿科...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="spxw_detail" target="_blank" type="primary" :underline="false">
-								宜宾市第三人民医院儿科...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-				</ul>
-			</el-card>
-		</el-col> -->
-	</el-row>
-
-	<el-row :gutter="20" style="margin-bottom: 20px;" justify="space-around">
-		<el-col :md="24">
+		<el-col :md="12">
 			<el-card class="box-card" shadow="hover">
 				<template #header>
 					<div class="card-header">
-						<strong>医院新闻</strong>
-						<el-link style="font-size: 12px;" href="/yygg" target="_blank" type="primary" :underline="false"
+						<strong>人事招聘</strong>
+						<el-link style="font-size: 12px;" href="/zpxx" target="_blank" type="primary" :underline="false"
 							:icon="Plus">更多</el-link>
 					</div>
 				</template>
-				<ul style="color: #409EFF; line-height: 38px;">
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
+				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in job">
+					<el-col :md="4" v-if="item.img_url">
+						<div style="display: flex; justify-content: space-around;">
+							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">
+								<el-image v-if="item.img_url" style="width: 100%;" :src="item.img_url" :key="item.img_url">
+								</el-image>
+							</el-link>
 						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
+					</el-col>
+					<el-col :md="20">
+						<div style="line-height: 50px; margin-left: 20px; display: flex; justify-content: space-between;">
+							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">{{ item.title }}</el-link>
+							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">{{ item.release_time }}</el-link>
 						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/yygg_detail" target="_blank" type="primary"
-								:underline="false">
-								宜宾市第三人民医院口腔根管治疗...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-				</ul>
+					</el-col>
+				</el-row>
 			</el-card>
 		</el-col>
 	</el-row>
+	<el-row v-else>
+		<el-skeleton :rows="5" animated />
+	</el-row>
 
-	<el-card shadow="hover" style="margin-bottom: 20px;">
-		<template #header>
-			<div class="card-header">
-				<strong>专家团队</strong>
-				<el-link style="font-size: 12px;" href="/zjjs" target="_blank" type="primary" :underline="false"
-					:icon="Plus">更多</el-link>
-			</div>
-		</template>
-		<el-row :gutter="20" justify="space-between">
-			<el-col :md="5" style="margin-bottom: 20px;">
-				<el-card :body-style="{ padding: '0px', height: '500px' }" shadow="never">
-					<img class="img"
-						src="https://www.ybssyy.com/uploadfiles/2021/1130/11512665/image/20211130115224_2578.jpg"
-						style="width: 100%;" />
-					<div style="padding: 14px; line-height: 36px; font-size: 14px;">
-						<span style="color: #DC8C00;">赵习末</span>
-						<div style="display: flex; justify-content: space-around">
-							<div style="list-style: none;">
-								<li>疼痛科(李庄)医生</li>
-								<li>副主任中医师</li>
-							</div>
-							<el-link style="font-size: 12px;" href="/zjjs_detail" target="_blank" type="primary"
-								:underline="false" :icon="Plus">详细信息</el-link>
-						</div>
-					</div>
-				</el-card>
-			</el-col>
-			<el-col :md="5">
-				<el-card :body-style="{ padding: '0px', height: '500px'}" shadow="never">
-					<img class="img"
-						src="https://www.ybssyy.com/uploadfiles/2020/0305/10401999/image/20201201154720_4999.jpg"
-						style="width: 100%;" />
-					<div style="padding: 14px; line-height: 36px; font-size: 14px;">
-						<span style="color: #DC8C00;">周红</span>
-						<div style="display: flex; justify-content: space-around;">
-							<span>副主任医师</span>
-							<el-link style="font-size: 12px;" href="/zjjs_detail" target="_blank" type="primary"
-								:underline="false" :icon="Plus">详细信息</el-link>
-						</div>
-					</div>
-				</el-card>
-			</el-col>
-			<el-col :md="5">
-				<el-card :body-style="{ padding: '0px', height: '500px' }" shadow="never">
-					<img class="img"
-						src="https://www.ybssyy.com/uploadfiles/2020/0305/10363879/image/20201201154806_9844.jpg"
-						style="width: 100%;" />
-					<div style="padding: 14px; line-height: 36px; font-size: 14px;">
-						<span style="color: #DC8C00;">曾辉</span>
-						<div style="display: flex; justify-content: space-around;">
-							<span>副主任医师</span>
-							<el-link style="font-size: 12px;" href="/zjjs_detail" target="_blank" type="primary"
-								:underline="false" :icon="Plus">详细信息</el-link>
-						</div>
-					</div>
-				</el-card>
-			</el-col>
-			<el-col :md="5">
-				<el-card :body-style="{ padding: '0px', height: '500px' }" shadow="never">
-					<img class="img"
-						src="https://www.ybssyy.com/uploadfiles/2021/0125/16111989/image/20210125161416_1816.jpg"
-						style="width: 100%;" />
-					<div style="padding: 14px; line-height: 36px; font-size: 14px;">
-						<span style="color: #DC8C00;">古仁俊</span>
-						<div style="display: flex; justify-content: space-around;">
-							<span>副主任医师</span>
-							<el-link style="font-size: 12px;" href="/zjjs_detail" target="_blank" type="primary"
-								:underline="false" :icon="Plus">详细信息</el-link>
-						</div>
-					</div>
-				</el-card>
-			</el-col>
-			<el-col :md="5">
-				<el-card :body-style="{ padding: '0px', height: '500px' }" shadow="never">
-					<img class="img"
-						src="https://www.ybssyy.com/uploadfiles/2020/0305/10363879/image/20201201154806_9844.jpg"
-						style="width: 100%;" />
-					<div style="padding: 14px; line-height: 36px; font-size: 14px;">
-						<span style="color: #DC8C00;">曾辉</span>
-						<div style="display: flex; justify-content: space-around;">
-							<span>副主任医师</span>
-							<el-link style="font-size: 12px;" href="/zjjs_detail" target="_blank" type="primary"
-								:underline="false" :icon="Plus">详细信息</el-link>
-						</div>
-					</div>
-				</el-card>
-			</el-col>
-		</el-row>
-	</el-card>
-
-	<el-card shadow="hover">
+	<el-card v-if="flag" shadow="hover">
 		<template #header>
 			<div class="card-header">
 				<strong>就医指南</strong>
@@ -773,106 +400,11 @@
 			</el-col>
 		</el-row>
 	</el-card>
-	<el-card style="margin-top: 20px; margin-bottom: 20px;" shadow="hover">
-		<template #header>
-			<div class="card-header">
-				<strong>护理园地</strong>
-				<el-link style="font-size: 12px;" href="/hlyd" target="_blank" type="primary" :underline="false"
-					:icon="Plus">更多</el-link>
-			</div>
-		</template>
-		<el-row :gutter="20" justify="space-around" align="middle">
-			<el-col :md="8">
-				<el-image src="https://www.ybssyy.com/uploadfiles/2021/1222/09123096/image/20211222091828_5996.jpg"
-					lazy></el-image>
-			</el-col>
-			<el-col :md="14">
-				<ul style="color: #409EFF; line-height: 38px;">
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/hlyd_detail" target="_blank" type="primary"
-								:underline="false">
-								加强护理质量管理 提升专业技术水平...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/hlyd_detail" target="_blank" type="primary"
-								:underline="false">
-								加强护理质量管理 提升专业技术水平...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/hlyd_detail" target="_blank" type="primary"
-								:underline="false">
-								加强护理质量管理 提升专业技术水平...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/hlyd_detail" target="_blank" type="primary"
-								:underline="false">
-								加强护理质量管理 提升专业技术水平...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/hlyd_detail" target="_blank" type="primary"
-								:underline="false">
-								加强护理质量管理 提升专业技术水平...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/hlyd_detail" target="_blank" type="primary"
-								:underline="false">
-								加强护理质量管理 提升专业技术水平...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/hlyd_detail" target="_blank" type="primary"
-								:underline="false">
-								加强护理质量管理 提升专业技术水平...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/hlyd_detail" target="_blank" type="primary"
-								:underline="false">
-								加强护理质量管理 提升专业技术水平...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/hlyd_detail" target="_blank" type="primary"
-								:underline="false">
-								加强护理质量管理 提升专业技术水平...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/hlyd_detail" target="_blank" type="primary"
-								:underline="false">
-								加强护理质量管理 提升专业技术水平...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-				</ul>
-			</el-col>
-		</el-row>
-	</el-card>
-	<el-card style="margin-top: 20px; margin-bottom: 20px;" shadow="hover">
+	<el-row v-else>
+		<el-skeleton :rows="5" animated />
+	</el-row>
+	
+	<el-card v-if="flag" style="margin-top: 20px; margin-bottom: 20px;" shadow="hover">
 		<template #header>
 			<div class="card-header">
 				<strong>健康促进</strong>
@@ -882,95 +414,25 @@
 		</template>
 		<el-row :gutter="20" justify="space-around" align="middle">
 			<el-col :md="8">
-				<el-image src="https://www.ybssyy.com/uploadfiles/2021/1222/09123096/image/20211222091828_5996.jpg"
-					lazy></el-image>
+				<el-image src="/src/assets/img/health.jpg" lazy></el-image>
 			</el-col>
 			<el-col :md="14">
 				<ul style="color: #409EFF; line-height: 38px;">
-					<li>
+					<li v-for="(item, index) in patient_service">
 						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/jkcj_detail" target="_blank" type="primary"
+							<el-link style="font-size: 16px;" :href="'/jkcj_detail?id=' + item.id" target="_blank" type="primary"
 								:underline="false">
-								朋友们请注意！疫情防护别大意！...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/jkcj_detail" target="_blank" type="primary"
-								:underline="false">
-								朋友们请注意！疫情防护别大意！...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/jkcj_detail" target="_blank" type="primary"
-								:underline="false">
-								朋友们请注意！疫情防护别大意！...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/jkcj_detail" target="_blank" type="primary"
-								:underline="false">
-								朋友们请注意！疫情防护别大意！...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/jkcj_detail" target="_blank" type="primary"
-								:underline="false">
-								朋友们请注意！疫情防护别大意！...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/jkcj_detail" target="_blank" type="primary"
-								:underline="false">
-								朋友们请注意！疫情防护别大意！...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/jkcj_detail" target="_blank" type="primary"
-								:underline="false">
-								朋友们请注意！疫情防护别大意！...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/jkcj_detail" target="_blank" type="primary"
-								:underline="false">
-								朋友们请注意！疫情防护别大意！...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/jkcj_detail" target="_blank" type="primary"
-								:underline="false">
-								朋友们请注意！疫情防护别大意！...</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/jkcj_detail" target="_blank" type="primary"
-								:underline="false">
-								朋友们请注意！疫情防护别大意！...</el-link>
-							<span style="color: #999;">2021-12-23</span>
+								{{ item.title }}</el-link>
+							<el-link :underline="false" style="color: #999;">{{ item.release_time }}</el-link>
 						</div>
 					</li>
 				</ul>
 			</el-col>
 		</el-row>
 	</el-card>
+	<el-row v-else>
+		<el-skeleton :rows="5" animated />
+	</el-row>
 </template>
 
 <script>
@@ -993,7 +455,15 @@
 				window.open('https://juejin.cn/book/6933939264455442444', 'target')
 			}
 			const state = reactive({
-				carousel_arr: []
+				flag: false,
+				carousel_arr: [],
+				office_arr: [],
+				expert_arr: [],
+				news_xw: [],
+				news_rotate: [],
+				news_gg: [],
+				job: [],
+				patient_service: [],
 			})
 
 			onMounted(() => {
@@ -1001,8 +471,16 @@
 			})
 
 			const get_lunbo = async () => {
-				const lunbo_arr = await axios.get('/api/head/rotates')
-				state.carousel_arr = lunbo_arr
+				const index = await axios.get('/api/head/indexs')
+				state.carousel_arr = index.data.rotates
+				state.office_arr = index.data.offices
+				state.expert_arr = index.data.expert
+				state.news_xw = index.data.news_xw
+				state.news_rotate = index.data.news_rotate
+				state.news_gg = index.data.news_gg
+				state.job = index.data.job
+				state.patient_service = index.data.patient_service
+				state.flag = true
 			}
 
 			const go_detail = (url) => {
@@ -1053,11 +531,12 @@
 		align-items: center;
 	}
 
-	.img {
+	.img>img {
+		width: 100%;
 		transition: all 0.6s;
 	}
 
-	.img:hover {
-		transform: scale(1.1);
+	.img>img:hover {
+		transform: scale(1.2);
 	}
 </style>

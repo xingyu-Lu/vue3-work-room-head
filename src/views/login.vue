@@ -1,18 +1,17 @@
-<template>
+<template>	
 	<el-row style="min-height: 100%;" justify="space-around" align="middle">
-		<el-col :md="8">
+		<el-col :md="7">
 			<el-card>
-				<div style="justify-content: center; display: flex;">宜宾市第三人民医院</div>
+				<div style="justify-content: center; display: flex; font-size: 28px; color: #1BAEAE; font-weight: bold; margin-bottom: 20px;">宜宾市第三人民医院</div>
 				<el-form label-position="top" :rules="rules" :model="loginModel" ref="loginRef">
-					<el-form-item label="手机号" prop="username">
-						<el-input type="text" v-model.trim="loginModel.username" autocomplete="off"></el-input>
+					<el-form-item label="手机号" prop="mobile">
+						<el-input type="text" v-model.trim="loginModel.mobile" autocomplete="off"></el-input>
 					</el-form-item>
 					<el-form-item label="密码" prop="password">
 						<el-input type="password" v-model.trim="loginModel.password" autocomplete="off"></el-input>
 					</el-form-item>
 					<el-form-item>
-						<div>登录表示您已同意<a>《服务条款》</a></div>
-						<el-button style="width: 100%" type="primary">立即登录</el-button>
+						<el-button style="width: 100%" type="primary" @click="submitForm">立即登录</el-button>
 					</el-form-item>
 					<!-- <el-form-item>
 						<el-checkbox v-model="checked" @change="!checked">下次自动登录</el-checkbox>
@@ -35,7 +34,7 @@
 		toRefs
 	} from 'vue'
 	import {
-		localSet
+		sessionSet
 	} from '@/utils'
 	export default {
 		name: 'Login',
@@ -43,14 +42,14 @@
 			const loginRef = ref(null)
 			const state = reactive({
 				loginModel: {
-					username: '',
+					mobile: '',
 					password: ''
 				},
 				checked: true,
 				rules: {
-					username: [{
+					mobile: [{
 						required: 'true',
-						message: '账户不能为空',
+						message: '手机号不能为空',
 						trigger: 'blur'
 					}],
 					password: [{
@@ -63,12 +62,12 @@
 			const submitForm = async () => {
 				loginRef.value.validate((valid) => {
 					if (valid) {
-						axios.post('/login.php', {
-							userName: state.loginModel.username || '',
-							passwordMd5: md5(state.loginModel.password)
+						axios.post('/api/head/authorizations', {
+							mobile: state.loginModel.mobile || '',
+							password: state.loginModel.password
 						}).then(res => {
-							// localSet('token', res)
-							window.location.href = '/login'
+							sessionSet('token', res.data.token)
+							window.location.href = '/'
 						})
 					} else {
 						console.log(2121)

@@ -112,7 +112,7 @@
 		useRouter
 	} from 'vue-router'
 	import {
-		localGet,
+		sessionGet,
 		uploadImgServer,
 		uploadImgsServer,
 		hasEmoji
@@ -139,7 +139,7 @@
 				checkedNames: [1,2],
 				disabled: false,
 				uploadImgServer,
-				token: localGet('token') || '',
+				token: sessionGet('token') || '',
 				id: id,
 				defaultCate: '请选择',
 				goodForm: {

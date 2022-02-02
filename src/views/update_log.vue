@@ -39,6 +39,14 @@
 			const state = reactive({
 				update_log: [
 					{
+						content: '注册登录，邮箱验证码登录，医院简介，领导团队',
+						timestamp: '2022-02-02',
+					},
+					{
+						content: '前端开始对接接口，首页对接等等',
+						timestamp: '2022-02-01',
+					},
+					{
 						content: '专家介绍，科研动态，患者服务，党建之窗，人才招聘，员工之声，优化等等',
 						timestamp: '2022-01-31',
 					},
