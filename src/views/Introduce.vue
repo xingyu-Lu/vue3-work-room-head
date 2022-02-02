@@ -239,7 +239,7 @@
 							:icon="Plus">更多</el-link>
 					</div>
 				</template>
-				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in news_gg" justify="space-between" align="middle">
+				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in news_gg" justify="space-between" align="top">
 					<el-col :md="4" v-if="item.img_url">
 						<div style="display: flex; justify-content: space-around;">
 							<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">
@@ -266,7 +266,7 @@
 							:icon="Plus">更多</el-link>
 					</div>
 				</template>
-				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in job">
+				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in job" justify="space-between" align="top">
 					<el-col :md="4" v-if="item.img_url">
 						<div style="display: flex; justify-content: space-around;">
 							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">
@@ -412,11 +412,11 @@
 					:icon="Plus">更多</el-link>
 			</div>
 		</template>
-		<el-row :gutter="20" justify="space-around" align="middle">
+		<el-row :gutter="20" justify="space-around" align="top">
 			<el-col :md="8">
-				<el-image src="/src/assets/img/health.jpg" lazy></el-image>
+				<img src="/src/assets/img/health.jpg" style="width: 100%;" lazy />
 			</el-col>
-			<el-col :md="14">
+			<el-col :md="16">
 				<ul style="color: #409EFF; line-height: 38px;">
 					<li v-for="(item, index) in patient_service">
 						<div style="display: flex; justify-content: space-between;">
