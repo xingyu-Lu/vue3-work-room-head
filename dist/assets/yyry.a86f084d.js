@@ -1,1 +1,0 @@
-import{_ as o}from"./index.9aeb5ec4.js";import{b as r,c,d as n}from"./vendor.dd5dfc9e.js";const t={};function s(_,a){const e=r("el-empty");return c(),n(e,{description:"\u5F85\u66F4\u65B0"})}var m=o(t,[["render",s]]);export{m as default};
