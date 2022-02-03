@@ -2,7 +2,7 @@
 	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
 		<el-col :span="24">
 			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
-				<strong>医院简介</strong>
+				<strong>领导团队</strong>
 			</div>
 		</el-col>
 	</el-row>

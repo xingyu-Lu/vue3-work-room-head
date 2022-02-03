@@ -39,6 +39,10 @@
 			const state = reactive({
 				update_log: [
 					{
+						content: '医院概况，新闻动态，科室介绍，专家介绍，科研教学等等',
+						timestamp: '2022-02-03',
+					},
+					{
 						content: '注册登录，邮箱验证码登录，医院简介，领导团队',
 						timestamp: '2022-02-02',
 					},

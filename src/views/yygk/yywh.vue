@@ -1,7 +1,9 @@
 <template>
-	<el-row style="margin-bottom: 20px;">
-		<el-col>
-			<el-image style="width: 100%;" src="https://www.ybssyy.com/images/images/ad_01.jpg" lazy></el-image>
+	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
+		<el-col :span="24">
+			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
+				<strong>医院文化</strong>
+			</div>
 		</el-col>
 	</el-row>
 	
@@ -10,20 +12,41 @@
 		<el-breadcrumb-item>医院文化</el-breadcrumb-item>
 	</el-breadcrumb>
 	
-	<el-row style="margin-bottom: 20px;">
-		<el-col style="display: flex; justify-content: center;">
-			<el-image style="width: 70%;" src="https://www.ybssyy.com/uploadfiles/2013/0306/12044362/image/20150528092830_4218.jpg" lazy></el-image>
-		</el-col>
-	</el-row>
-	
-	<el-row style="margin-bottom: 20px;">
-		<el-col style="display: flex; justify-content: center;">
-			<el-image style="width: 70%;" src="https://www.ybssyy.com/uploadfiles/2013/0306/12044362/image/20210713102837_8406.png" lazy></el-image>
-		</el-col>
-	</el-row>
+	<span v-html="res_data.content"></span>
 </template>
 
 <script>
+	import axios from '@/utils/axios'
+	import {
+		onMounted,
+		reactive,
+		ref,
+		toRefs
+	} from 'vue'
+	
+	export default {
+		name: 'ldtd',
+		
+		setup() {
+			const state = reactive({
+				res_data: ref('')
+			})
+			
+			onMounted(() => {
+				get_data()
+			})
+			
+			const get_data = () => {
+				axios.get('/api/head/briefs/yywh').then(res => {
+					state.res_data = res.data
+				})
+			}
+			
+			return {
+				...toRefs(state)
+			}
+		}
+	}
 </script>
 
 <style>

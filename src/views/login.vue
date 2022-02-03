@@ -34,7 +34,7 @@
 		toRefs
 	} from 'vue'
 	import {
-		sessionSet
+		localSet
 	} from '@/utils'
 	export default {
 		name: 'Login',
@@ -66,7 +66,7 @@
 							mobile: state.loginModel.mobile || '',
 							password: state.loginModel.password
 						}).then(res => {
-							sessionSet('token', res.data.token)
+							localSet('token', res.data.token)
 							window.location.href = '/'
 						})
 					} else {

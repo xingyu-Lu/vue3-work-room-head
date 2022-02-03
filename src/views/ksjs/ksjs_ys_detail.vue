@@ -1,38 +1,120 @@
 <template>
-	<el-row style="margin-bottom: 20px;">
-		<el-col>
-			<el-image style="width: 100%;" src="https://www.ybssyy.com/images/images/ad_07.jpg" lazy></el-image>
+	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
+		<el-col :span="24">
+			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
+				<strong>科室医生</strong>
+			</div>
 		</el-col>
 	</el-row>
 
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item>科室介绍</el-breadcrumb-item>
-		<el-breadcrumb-item>心血管内科（市级重点专科）</el-breadcrumb-item>
-		<el-breadcrumb-item>熊果</el-breadcrumb-item>
+		<el-breadcrumb-item>{{res_data.office_name}}</el-breadcrumb-item>
 	</el-breadcrumb>
 
-	<p style="text-align:center;"><b>熊 果</b></p>
-	<p style="text-align:center;">发布时间：2021/1/28 17:31:48&nbsp;&nbsp;&nbsp; 访问次数：<em>139</em>&nbsp;&nbsp;&nbsp; 来源：</p>
-	<p style="text-align:center;"><img alt=""
-			src="https://www.ybssyy.com/uploadfiles/2021/0128/17314808/image/20210818080825_4665.jpg" /></p>
-	<p style="text-align:center;">熊 果</p>
-	<p style="text-align:center;">副主任医师</p>
-	<p style="text-align:center;">心血管内科副主任</p>
-	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		中共党员，硕士研究生，毕业于重庆医科大学，临床工作20年，经验丰富，医学知识全面，熟练掌握心内科常见病、多发病的诊断与治疗。曾在重庆医科大学附属第一医院心内科进修介入手术一年，能熟练完成冠脉支架介入手术、单双腔永久起搏器安置术、阵发性室上性心动过速二维及三维下射频消融术。掌握室性早搏与房颤三维射频消融术、三腔起搏器（CRT+D）安置术、房间隔缺损、动脉导管未闭及左心耳介入封堵术等。在北大核心库及中文核心库等发表医学论文3篇。
-	</p>
-	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 主要研究方向：冠脉介入及心律失常与起搏治疗。</p>
-
+	<el-row :gutter="24" justify="space-around" align="middle" style="line-height: 36px; margin-bottom: 20px;">
+		<el-col :md="3">
+			<el-button type="primary" @click="go_detail('/ksjs_detail?id=' +id)">科室介绍</el-button>
+		</el-col>
+		<el-col :md="3">
+			<el-button type="primary" @click="go_detail('/ksjs-ksdt?id=' + id)">科室动态</el-button>
+		</el-col>
+		<el-col :md="3">
+			<el-button type="primary" @click="go_detail('/ksjs-ksys?id=' + id)">科室医生</el-button>
+		</el-col>
+		<el-col :md="3">
+			<el-button type="primary" @click="go_detail('/ksmz?id=' + id)">科室门诊</el-button>
+		</el-col>
+		<el-col :md="3">
+			<el-button type="primary" @click="go_detail('/kstsyl?id=' + id)">特色医疗</el-button>
+		</el-col>
+		<el-col :md="3">
+			<el-button type="primary" @click="go_detail('/kstp?id=' + id)">科室图片</el-button>
+		</el-col>
+		<el-col :md="3">
+			<el-button type="primary" @click="go_detail('/ksjkkp?id=' + id)">健康科普</el-button>
+		</el-col>
+	</el-row>
+	
+	<el-row :gutter="20">
+		<el-col :md="3">
+			<el-image :src="res_data.img_url"></el-image>
+		</el-col>
+		<el-col :md="21">
+			<h1 style="color: rgb(64 158 255);">{{res_data.name}}</h1>
+			<div style="line-height: 42px;">
+				<div><span style="color: #999;">科室：</span><span style="color: #444;">{{res_data.office_name}}</span></div>
+				<div><span style="color: #999;">职称：</span><span style="color: #444;">{{res_data.professional}}</span></div>
+				<div><span style="color: #999;">擅长：</span><span style="color: #444;">{{res_data.excel}}</span></div>
+			</div>
+		</el-col>
+	</el-row>
+	
+	<el-divider></el-divider>
+		
+	<h2 style="color: #555;">
+		医生介绍
+	</h2>
+	
+	<el-divider></el-divider>
+	
+	<span v-if="res_data.content" v-html="res_data.content"></span>
 </template>
 
 <script>
 	import {
-		ref
+		Plus
+	} from '@element-plus/icons-vue'
+	import axios from '@/utils/axios'
+	import {
+		onMounted,
+		reactive,
+		ref,
+		toRefs
 	} from 'vue'
+	import {
+		useRoute,
+		useRouter
+	} from 'vue-router'
+	
 	export default {
+		name: 'ldtd',
+		
 		setup() {
-			document.title = '心血管内科（市级重点专科）';
+			const route = useRoute()
+			const router = useRouter()
+			const {
+				id
+			} = route.query
+			
+			const state = reactive({
+				res_data: ref('')
+			})
+			
+			onMounted(() => {
+				get_data()
+			})
+			
+			const get_data = () => {
+				axios.get('/api/head/offices/ksys_detail', {
+					params: {
+						id: id,
+					}
+				}).then(res => {
+					state.res_data = res.data
+				})
+			}
+			
+			const go_detail = (url) => {
+				window.open(url, '_blank')
+			}
+			
+			return {
+				...toRefs(state),
+				go_detail,
+				Plus,
+				id,
+			}
 		}
 	}
 </script>

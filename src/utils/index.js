@@ -1,18 +1,18 @@
-export function sessionGet(key) {
-	const value = window.sessionStorage.getItem(key)
+export function localGet(key) {
+	const value = window.localStorage.getItem(key)
 	try {
-		return JSON.parse(window.sessionStorage.getItem(key))
+		return JSON.parse(window.localStorage.getItem(key))
 	} catch (error) {
 		return value
 	}
 }
 
-export function sessionSet(key, value) {
-	window.sessionStorage.setItem(key, JSON.stringify(value))
+export function localSet(key, value) {
+	window.localStorage.setItem(key, JSON.stringify(value))
 }
 
-export function sessionRemove(key) {
-	window.sessionStorage.removeItem(key)
+export function localRemove(key) {
+	window.localStorage.removeItem(key)
 }
 
 // 判断内容是否含有表情字符，现有数据库不支持。
@@ -44,15 +44,37 @@ export const pathMap = {
 	wlzw: '未来展望',
 	// 新闻动态
 	yyxw: '医院新闻',
+	yyxw_detail: '医院新闻',
 	spxw: '视频新闻',
+	spxw_detail: '视频新闻',
 	yygg: '医院公告',
+	yygg_detail: '医院公告',
 	// 科室介绍
-	ksjs: '科室介绍',
+	ksjs: '科室设置',
+	ksjs_detail: '科室介绍',
+	ksjs_ksdt: '科室动态',
+	ksjs_dt_detail: '科室动态',
+	ksjs_ksys: '科室医生',
+	ksjs_ys_detail: '科室医生',
+	ksmz: '科室门诊',
+	kstsyl: '特色医疗',
+	kstsyl_detail: '特色医疗',
+	kstp: '科室图片',
+	ksjkkp: '健康科普',
+	ksjkkp_detail: '健康科普',
+	
 	// 专家介绍
 	zjjs: '专家介绍',
-	czxx: '出诊信息',
+	zjjs_detail: '专家介绍',
+	expert_czxx: '出诊信息',
 	// 科研教学
-	kyjx: '科研动态',
+	kydt: '科研动态',
+	kydt_detail: '科研动态',
+	xkjs: '学科建设',
+	xkjs_detail: '学科建设',
+	jxjy: '继续教育',
+	jxjy_detail: '继续教育',
+	
 	// 患者服务
 	mzlc: '门诊流程',
 	zylc: '住院流程',

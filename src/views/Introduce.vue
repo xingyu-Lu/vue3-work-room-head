@@ -131,7 +131,8 @@
 					<li v-for="(item_1, index_1) in item">
 						<el-button>
 							<el-link :href="'/ksjs_detail?id=' + item_1.id" target="_blank" :underline="false">
-								{{ item_1.name }}</el-link>
+								{{ item_1.name }}
+							</el-link>
 						</el-button>
 					</li>
 				</el-row>
@@ -142,38 +143,43 @@
 		<el-skeleton :rows="5" animated />
 	</el-row>
 
-	<el-card v-if="flag" shadow="hover" style="margin-bottom: 20px;">
-		<template #header>
-			<div class="card-header">
-				<strong>专家团队</strong>
-				<el-link style="font-size: 12px;" href="/zjjs" target="_blank" type="primary" :underline="false"
-					:icon="Plus">更多</el-link>
-			</div>
-		</template>
-		<el-row v-for="(item,index) in expert_arr" :gutter="20" justify="space-around">
-			<el-col v-for="(item_1, index_1) in item" :md="4">
-				<el-link :href="'/zjjs_detail?id=' + item_1.id" :underline="false" target="_blank">
-					<el-card :body-style="{ padding: '10px'}" shadow="never">
-						<div class="img" style="overflow: hidden;">
-							<img :src="item_1.img_url" />
-						</div>
-
-						<div style="padding: 14px; line-height: 36px; font-size: 14px;">
-							<span style="color: #DC8C00;">{{ item_1.name }}</span>
-							<div style="display: flex; justify-content: space-around;">
-								<div style="list-style: none;">
-									<!-- <li v-for="(item_2, index_2) in item_1.position">{{ item_2 }}</li> -->
-									<li v-for="(item_3, index_3) in item_1.professional">{{ item_3 }}</li>
+	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="space-around">
+		<el-col :md="24">
+			<el-card v-if="flag" shadow="hover" style="margin-bottom: 20px;">
+				<template #header>
+					<div class="card-header">
+						<strong>专家团队</strong>
+						<el-link style="font-size: 12px;" href="/zjjs" target="_blank" type="primary" :underline="false"
+							:icon="Plus">更多</el-link>
+					</div>
+				</template>
+				<el-row v-for="(item,index) in expert_arr" :gutter="20" justify="space-around">
+					<el-col v-for="(item_1, index_1) in item" :md="4">
+						<el-link :href="'/zjjs_detail?id=' + item_1.id" :underline="false" target="_blank">
+							<el-card :body-style="{ padding: '10px'}" shadow="never">
+								<div class="img" style="overflow: hidden;">
+									<img :src="item_1.img_url" />
 								</div>
-								<el-link style="font-size: 12px;" :href="'/zjjs_detail?id=' + item_1.id" target="_blank"
-									type="primary" :underline="false" :icon="Plus">详细信息</el-link>
-							</div>
-						</div>
-					</el-card>
-				</el-link>
-			</el-col>
-		</el-row>
-	</el-card>
+
+								<div style="padding: 14px; line-height: 36px; font-size: 14px;">
+									<span style="color: #DC8C00;">{{ item_1.name }}</span>
+									<div style="display: flex; justify-content: space-around;">
+										<div style="list-style: none;">
+											<!-- <li v-for="(item_2, index_2) in item_1.position">{{ item_2 }}</li> -->
+											<li v-for="(item_3, index_3) in item_1.professional">{{ item_3 }}</li>
+										</div>
+										<el-link style="font-size: 12px;" :href="'/zjjs_detail?id=' + item_1.id"
+											target="_blank" type="primary" :underline="false" :icon="Plus">详细信息
+										</el-link>
+									</div>
+								</div>
+							</el-card>
+						</el-link>
+					</el-col>
+				</el-row>
+			</el-card>
+		</el-col>
+	</el-row>
 	<el-row v-else>
 		<el-skeleton :rows="5" animated />
 	</el-row>
@@ -191,27 +197,35 @@
 				<el-row :gutter="20">
 					<el-col :md="8">
 						<el-carousel height="250px">
-							<el-carousel-item v-for="item in news_rotate" :key="item" indicator-position="none" :label="item.title">
-								<el-image style="width: auto; cursor: pointer;" fit="fill" :key=item.img_url :src=item.img_url @click="go_detail('/yyxw_detail?id=' + item.id)">
+							<el-carousel-item v-for="item in news_rotate" :key="item" indicator-position="none"
+								:label="item.title">
+								<el-image style="width: auto; cursor: pointer;" fit="fill" :key=item.img_url
+									:src=item.img_url @click="go_detail('/yyxw_detail?id=' + item.id)">
 								</el-image>
 							</el-carousel-item>
 						</el-carousel>
 					</el-col>
 					<el-col :md="16">
-						<el-row :gutter="20" v-for="(item,index) in news_xw" style="margin-bottom: 10px;" justify="space-around" align="middle">
+						<el-row :gutter="20" v-for="(item,index) in news_xw" style="margin-bottom: 10px;"
+							justify="space-around" align="middle">
 							<el-col :md="12" v-for="(item_1, index_1) in item">
-								<div style="display: flex; justify-content: flex-start; cursor: pointer;" @click="go_detail('/yyxw_detail?id=' + item_1.id)">
-										<el-image v-if="item_1.img_url" style="width: 30%; height: auto;" :src="item_1.img_url"
-											:key="item_1.img_url">
-										</el-image>
+								<div style="display: flex; justify-content: flex-start; cursor: pointer;"
+									@click="go_detail('/yyxw_detail?id=' + item_1.id)">
+									<el-image v-if="item_1.img_url" style="width: 30%; height: auto;"
+										:src="item_1.img_url" :key="item_1.img_url">
+									</el-image>
 									<div style="line-height: 50px; margin-left: 40px;">
 										<div>
-											<el-link :underline="false" :href="'/yyxw_detail?id=' + item_1.id" target="_blank">
-												{{ item_1.title }}</el-link>
+											<el-link :underline="false" :href="'/yyxw_detail?id=' + item_1.id"
+												target="_blank">
+												{{ item_1.title }}
+											</el-link>
 										</div>
 										<div>
-											<el-link :underline="false" :href="'/yyxw_detail?id=' + item_1.id" target="_blank">
-												{{ item_1.release_time }}</el-link>
+											<el-link :underline="false" :href="'/yyxw_detail?id=' + item_1.id"
+												target="_blank">
+												{{ item_1.release_time }}
+											</el-link>
 										</div>
 									</div>
 								</div>
@@ -239,19 +253,24 @@
 							:icon="Plus">更多</el-link>
 					</div>
 				</template>
-				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in news_gg" justify="space-between" align="top">
+				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in news_gg"
+					justify="space-between" align="top">
 					<el-col :md="4" v-if="item.img_url">
 						<div style="display: flex; justify-content: space-around;">
 							<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">
-								<el-image v-if="item.img_url" style="width: 100%;" :src="item.img_url" :key="item.img_url">
+								<el-image v-if="item.img_url" style="width: 100%;" :src="item.img_url"
+									:key="item.img_url">
 								</el-image>
 							</el-link>
 						</div>
 					</el-col>
 					<el-col :md="20">
-						<div style="line-height: 50px; margin-left: 20px; display: flex; justify-content: space-between;">
-								<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">{{ item.title }}</el-link>
-								<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">{{ item.release_time }}</el-link>
+						<div
+							style="line-height: 50px; margin-left: 20px; display: flex; justify-content: space-between;">
+							<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">
+								{{ item.title }}</el-link>
+							<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">
+								{{ item.release_time }}</el-link>
 						</div>
 					</el-col>
 				</el-row>
@@ -266,19 +285,24 @@
 							:icon="Plus">更多</el-link>
 					</div>
 				</template>
-				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in job" justify="space-between" align="top">
+				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in job" justify="space-between"
+					align="top">
 					<el-col :md="4" v-if="item.img_url">
 						<div style="display: flex; justify-content: space-around;">
 							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">
-								<el-image v-if="item.img_url" style="width: 100%;" :src="item.img_url" :key="item.img_url">
+								<el-image v-if="item.img_url" style="width: 100%;" :src="item.img_url"
+									:key="item.img_url">
 								</el-image>
 							</el-link>
 						</div>
 					</el-col>
 					<el-col :md="20">
-						<div style="line-height: 50px; margin-left: 20px; display: flex; justify-content: space-between;">
-							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">{{ item.title }}</el-link>
-							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">{{ item.release_time }}</el-link>
+						<div
+							style="line-height: 50px; margin-left: 20px; display: flex; justify-content: space-between;">
+							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">
+								{{ item.title }}</el-link>
+							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">
+								{{ item.release_time }}</el-link>
 						</div>
 					</el-col>
 				</el-row>
@@ -403,7 +427,7 @@
 	<el-row v-else>
 		<el-skeleton :rows="5" animated />
 	</el-row>
-	
+
 	<el-card v-if="flag" style="margin-top: 20px; margin-bottom: 20px;" shadow="hover">
 		<template #header>
 			<div class="card-header">
@@ -420,9 +444,10 @@
 				<ul style="color: #409EFF; line-height: 38px;">
 					<li v-for="(item, index) in patient_service">
 						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" :href="'/jkcj_detail?id=' + item.id" target="_blank" type="primary"
-								:underline="false">
-								{{ item.title }}</el-link>
+							<el-link style="font-size: 16px;" :href="'/jkcj_detail?id=' + item.id" target="_blank"
+								type="primary" :underline="false">
+								{{ item.title }}
+							</el-link>
 							<el-link :underline="false" style="color: #999;">{{ item.release_time }}</el-link>
 						</div>
 					</li>
@@ -484,7 +509,7 @@
 			}
 
 			const go_detail = (url) => {
-				window.open(url, 'target')
+				window.open(url, '_blank')
 			}
 			return {
 				...toRefs(state),

@@ -90,16 +90,66 @@ const router = createRouter({
 		name: 'ksjs_detail',
 		component: () => import('../views/ksjs/ksjs_detail.vue')
 	},
+	// 医师介绍
+	{
+		path: '/ksjs-ksys',
+		name: 'ksjs_ksys',
+		component: () => import('../views/ksjs/ksys.vue')
+	},
 	{
 		path: '/ksjs_ys_detail',
 		name: 'ksjs_ys_detail',
 		component: () => import('../views/ksjs/ksjs_ys_detail.vue')
 	},
+	// 科室动态
 	{
 		path: '/ksjs_dt_detail',
 		name: 'ksjs_dt_detail',
 		component: () => import('../views/ksjs/ksjs_dt_detail.vue')
 	},
+	{
+		path: '/ksjs-ksdt',
+		name: 'ksjs_ksdt',
+		component: () => import('../views/ksjs/ksdt.vue')
+	},
+	// 科室门诊
+	{
+		path: '/ksmz',
+		name: 'ksmz',
+		component: () => import('../views/ksjs/ksmz.vue')
+	},
+	// 特色医疗
+	{
+		path: '/kstsyl',
+		name: 'kstsyl',
+		component: () => import('../views/ksjs/tsyl.vue')
+	},
+	// 特色医疗详情
+	{
+		path: '/kstsyl-detail',
+		name: 'kstsyl_detail',
+		component: () => import('../views/ksjs/tsyl_detail.vue')
+	},
+	// 科室图片
+	{
+		path: '/kstp',
+		name: 'kstp',
+		component: () => import('../views/ksjs/kstp.vue')
+	},
+	// 特色医疗
+	{
+		path: '/ksjkkp',
+		name: 'ksjkkp',
+		component: () => import('../views/ksjs/ksjkkp.vue')
+	},
+	// 特色医疗详情
+	{
+		path: '/ksjkkp-detail',
+		name: 'ksjkkp_detail',
+		component: () => import('../views/ksjs/ksjkkp_detail.vue')
+	},
+	
+	
 	// 专家介绍
 	{
 		path: '/zjjs',
@@ -112,21 +162,44 @@ const router = createRouter({
 		component: () => import('../views/zjjs/zjjs_detail.vue')
 	},
 	{
-		path: '/czxx',
-		name: 'czxx',
+		path: '/expert-czxx',
+		name: 'expert_czxx',
 		component: () => import('../views/zjjs/czxx.vue')
 	},
 	// 科研教学
 	{
-		path: '/kyjx',
-		name: 'kyjx',
-		component: () => import('../views/kyjx/kyjx.vue')
+		path: '/kydt',
+		name: 'kydt',
+		component: () => import('../views/kyjx/kydt.vue')
 	},
 	{
-		path: '/kyjx_detail',
-		name: 'kyjx_detail',
-		component: () => import('../views/kyjx/kyjx_detail.vue')
+		path: '/kydt_detail',
+		name: 'kydt_detail',
+		component: () => import('../views/kyjx/kydt_detail.vue')
 	},
+	// 学科建设
+	{
+		path: '/xkjs',
+		name: 'xkjs',
+		component: () => import('../views/kyjx/xkjs.vue')
+	},
+	{
+		path: '/xkjs_detail',
+		name: 'xkjs_detail',
+		component: () => import('../views/kyjx/xkjs_detail.vue')
+	},
+	// 继续教育
+	{
+		path: '/jxjy',
+		name: 'jxjy',
+		component: () => import('../views/kyjx/jxjy.vue')
+	},
+	{
+		path: '/jxjy_detail',
+		name: 'jxjy_detail',
+		component: () => import('../views/kyjx/jxjy_detail.vue')
+	},
+	
 	// 患者服务
 	{
 		path: '/mzlc',

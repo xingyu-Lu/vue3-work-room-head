@@ -56,7 +56,7 @@
 		toRefs
 	} from 'vue'
 	import {
-		sessionSet
+		localSet
 	} from '@/utils'
 	export default {
 		name: 'Login',
