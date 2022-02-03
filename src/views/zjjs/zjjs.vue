@@ -33,9 +33,9 @@
 								<li v-for="(item_2, index_2) in item_1.position">{{ item_2 }}</li>
 								<li v-for="(item_3, index_3) in item_1.professional">{{ item_3 }}</li>
 							</div>
-							<el-link style="font-size: 12px;" :href="'/zjjs_detail?id=' + item_1.id"
+							<!-- <el-link style="font-size: 12px;" :href="'/zjjs_detail?id=' + item_1.id"
 								target="_blank" type="primary" :underline="false" :icon="Plus">详细信息
-							</el-link>
+							</el-link> -->
 						</div>
 					</div>
 				</el-card>
