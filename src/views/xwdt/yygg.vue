@@ -18,9 +18,9 @@
 			<el-col :md="24">
 				<div style="display: flex; justify-content: space-between; cursor: pointer;"
 					@click="go_detail('/yygg_detail?id=' + item.id)">
-					<el-image v-if="item.img_url" style="width: 30%; height: auto;"
+					<!-- <el-image v-if="item.img_url" style="width: 30%; height: auto;"
 						:src="item.img_url" :key="item.img_url">
-					</el-image>
+					</el-image> -->
 					<!-- <div style="line-height: 50px; margin-left: 40px;"> -->
 						<!-- <div> -->
 							<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">

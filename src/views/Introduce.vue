@@ -255,7 +255,7 @@
 				</template>
 				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in news_gg"
 					justify="space-between" align="top">
-					<el-col :md="4" v-if="item.img_url">
+					<!-- <el-col :md="4" v-if="item.img_url">
 						<div style="display: flex; justify-content: space-around;">
 							<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">
 								<el-image v-if="item.img_url" style="width: 100%;" :src="item.img_url"
@@ -263,10 +263,10 @@
 								</el-image>
 							</el-link>
 						</div>
-					</el-col>
+					</el-col> -->
 					<el-col :md="20">
 						<div
-							style="line-height: 50px; margin-left: 20px; display: flex; justify-content: space-between;">
+							style="line-height: 16px; margin-left: 20px; display: flex; justify-content: space-between;">
 							<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">
 								{{ item.title }}</el-link>
 							<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">
@@ -287,7 +287,7 @@
 				</template>
 				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in job" justify="space-between"
 					align="top">
-					<el-col :md="4" v-if="item.img_url">
+					<!-- <el-col :md="4" v-if="item.img_url">
 						<div style="display: flex; justify-content: space-around;">
 							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">
 								<el-image v-if="item.img_url" style="width: 100%;" :src="item.img_url"
@@ -295,10 +295,10 @@
 								</el-image>
 							</el-link>
 						</div>
-					</el-col>
+					</el-col> -->
 					<el-col :md="20">
 						<div
-							style="line-height: 50px; margin-left: 20px; display: flex; justify-content: space-between;">
+							style="line-height: 16px; margin-left: 20px; display: flex; justify-content: space-between;">
 							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">
 								{{ item.title }}</el-link>
 							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">
