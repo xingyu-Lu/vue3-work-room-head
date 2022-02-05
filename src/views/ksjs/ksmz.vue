@@ -130,8 +130,13 @@
 				})
 			}
 			
+			const go_detail = (url) => {
+				window.open(url, '_blank')
+			}
+			
 			return {
 				...toRefs(state),
+				go_detail,
 				Plus,
 				id,
 			}
