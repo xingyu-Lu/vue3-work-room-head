@@ -115,7 +115,7 @@
 							password: state.loginModel.password,
 						}).then(res => {
 							ElMessage.success('注册成功，待管理员审核')
-							// window.location.href = '/login'
+							window.location.href = '/'
 						})
 					} else {
 						return false;
