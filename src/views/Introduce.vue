@@ -322,7 +322,7 @@
 		<el-row :gutter="20" justify="space-around" style="margin-bottom: 20px;">
 			<el-col :md="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex;">
+					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/mzlc')">
 					<img src="/src/assets/img/link_01.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
 						<el-link style="font-size: 12px;" href="/mzlc" target="_blank" type="primary" :underline="false"
@@ -332,7 +332,7 @@
 			</el-col>
 			<el-col :md="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex;">
+					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/zylc')">
 					<img src="/src/assets/img/link_02.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
 						<el-link style="font-size: 12px;" href="/zylc" target="_blank" type="primary" :underline="false"
@@ -342,27 +342,27 @@
 			</el-col>
 			<el-col :md="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex;">
+					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/expert-czxx')">
 					<img src="/src/assets/img/link_03.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
-						<el-link style="font-size: 12px;" href="/czxx" target="_blank" type="primary" :underline="false"
+						<el-link style="font-size: 12px;" href="/expert-czxx" target="_blank" type="primary" :underline="false"
 							:icon="Plus">出诊信息</el-link>
 					</div>
 				</el-card>
 			</el-col>
 			<el-col :md="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex;">
+					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/azb')">
 					<img src="/src/assets/img/link_04.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
-						<el-link style="font-size: 12px;" href="azb" target="_blank" type="primary" :underline="false"
+						<el-link style="font-size: 12px;" href="/azb" target="_blank" type="primary" :underline="false"
 							:icon="Plus">艾滋病</el-link>
 					</div>
 				</el-card>
 			</el-col>
 			<el-col :md="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex;">
+					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/lyfb')">
 					<img src="/src/assets/img/link_05.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
 						<el-link style="font-size: 12px;" href="/lyfb" target="_blank" type="primary" :underline="false"
@@ -374,7 +374,7 @@
 		<el-row :gutter="20" justify="space-around" style="margin-bottom: 20px;">
 			<el-col :md="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex;">
+					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/lxwm')">
 					<img src="/src/assets/img/link_06.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
 						<el-link style="font-size: 12px;" href="/lxwm" target="_blank" type="primary" :underline="false"
@@ -384,7 +384,7 @@
 			</el-col>
 			<el-col :md="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex;">
+					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/jcxz')">
 					<img src="/src/assets/img/link_07.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
 						<el-link style="font-size: 12px;" href="/jcxz" target="_blank" type="primary" :underline="false"
@@ -394,17 +394,17 @@
 			</el-col>
 			<el-col :md="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex;">
+					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/jktj')">
 					<img src="/src/assets/img/link_08.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
-						<el-link style="font-size: 12px;" href="/jkcj" target="_blank" type="primary" :underline="false"
+						<el-link style="font-size: 12px;" href="/jktj" target="_blank" type="primary" :underline="false"
 							:icon="Plus">健康体检</el-link>
 					</div>
 				</el-card>
 			</el-col>
 			<el-col :md="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex;">
+					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/ybzn')">
 					<img src="/src/assets/img/link_09.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
 						<el-link style="font-size: 12px;" href="/ybzn" target="_blank" type="primary" :underline="false"
@@ -414,11 +414,11 @@
 			</el-col>
 			<el-col :md="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex;">
+					style="justify-content: center; display: flex; cursor: pointer;">
 					<img src="/src/assets/img/link_10.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
-						<el-link style="font-size: 12px;" href="mailto:" target="_blank" type="primary"
-							:underline="false" :icon="Plus">院长信箱</el-link>
+						<el-link style="font-size: 12px;" target="_blank" type="primary"
+							:underline="false" href="mailto:" :icon="Plus">院长信箱</el-link>
 					</div>
 				</el-card>
 			</el-col>

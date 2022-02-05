@@ -39,7 +39,7 @@
 						<template #title>患者服务</template>
 						<el-menu-item index="/mzlc">门诊流程</el-menu-item>
 						<el-menu-item index="/zylc">住院流程</el-menu-item>
-						<el-menu-item index="/czxx">出诊信息</el-menu-item>
+						<!-- <el-menu-item index="/czxx">出诊信息</el-menu-item> -->
 						<el-menu-item index="/jcxz">检查须知</el-menu-item>
 						<el-menu-item index="/jktj">健康体检</el-menu-item>
 						<el-menu-item index="/ybzn">医保指南</el-menu-item>
@@ -71,21 +71,23 @@
 							</template>
 						</el-input> -->
 					<!-- </div> -->
-					<el-menu-item index="/register">员工之声</el-menu-item>
-					<el-menu-item index="/login">登录</el-menu-item>
-					<el-menu-item index="/register">注册</el-menu-item>
+					<el-menu-item index="/employee-article">员工之声</el-menu-item>
+					<el-menu-item index="/login" v-if="is_login == false">登录</el-menu-item>
+					<el-menu-item index="/register" v-if="is_login == false">注册</el-menu-item>
+					<el-menu-item index="" v-if="is_login == true" @click="logout">退出登录</el-menu-item>
+					<el-menu-item index="/change-password" v-if="is_login == true">修改密码</el-menu-item>
 					<el-menu-item index="/update_log">更新记录</el-menu-item>
-					<div style="margin-top: 10px; margin-left: 10px; width: 260px;">
+					<div style="margin-top: 10px; margin-left: 10px; width: 210px;">
 						<el-input v-model="input3" placeholder="请输入关键词" class="input-with-select" size="large">
-							<template #prepend>
+							<!-- <template #prepend>
 								<el-select v-model="select" placeholder="请选择" style="width: 90px">
 									<el-option label="新闻" value="1"></el-option>
 									<el-option label="医生" value="2"></el-option>
 									<el-option label="视频" value="3"></el-option>
 								</el-select>
-							</template>
+							</template> -->
 							<template #append>
-						  <el-button :icon="Search"></el-button>
+								<el-button :icon="Search" @click="go_detail('/search?keyword=' + input3)"></el-button>
 							</template>
 						</el-input>
 					</div>
@@ -133,18 +135,18 @@
 				</el-row>
 
 				<el-row :gutter="20" style="background: #516071; color: #CCC;">
-					<el-col :md="3" style="display: flex; justify-content: center; align-items: center;">
-						<div>
+					<el-col :md="4" style="display: flex; justify-content: center; align-items: center;">
+						<div style="margin-right: 20px;">
 							<a href="http://bszs.conac.cn/sitename?method=show&id=1354A7487A5C32CFE053012819ACA802"
 								target="_blank">
-								<img style="height: 70px; margin-left: 60px;" src="/src/assets/img/qualification.png"
+								<img style="height: 70px;" src="/src/assets/img/qualification.png"
 									alt="">
 							</a>
 						</div>
 						<div>
 							<a href="http://bszs.conac.cn/sitename?method=show&id=1354A7487A5C32CFE053012819ACA802"
 								target="_blank">
-								<img style="height: 70px; margin-left: 20px;" src="/src/assets/img/police.png" alt="">
+								<img style="height: 70px;" src="/src/assets/img/police.png" alt="">
 							</a>
 						</div>
 					</el-col>
@@ -157,7 +159,7 @@
 							</ul>
 						</div>
 					</el-col> -->
-					<el-col :md="7" style="display: flex; justify-content: center; align-items: center;">
+					<el-col :md="8" style="display: flex; justify-content: center; align-items: center;">
 						<ul style="list-style: none; line-height: 36px;">
 							<li>版权所有：@宜宾市第三人民医院</li>
 							<li>蜀ICP备12031661号-1</li>
@@ -169,7 +171,7 @@
 							</li>
 						</ul>
 					</el-col>
-					<el-col :md="7" style="display: flex; justify-content: center; align-items: center;">
+					<el-col :md="8" style="display: flex; justify-content: center; align-items: center;">
 						<ul style="list-style: none; line-height: 36px;">
 							<li>医院邮箱：ybsdsrmyy@163.com</li>
 							<li>联系电话：0831-8224806</li>
@@ -177,7 +179,7 @@
 							<li>邮编：644000</li>
 						</ul>
 					</el-col>
-					<el-col :md="7" style="display: flex; justify-content: center; align-items: center;">
+					<el-col :md="4" style="display: flex; justify-content: center; align-items: center;">
 						<div>
 							<img style="height: 100px; margin-right: 20px;" src="/src/assets/img/wxgzh.png" alt="">
 							<p style="margin-left: 20px;">官方微信</p>
@@ -234,6 +236,7 @@
 		ref,
 		reactive,
 		toRefs,
+		onMounted,
 		onUnmounted
 	} from 'vue'
 	import {
@@ -242,17 +245,19 @@
 	import {
 		pathMap
 	} from '@/utils'
+	import { localGet, localRemove } from '@/utils'
 
 	export default {
 		components: {
 			Search,
 		},
 		setup() {
-			const input3 = ref()
+			const input3 = ref('')
 			const select = ref()
 			const noMenu = ['/login']
 			const router = useRouter()
 			const state = reactive({
+				is_login: false,
 				currentPath: '/',
 				showMenu: true,
 			})
@@ -281,14 +286,35 @@
 				}, false);
 			}
 
+			onMounted(() => {
+				if(localGet('token')) {
+					state.is_login = true
+				}
+			})
+
 			onUnmounted(() => {
 				unwatch()
 			})
+			
+			const go_detail = (url) => {
+				window.open(url, '_blank')
+			}
+			
+			const logout = () => {
+				// axios.delete('/logout').then(() => {
+				//   sessionRemove('token')
+				//   window.location.reload()
+				// })
+				localRemove('token')
+				window.location.reload()
+			}
 
 			return {
 				locale: zhCn,
 				...toRefs(state),
+				go_detail,
 				Search,
+				logout,
 				input3,
 				select
 			}

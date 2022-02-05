@@ -281,6 +281,7 @@ const router = createRouter({
 		name: 'jkcj_detail',
 		component: () => import('../views/hzfw/jkcj_detail.vue')
 	},
+	// 党建之窗
 	{
 		path: '/dwgl',
 		name: 'dwgl',
@@ -341,6 +342,7 @@ const router = createRouter({
 		name: 'qnjyz_detail',
 		component: () => import('../views/djzc/qnjyz_detail.vue')
 	},
+	// 人才招聘
 	{
 		path: '/zpxx',
 		name: 'zpxx',
@@ -374,6 +376,49 @@ const router = createRouter({
 		path: '/update_log',
 		name: 'update_log',
 		component: () => import('../views/update_log.vue')
+	},
+	// 员工文章列表
+	{
+		path: '/employee-article',
+		name: 'employee_article',
+		component: () => import('../views/employee/index.vue')
+	},
+	// 员工文章列表详情
+	{
+		path: '/employee-article-detail',
+		name: 'employee_article_detail',
+		component: () => import('../views/employee/detail.vue')
+	},
+	// 员工自己的文章
+	{
+		path: '/employee-my-article',
+		name: 'employee_my_article',
+		component: () => import('../views/employee/my_article.vue')
+	},
+	// 员工发表文章
+	{
+		path: '/employee-my-article-add',
+		name: 'employee_my_article_add',
+		component: () => import('../views/employee/my_article_add.vue')
+	},
+	// 员工发表文章预览
+	{
+		path: '/employee-my-article-preview',
+		name: 'employee_my_article_preview',
+		component: () => import('../views/employee/my_article_preview.vue')
+	},
+	// 修改密码
+	{
+		path: '/change-password',
+		name: 'change_password',
+		component: () => import('../views/change_password.vue')
+	},
+	
+	// 搜索
+	{
+		path: '/search',
+		name: 'search',
+		component: () => import('../views/search/index.vue')
 	},
 	
 	

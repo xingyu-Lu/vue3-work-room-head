@@ -1,7 +1,9 @@
 <template>
-	<el-row style="margin-bottom: 20px;">
-		<el-col>
-			<el-image style="width: 100%;" src="https://www.ybssyy.com/images/images/ad_06.jpg" lazy></el-image>
+	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
+		<el-col :span="24">
+			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
+				<strong>员工之家</strong>
+			</div>
 		</el-col>
 	</el-row>
 	
@@ -10,124 +12,83 @@
 		<el-breadcrumb-item>员工之家</el-breadcrumb-item>
 	</el-breadcrumb>
 	
-	<el-row style="margin-bottom: 20px;" justify="space-around">
-		<el-col :md="24">
-			<el-card class="box-card">
-				<ul style="color: #409EFF; line-height: 38px;">
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-					<li>
-						<div style="display: flex; justify-content: space-between;">
-							<el-link style="font-size: 16px;" href="/ygzj_detail" target="_blank" type="primary" :underline="false">
-								气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</el-link>
-							<span style="color: #999;">2021-12-23</span>
-						</div>
-					</li>
-				</ul>
-				<el-pagination background layout="prev, pager, next" :total="1000">
-				</el-pagination>
-			</el-card>
-		</el-col>
-	</el-row>
+	<el-card>
+		<ul style="color: #409EFF; line-height: 38px;">
+			<li v-for="(item, index) in res_data">
+				<div style="display: flex; justify-content: space-between;">
+					<el-link style="font-size: 16px;" :href="'/ygzj_detail?id=' + item.id" target="_blank" type="primary" :underline="false">
+						{{ item.title }}​</el-link>
+					<span style="color: #999;">{{ item.release_time }}</span>
+				</div>
+			</li>
+		</ul>
+		
+		<el-pagination background layout="prev, pager, next" :total="total" :page-size="pageSize"
+			:current-page="currentPage" @current-change="changePage" />
+	</el-card>
 </template>
 
 <script>
+	import {
+		Plus
+	} from '@element-plus/icons-vue'
+	import axios from '@/utils/axios'
+	import {
+		onMounted,
+		reactive,
+		ref,
+		toRefs
+	} from 'vue'
+	import {
+		useRoute,
+		useRouter
+	} from 'vue-router'
+	
+	export default {
+		setup() {
+			const state = reactive({
+				res_data: [],
+				total: 0, // 总条数
+				currentPage: 1, // 当前页
+				pageSize: 10 // 分页大小
+			})
+			
+			onMounted(() => {
+				get_data()
+			})
+			
+			const get_data = () => {
+				axios.get('/api/head/partys/index', {
+					params: {
+						page: state.currentPage,
+						page_size: state.pageSize,
+						type: 3
+					}
+				}).then(res => {
+					state.res_data = res.data
+					state.pageSize = res.pagination.perPage
+					state.total = res.pagination.total
+					state.currentPage = res.pagination.currentPage
+				})
+			}
+			
+			const changePage = (val) => {
+				state.currentPage = val
+				get_data()
+			}
+			
+			const go_detail = (url) => {
+				window.open(url, '_blank')
+			}
+	
+			return {
+				...toRefs(state),
+				changePage,
+				go_detail,
+				Plus
+			}
+		}
+	}
 </script>
 
 <style>

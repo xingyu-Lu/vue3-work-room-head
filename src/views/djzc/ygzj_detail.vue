@@ -1,49 +1,88 @@
 <template>
-	<el-row style="margin-bottom: 20px;">
-		<el-col>
-			<el-image style="width: 100%;" src="https://www.ybssyy.com/images/images/ad_06.jpg" lazy></el-image>
+	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
+		<el-col :span="24">
+			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
+				<strong>职工之家</strong>
+			</div>
 		</el-col>
 	</el-row>
 
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item>员工之家</el-breadcrumb-item>
+		<el-breadcrumb-item>职工之家</el-breadcrumb-item>
 	</el-breadcrumb>
 
-	<p style="text-align:center;"><b>气温下降，热情不减———宜宾市第三人民医院165人献血3.9万毫升</b></p>
-	<p style="text-align:center;">发布时间：2021/11/16 9:12:31&nbsp;&nbsp;&nbsp; 访问次数：<em>14</em>&nbsp;&nbsp;&nbsp; 来源：</p>
-	<p>&nbsp; &nbsp; &nbsp;
-		他们不仅是爱的宣导者，更是爱的践行者！11月9日，为了更好地保障冬季临床用血，在室外只有6℃的温度下，宜宾市第三人民医院的165名白衣战士们，不惧严寒，挽袖献血3.9万毫升，用实际行动践行了医者仁心、大爱无疆、无私奉献的崇高精神！
-	</p>
-	<p>&nbsp; &nbsp; &nbsp;
-		早上8时许，医院大门前，白衣战士们早早地就排起了长长的队伍。据此次献血活动组织者、医院办公室主任苗良红介绍：“今年是我院建院七十周年，近几年来，随着医院门诊人次和住院病人的逐年递增，手术病人大量增加，我们医院的用血量也在逐年增多。大家都想用这种特殊的方式表达一个共同的心愿，用可以再生的血液去挽救不可重来的生命，是我们医务人员义不容辞的神圣职责。从开始填表登记到验血再到抽血，大家犹如奔赴一场盛宴般兴致勃勃，他们其中有很多医护人员都是从繁忙的工作中抽空而来，在献完血后又马上回到了各自的工作岗位，还有的是下夜班休息的，大家都特意赶来参加献血。我为他们这种行为所感动，为他们点赞”。
-	</p>
-	<p style="text-align:center;"><img
-			src="https://www.ybssyy.com/uploadfiles/2021/1222/09123096/image/20211222091828_5996.jpg" alt="" /></p>
-	<p style="text-align:center;">►献血，我们“医”不容辞</p>
-	<p>&nbsp; &nbsp; &nbsp;
-		&nbsp;不同的血型，同样的初心，三医院的白衣战士们在这个寒冷的冬日让生命显得更有力量、更有温度、更富有激情！医生是一个神圣而光荣的职业，但同时也是最辛苦的职业，每一名医务工作者的辛勤付出，都承载着一份沉甸甸的爱，参加无偿献血也是对爱更好的诠释。
-	</p>
-	<p>&nbsp; &nbsp; &nbsp;
-		来自三医院肿瘤科主任胡钧文是今天第一个登上采血车的人，目前为止，他已经有4次献血经历，献血总量累计超过1200毫升。他在献血时这样说道：“作为一名医生，我深深知道血液在临床上的重要性，无偿献血是一种最简单、最直接能救人的方式，每一个人只需要一点点小小勇气，走进献血车，献一次血，也许就能够挽救一条生命。”血脉相连，爱心互助！90后心血管内科护士胡静，今天是第一次参加献血，他在献完200毫升AB型热血后不无感慨地说：“我心中早就有献血的念头，但始终对献血存在一定畏惧。今天献完血后，我最大的感触是：献血并不可怕，能把自己的一份热血奉献给需要输血的患者，也就是将自己的一份爱心奉献给了社会。”现年26岁的护士先世金，多年来一直坚持无偿献血，今天熟悉的身影再一次出现在这里。作为一名急诊科护士，我更加深刻地认识到血液对每一位患者的重要性，献出400毫升血液，对身体没有任何影响，但是却可以挽救一条生命，他是我从事这份职业的责任，我希望用自己的实际行动，让更多的人看到献血的价值。先世金说道。
-	</p>
-	<p style="text-align:center;"><img
-			src="https://www.ybssyy.com/uploadfiles/2021/1222/09123096/image/20211222091843_6777.jpg" alt="" /></p>
-	<p style="text-align:center;">►让我们一起为生命加油</p>
-	<p>&nbsp; &nbsp; &nbsp;
-		&nbsp;据统计：今年以来，宜宾市第三人民医院临床急救用血，红细胞1426个单位，共计28.5万毫升；血浆1224个单位，共计24.4万毫升；冷沉淀122个单位，共计4.8万毫升，是宜宾市医疗临床用血量最多的医疗机构之一。患者住院输血，医务人员献血，是构建新型医患关系的桥梁和纽带。当天献血活动结束后，宜宾市第三人民医院165名医务工作者踊跃献血超过3.9万毫升。
-	</p>
-	<p>&nbsp; &nbsp; &nbsp;
-		血站副站长蒲勇最后表示：“关键时刻，一袋血就是一个人的生命，宜宾市第三人民医院的白衣战士们为确保我市冬季医疗临床用血和血液安全，打下了坚实的基础！他们的率先垂范，将激励和倡导更多的社会各界人士加入到无偿献血的行列中来”。
-	</p>
-	<p style="text-align:center;"><img
-			src="https://www.ybssyy.com/uploadfiles/2021/1222/09123096/image/20211222091859_4287.jpg" alt="" /></p>
-	<p>文章来源：宜宾市中心血站</p>
-
+	<div style="display: flex; justify-content: center;"><strong v-html="res_data.title"></strong></div>
+	<div style="display: flex; justify-content: center; font-size: 12px; color: #5B5B5B; margin-top: 10px;">
+		发布时间：<span v-html="res_data.release_time"></span>
+		<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		访问次数：<span v-html="res_data.num"></span>
+	</div>
+	<span v-html="res_data.content"></span>
 </template>
 
 <script>
+	import axios from '@/utils/axios'
+	import {
+		onMounted,
+		reactive,
+		ref,
+		toRefs
+	} from 'vue'
+	import {
+		useRoute,
+		useRouter
+	} from 'vue-router'
+	
+	export default {
+		name: 'ldtd',
+		
+		setup() {
+			const route = useRoute()
+			const router = useRouter()
+			const {
+				id
+			} = route.query
+			
+			const state = reactive({
+				res_data: ref('')
+			})
+			
+			onMounted(() => {
+				get_data()
+			})
+			
+			const get_data = () => {
+				axios.get('/api/head/partys/show', {
+					params: {
+						id: id,
+					}
+				}).then(res => {
+					state.res_data = res.data
+				})
+			}
+			
+			return {
+				...toRefs(state)
+			}
+		}
+	}
 </script>
 
-<style>
+<style scoped>
+	/* table 样式 */
+	/deep/ table {
+	  border-top: 1px solid #ccc;
+	  border-left: 1px solid #ccc;
+	}
+	/deep/ table td,
+	/deep/ table th {
+	  border-bottom: 1px solid #ccc;
+	  border-right: 1px solid #ccc;
+	  padding: 3px 5px;
+	}
+	/deep/ table th {
+	 border-bottom: 2px solid #ccc;
+	  text-align: center;
+	}
 </style>

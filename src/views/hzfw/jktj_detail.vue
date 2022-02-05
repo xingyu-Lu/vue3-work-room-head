@@ -1,7 +1,9 @@
 <template>
-	<el-row style="margin-bottom: 20px;">
-		<el-col>
-			<el-image style="width: 100%;" src="https://www.ybssyy.com/images/images/ad_03.jpg" lazy></el-image>
+	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
+		<el-col :span="24">
+			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
+				<strong>健康体检</strong>
+			</div>
 		</el-col>
 	</el-row>
 
@@ -10,79 +12,61 @@
 		<el-breadcrumb-item>健康体检</el-breadcrumb-item>
 	</el-breadcrumb>
 
-	<p style="text-align:center;"><b>精准体检！宫颈检查要做些什么？听医生说</b></p>
-	<p style="text-align:center;">发布时间：2021/11/15 8:54:08&nbsp;&nbsp;&nbsp; 访问次数：<em>12</em>&nbsp;&nbsp;&nbsp; 来源：</p>
-	<p>咱们女孩子日常说到健康管理</p>
-	<p>最关注的就是两个部位</p>
-	<p>&nbsp;乳房和宫颈 &nbsp;</p>
-	<p>常常看到新闻资讯推送</p>
-	<p>“20几岁的她，是XX医院最年轻的宫颈癌患者，</p>
-	<p>数据统计宫颈癌的发生呈现年轻化的趋势。”</p>
-	<p><br /></p>
-	<p>图片</p>
-	<p><br /></p>
-	<p><br /></p>
-	<p>1、宫颈检查做什么最好？</p>
-	<p>2、宫颈检查前究竟要注意些什么？</p>
-	<p><br /></p>
-	<p><br /></p>
-	<p>今天，宜宾市第三人民医院的医生就来为大家科普宫颈癌的筛查。</p>
-	<p><br /></p>
-	<p><br /></p>
-	<p><br /></p>
-	<p>图片</p>
-	<p>1、宫颈癌筛查，TCT、HPV</p>
-	<p><br /></p>
-	<p><br /></p>
-	<p><br /></p>
-	<p>宫颈癌筛查可以提前发现癌前病变，所以说做好宫颈癌的筛查是非常必要的！医院的宫颈癌筛查，一般包含TCT和HPV,TCT和HPV是两种不同的检查。</p>
-	<p><br /></p>
-	<p>TCT</p>
-	<p><br /></p>
-	<p>TCT（液基薄层细胞检测），指的是在采集宫颈的脱落细胞后，将细胞处理并铺在玻片上，来进行病理学的检查，以早期发现宫颈癌细胞，是目前应用较为广泛的筛查手段。TCT检查主要看取出来的细胞有没有异常。</p>
-	<p><br /></p>
-	<p><br /></p>
-	<p>HPV&nbsp;&nbsp;</p>
-	<p><br /></p>
-	<p><br /></p>
-	<p><br /></p>
-	<p>HPV检测是检测人体是否感染HPV（人乳头瘤病毒，是一种小的DNA病毒）该病毒能引起人类皮肤和黏膜的多种良性乳头状瘤，其中有某些类型的HPV感染具有潜在的致癌性。HPV检测主要看是否感染了HPV，并分辨是哪一种。</p>
-	<p><br /></p>
-	<p><br /></p>
-	<p><br /></p>
-	<p>HPV病毒称为人乳头瘤病毒，目前已经发现HPV病毒有160多个型别。HPV病毒又分为低危型和高危型。低危型HPV病毒主要与尖锐湿疣的发生有关。HPV病毒主要都是通过性接触传播的，但是直接接触带有感染者体液的衣物和用品，也有可能导致感染。HPV高危型包括16、18、31、33、35、39、45、51、52、56、58、59、66
-		、68等型，主要与子宫颈癌及重度上皮内瘤变的发生有关，最常见的是16型和18型感染。</p>
-	<p><br /></p>
-	<p><br /></p>
-	<p><br /></p>
-	<p><br /></p>
-	<p><br /></p>
-	<p>图片</p>
-	<p>2、宫颈癌筛查TCT、HPV</p>
-	<p><br /></p>
-	<p><br /></p>
-	<p><br /></p>
-	<p>注意事项：</p>
-	<p>1.最好在月经结束后3-7天做筛查，可以避免血液、宫颈粘液的干扰；</p>
-	<p>2.宫颈癌筛查不需要空腹，检查前2天不要同房；</p>
-	<p><br /></p>
-	<p>3.筛查前一天不要冲洗阴道，更不能阴道用药；</p>
-	<p><br /></p>
-	<p>4.如果有阴道炎等疾病，最好治疗好后再检查，以免结果不准确！</p>
-	<p><br /></p>
-	<p><br /></p>
-	<p><br /></p>
-	<p>温馨提示：</p>
-	<p>1、检查的时候要穿适合脱下的衣服。</p>
-	<p>2、医生取样这2项检查能同时完成。</p>
-	<p>3、检查时保持放松别紧张，一般不会痛和出血。</p>
-	<p><br /></p>
-	<p>宜宾市第三人民医院体检部针对关爱女性健康，制定了一系列筛查宫颈癌的女性妇科体检套餐。</p>
-	<p>体检部电话：0831-8205118</p>"
-
+	<div style="display: flex; justify-content: center;"><strong v-html="res_data.title"></strong></div>
+	<div style="display: flex; justify-content: center; font-size: 12px; color: #5B5B5B; margin-top: 10px;">
+		发布时间：<span v-html="res_data.release_time"></span>
+		<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		访问次数：<span v-html="res_data.num"></span>
+	</div>
+	<span v-html="res_data.content"></span>
 </template>
 
 <script>
+	import axios from '@/utils/axios'
+	import {
+		onMounted,
+		reactive,
+		ref,
+		toRefs
+	} from 'vue'
+	import {
+		useRoute,
+		useRouter
+	} from 'vue-router'
+	
+	export default {
+		name: 'ldtd',
+		
+		setup() {
+			const route = useRoute()
+			const router = useRouter()
+			const {
+				id
+			} = route.query
+			
+			const state = reactive({
+				res_data: ref('')
+			})
+			
+			onMounted(() => {
+				get_data()
+			})
+			
+			const get_data = () => {
+				axios.get('/api/head/patientservices/show', {
+					params: {
+						id: id,
+					}
+				}).then(res => {
+					state.res_data = res.data
+				})
+			}
+			
+			return {
+				...toRefs(state)
+			}
+		}
+	}
 </script>
 
 <style>

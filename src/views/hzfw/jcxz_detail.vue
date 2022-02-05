@@ -1,7 +1,9 @@
 <template>
-	<el-row style="margin-bottom: 20px;">
-		<el-col>
-			<el-image style="width: 100%;" src="https://www.ybssyy.com/images/images/ad_03.jpg" lazy></el-image>
+	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
+		<el-col :span="24">
+			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
+				<strong>检查须知</strong>
+			</div>
 		</el-col>
 	</el-row>
 
@@ -10,35 +12,61 @@
 		<el-breadcrumb-item>检查须知</el-breadcrumb-item>
 	</el-breadcrumb>
 
-	<p style="text-align:center;"><b>超声检查常见问答</b></p>
-	<p style="text-align:center;">发布时间：2017/7/6 10:58:24&nbsp;&nbsp;&nbsp; 访问次数：<em>499</em>&nbsp;&nbsp;&nbsp; 来源：</p>
-	<p>一、超声波检查对人体有害吗？</p>
-	<p>&nbsp;&nbsp;&nbsp;&nbsp; 超声波是一种高频率的声波，它没有放射性，对人体安全、无害，广泛应用于全身各器官系统以及产前对胎儿的检查，对孕妇也是安全的。超声波检查已成为临床首选的检查方法之一。</p>
-	<p>二、超声检查前有那些注意事项？</p>
-	<p>&nbsp;&nbsp;&nbsp;
-		1.肝脏、胆囊、胰腺、腹主动脉、肾血管检查前须禁食8-12小时，婴儿需空腹4小时以上，如患者当天同时有胃镜，请将常规空腹超声检查安排在胃镜检查之前。钡餐检查后三天方能进行超声检查。ECT检查后隔天方能进行超声检查，以保证造影剂已经代谢完全。
-	</p>
-	<p>&nbsp;&nbsp;&nbsp; 2.经腹部检查子宫附件（包括产后子宫）、产科（妊娠三月内或怀疑前置胎盘者）、泌尿系统（肾、输尿管、膀胱、前列腺）及测定残余尿检查者，需膀胱适度充盈后才可检查（俗称憋尿）。</p>
-	<p>&nbsp;&nbsp;&nbsp; 3.经阴道检查子宫附件检查前须排空尿液，经直肠检查前须排便后方能检查。</p>
-	<p>&nbsp;&nbsp;&nbsp; 4.心脏检查：对于不能配合做心脏检查的小儿，请提前30分钟应用镇静剂，待患儿熟睡后再检查；对于正行24小时动态心电图检查，则需等检查结束后才能进行心脏检查。</p>
-	<p>&nbsp;&nbsp;&nbsp; 5.检查成人心脏、乳腺、胎儿、颈部血管及外周血管超声等无特殊准备需求。</p>
-	<p>三、肝胆胰脾检查前为什么要空腹？</p>
-	<p>&nbsp;&nbsp;&nbsp; 进食后胆囊会收缩，排出胆汁，胆囊缩小，囊壁皱缩在一起，导致显示不清。超声最怕气体干扰，进食后食道、胃肠内的气体会遮挡部分肝脏、胰腺，甚至出现伪像。</p>
-	<p>四、1.经腹检查子宫附件或前列腺为什么要憋尿？</p>
-	<p>&nbsp;&nbsp;&nbsp; 适度充盈膀胱后，可减少肠管气体干扰并形成良好的透声窗。</p>
-	<p>2.&nbsp;如何快速憋尿？</p>
-	<p>&nbsp;&nbsp;&nbsp;
-		做需要憋尿的超声项目前，若快轮到还没尿意，可饮用含糖饮料(前提是已经做完其他需要空腹的项目)，通过“渗透性利尿”的原理，憋尿速度会大大提升。当然，如果前面还有很多人在排队，建议喝白开水，毕竟含糖饮料少喝为宜。</p>
-	<p>3.&nbsp;憋到什么程度合适？</p>
-	<p>&nbsp;&nbsp;&nbsp;
-		可以通过喝水量和憋尿时间来控制尿量，例如做妇科超声要求膀胱的尿量在300-&nbsp;400ml，检查前喝500ml-800ml水，一般需憋尿2个小时，喝800ml-1000ml水，需憋尿1小时左右。膀胱充盈良好的标志是平卧时下腹部凸起呈浅弧形，加压时能往下按而且能忍住。值得注意的是膀胱太充盈也不利于做检查。
-	</p>
-	<p>五、检查时在检查部位涂抹的液体是什么？</p>
-	<p>&nbsp;&nbsp;&nbsp; 检查时在检查部位涂抹的液体是耦合剂，目的是使探头与皮肤之间良好接触，有利于声波的传导并提高成像质量。耦合剂是水溶性液体，对人体无毒、无害，检查后擦净或用温水清洗即可。</p>
-
+	<div style="display: flex; justify-content: center;"><strong v-html="res_data.title"></strong></div>
+	<div style="display: flex; justify-content: center; font-size: 12px; color: #5B5B5B; margin-top: 10px;">
+		发布时间：<span v-html="res_data.release_time"></span>
+		<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		访问次数：<span v-html="res_data.num"></span>
+	</div>
+	<span v-html="res_data.content"></span>
 </template>
 
 <script>
+	import axios from '@/utils/axios'
+	import {
+		onMounted,
+		reactive,
+		ref,
+		toRefs
+	} from 'vue'
+	import {
+		useRoute,
+		useRouter
+	} from 'vue-router'
+	
+	export default {
+		name: 'ldtd',
+		
+		setup() {
+			const route = useRoute()
+			const router = useRouter()
+			const {
+				id
+			} = route.query
+			
+			const state = reactive({
+				res_data: ref('')
+			})
+			
+			onMounted(() => {
+				get_data()
+			})
+			
+			const get_data = () => {
+				axios.get('/api/head/patientservices/show', {
+					params: {
+						id: id,
+					}
+				}).then(res => {
+					state.res_data = res.data
+				})
+			}
+			
+			return {
+				...toRefs(state)
+			}
+		}
+	}
 </script>
 
 <style>

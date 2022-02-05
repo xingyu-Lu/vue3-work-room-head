@@ -1,84 +1,88 @@
 <template>
-	<el-row style="margin-bottom: 20px;">
-		<el-col>
-			<el-image style="width: 100%;" src="https://www.ybssyy.com/images/images/ad_04.jpg" lazy></el-image>
+	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
+		<el-col :span="24">
+			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
+				<strong>招聘信息</strong>
+			</div>
 		</el-col>
 	</el-row>
 
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item>人才招聘</el-breadcrumb-item>
+		<el-breadcrumb-item>招聘信息</el-breadcrumb-item>
 	</el-breadcrumb>
 
-	<p style="text-align:center;"><b>宜宾市第三人民医院2022年人才招聘公告</b></p>
-	<p style="text-align:center;">发布时间：2021/10/26 15:01:13&nbsp;&nbsp;&nbsp; 访问次数：<em>597</em>&nbsp;&nbsp;&nbsp; 来源：</p>
-	<p>&nbsp; &nbsp; &nbsp; 为满足医院发展需要，宜宾市第三人民医院面向社会公开招聘各类专业人才，现就有关事项公告如下：</p>
-	<p>一、医院简介</p>
-	<p>&nbsp; &nbsp; &nbsp; 宜宾市第三人民医院成立于1951年，是宜宾市的一所非营利性的国家三级乙等综合医院和国家级爱婴医院，由院本部（A区、B区）、李庄院区组成。</p>
-	<p style="text-align:center;"><img
-			src="https://www.ybssyy.com/uploadfiles/2021/1026/18011335/image/20211101170659_1220.jpg" alt="" /><br />
-	</p>
-	<p>&nbsp; &nbsp; &nbsp;
-		医院集医疗、急救、教学、科研任务于一体。目前是同济大学教学医院，西南医科大学继续教育学院、四川卫生康复职业学院、华西卫校、宜宾市卫生学校的临床教学实习基地，西南医科大学成人高等教育宜宾直属班，上海市同济医院医疗集团理事单位，上海市肺科医院专科联盟成员单位。
-	</p>
-	<p>&nbsp; &nbsp; &nbsp;
-		医院现有编制床位750张，员工1083人，高级职称108人，中级职称279人，博士2人，硕士28人，全国中医肛肠名专家1人，宜宾市市级拔尖人才4人，四川省卫生健康委学术技术带头人后备人选3人，宜宾市学术技术带头人3人，宜宾市翠屏区拔尖人才6人，翠屏区学术技术带头人4人。设有25个临床科室，10个医技科室，口腔科、肛肠科、心血管内科、泌尿外科、麻醉科、放射科为市级重点专科，肝胆外科、神经外科、疼痛科（李庄）、肾病内科风湿免疫科、检验科列为市级重点专科建设，各科室均有临床经验丰富的学术技术带头人。医院被中国卒中学会、中国卒中中心联盟授予“卒中中心”单位。
-	</p>
-	<p>二、招聘岗位及条件</p>
-	<p>（一）基本条件</p>
-	<p>&nbsp; &nbsp; &nbsp; 1、遵纪守法，品行端正，有良好的职业道德、集体荣誉感和沟通能力，爱岗敬业，事业心和责任感强。未参加国家禁止的组织及其活动。</p>
-	<p>&nbsp; &nbsp; &nbsp; 2、身心健康、体检合格，具有正常履行招聘岗位的人际沟通能力和身体条件。</p>
-	<p>&nbsp; &nbsp; &nbsp; 3、具备符合岗位要求的专业水平和工作能力，服从医院安排。</p>
-	<p>（二）具体岗位及条件见附件</p>
-	<p>三、有下列情况之一者，不得报考</p>
-	<p>&nbsp; &nbsp; &nbsp; （一）曾受过各类刑事处罚的；</p>
-	<p>&nbsp; &nbsp; &nbsp; （二）有违法、违纪正在接受审查的；尚未解除党纪、政纪处分的；</p>
-	<p>&nbsp; &nbsp; &nbsp; （三）参与或者支持色情、吸毒、赌博、迷信等活动，违反职业道德、社会公德的；</p>
-	<p>&nbsp; &nbsp; &nbsp; （四）有其它违反国家法律、法规等行为的；</p>
-	<p>&nbsp; &nbsp; &nbsp; （五）被开除的。</p>
-	<p>四、工作地点</p>
-	<p>&nbsp; &nbsp;宜宾市翠屏区。</p>
-	<p>五、招聘程序</p>
-	<p>（一）报名</p>
-	<p>1、报名方式</p>
-	<p>&nbsp; &nbsp; &nbsp; 第一步：扫描下方二维码填写报名信息</p>
-	<p><img src="https://www.ybssyy.com/uploadfiles/2021/1026/18011335/image/20211027153246_1894.png" alt="" /><br />
-	</p>
-	<p>&nbsp; &nbsp; &nbsp;
-		第二步：将个人简历和相关材料制作成PDF投递到邮箱：3593192728@qq.com，投递简历主题处请标明毕业院校+专业+学历+姓名+应聘岗位（例：四川大学+外科学+硕士研究生+张三+泌尿外科）。</p>
-	<p>2、报名时间</p>
-	<p>&nbsp; &nbsp; &nbsp; 2021年10月22日-2021年11月30日</p>
-	<p>3、现场报名地点</p>
-	<p>&nbsp; &nbsp; &nbsp; （1）四川大学华西校区东区田径场（10月25日下午14：00-18:00）。</p>
-	<p>&nbsp; &nbsp; &nbsp; （2）西南医科大学城北校区奥林匹克中心主体育馆（2021.11.10 &nbsp;9:00-12:00）。</p>
-	<p>&nbsp; &nbsp; &nbsp;（3）重庆国际会展中心（南岸区江南大道2号）重庆西部医药卫生人才交流会（2021.11.06 &nbsp;08：30—12：30）。</p>
-	<p>&nbsp; &nbsp; &nbsp; （4）宜宾市第三人民医院行政办公区三楼人力资源部（检验科楼上）。</p>
-	<p>现场报名准备资料：个人简介、身份证、学生证、毕业证、学位证、规培证、专业技术资格证复印件、主要业绩材料等。</p>
-	<p>（二）面试</p>
-	<p>&nbsp; &nbsp; &nbsp; 面试初步安排在11月底（以电话通知为准），面试通过人员签订《高校毕业生就业协议》或《宜宾市第三人民医院就业协议》。</p>
-	<p>（三）体检</p>
-	<p>&nbsp; &nbsp; &nbsp; 入职前参照公务员体检有关标准和医院要求执行，由宜宾市第三人民医院统一组织实施。</p>
-	<p>（四）公示和录用</p>
-	<p>&nbsp; &nbsp; &nbsp; 拟聘人选在官网公示，时间为5个工作日。公示期满，对没有问题及反映问题经查实不影响录用的人员，按规定程序办理聘用手续。</p>
-	<p>六、待遇</p>
-	<p>&nbsp; &nbsp; &nbsp; 1、安家费及人才津贴</p>
-	<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-		博士安家费80万元，人才津贴1万元/月；硕士研究生安家费15-25万元，人才津贴2000元/月。紧缺专业规培结业人员安家费8万元。博士研究生、正高级职称可面议。</p>
-	<p>&nbsp; &nbsp; &nbsp; 2、入职一月以内签订劳动合同、购买五险一金。</p>
-	<p>&nbsp; &nbsp; &nbsp; 3、带薪休假、节假日福利。</p>
-	<p>&nbsp; &nbsp; &nbsp; 4、事业编制（需本人通过考试）。</p>
-	<p>七、联系方式</p>
-	<p>&nbsp; &nbsp; &nbsp; 咨询电话：0831-8235418 （陈老师、卢老师）</p>
-	<p>&nbsp; &nbsp; &nbsp; 简历投递邮箱：3593192728@qq.com</p>
-	<p><strong>附件：</strong><a href="https://www.ybssyy.com/uploadfiles/2021/1026/18011335/file/20211026180724_5117.docx"
-			target="_blank">招聘岗位及条件&nbsp;</a>&nbsp;</p>
-	<p>宜宾市第三人民医院</p>
-	<p>2021年10月22日</p>
-
+	<div style="display: flex; justify-content: center;"><strong v-html="res_data.title"></strong></div>
+	<div style="display: flex; justify-content: center; font-size: 12px; color: #5B5B5B; margin-top: 10px;">
+		发布时间：<span v-html="res_data.release_time"></span>
+		<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		访问次数：<span v-html="res_data.num"></span>
+	</div>
+	<span v-html="res_data.content"></span>
 </template>
 
 <script>
+	import axios from '@/utils/axios'
+	import {
+		onMounted,
+		reactive,
+		ref,
+		toRefs
+	} from 'vue'
+	import {
+		useRoute,
+		useRouter
+	} from 'vue-router'
+	
+	export default {
+		name: 'ldtd',
+		
+		setup() {
+			const route = useRoute()
+			const router = useRouter()
+			const {
+				id
+			} = route.query
+			
+			const state = reactive({
+				res_data: ref('')
+			})
+			
+			onMounted(() => {
+				get_data()
+			})
+			
+			const get_data = () => {
+				axios.get('/api/head/jobs/show', {
+					params: {
+						id: id,
+					}
+				}).then(res => {
+					state.res_data = res.data
+				})
+			}
+			
+			return {
+				...toRefs(state)
+			}
+		}
+	}
 </script>
 
-<style>
+<style scoped>
+	/* table 样式 */
+	/deep/ table {
+	  border-top: 1px solid #ccc;
+	  border-left: 1px solid #ccc;
+	}
+	/deep/ table td,
+	/deep/ table th {
+	  border-bottom: 1px solid #ccc;
+	  border-right: 1px solid #ccc;
+	  padding: 3px 5px;
+	}
+	/deep/ table th {
+	 border-bottom: 2px solid #ccc;
+	  text-align: center;
+	}
 </style>

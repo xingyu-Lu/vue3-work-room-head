@@ -1,21 +1,78 @@
 <template>
-	<el-row style="margin-bottom: 20px;">
-		<el-col>
-			<el-image style="width: 100%;" src="https://www.ybssyy.com/images/images/ad_03.jpg" lazy></el-image>
+	<el-row justify="center" align="middle"
+		style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
+		<el-col :span="24">
+			<div
+				style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
+				<strong>艾滋病预防</strong>
+			</div>
 		</el-col>
 	</el-row>
 
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item>艾滋病</el-breadcrumb-item>
+		<el-breadcrumb-item>艾滋病预防</el-breadcrumb-item>
 	</el-breadcrumb>
 
-	<p>&nbsp; &nbsp; &nbsp; &nbsp;宜宾市第三人民医院是翠宜宾市屏屏区艾滋病治疗定点医疗机构，艾滋病暴露前后预防门诊可提供艾滋病暴露前后咨询、检测、药物预防干预等服务。</p>
-	<p style="text-align:center;"><strong></strong><strong>联系电话：0831 - 2443593</strong></p>
-
+	<span v-if="res_data" v-html="res_data.content"></span>
 </template>
 
 <script>
+	import {
+		Plus
+	} from '@element-plus/icons-vue'
+	import axios from '@/utils/axios'
+
+	import {
+		onMounted,
+		reactive,
+		ref,
+		toRefs
+	}
+
+	from 'vue'
+
+	import {
+		useRoute,
+		useRouter
+	}
+
+	from 'vue-router'
+
+	export default {
+		/* name: 'ldtd', */
+		setup() {
+			const route = useRoute()
+			const router = useRouter()
+			const state = reactive({
+					res_data: ref('')
+				}) 
+				
+			onMounted(() => {
+				get_data()
+			}) 
+			
+			const get_data = () => {
+				axios.get('/api/head/patientservices/mzlc', {
+					params: {
+						type: 5,
+					}
+				}).then(res => {
+					state.res_data = res.data
+				})
+			}
+
+			const go_detail = (url) => {
+				window.open(url, '_blank')
+			}
+
+			return {
+				...toRefs(state),
+				go_detail,
+				Plus,
+			}
+		}
+	}
 </script>
 
 <style>

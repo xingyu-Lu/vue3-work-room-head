@@ -25,10 +25,10 @@ import config from '~/config'
 
 // 单张图片上传
 // export const uploadImgServer = 'http://backend-api-02.newbee.ltd/manage-api/v1/upload/file'
-export const uploadImgServer = config[import.meta.env.MODE].baseUrl + '/api/back/files/upload'
+export const uploadImgServer = config[import.meta.env.MODE].baseUrl + '/api/head/files/upload'
 // 多张图片上传
 // export const uploadImgsServer = 'http://backend-api-02.newbee.ltd/manage-api/v1/upload/files'
-export const uploadImgsServer = config[import.meta.env.MODE].baseUrl + '/api/back/files/upload'
+export const uploadImgsServer = config[import.meta.env.MODE].baseUrl + '/api/head/files/upload'
 
 export const pathMap = {
 	login: '登录',
@@ -108,7 +108,21 @@ export const pathMap = {
 	zpxx: '招聘信息',
 	zpxx_detail: '招聘信息',
 	yplc: '应聘流程',
+	
 	update_log: '更新记录',
+	
+	// 员工之声
+	employee_article: '文章列表',
+	employee_article_detail: '文章详情',
+	employee_my_article: '我的文章',
+	employee_my_article_add: '发表文章',
+	employee_my_article_preview: '预览文章',
+	
+	// 搜索
+	search: '搜索',
+	
+	// 修改密码
+	change_password: '修改密码',
 	
 	
 	api_test: 'api 测试',
