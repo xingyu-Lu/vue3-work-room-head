@@ -3,6 +3,9 @@ import { ElMessage } from 'element-plus'
 import router from '@/router/index.js'
 import { localGet } from './index.js'
 import config from '~/config'
+import {
+	localRemove
+} from '@/utils'
 
 
 // 这边由于后端没有区分测试和正式，姑且都写成一个接口。
@@ -36,6 +39,10 @@ axios.interceptors.response.use(res => {
 }, function(error) {
 	console.log(error.response);
 	ElMessage.error(error.response.data.error.message)
+	if (error.response.data.status == 401) {
+		localRemove('token')
+		router.push({ path: '/login' })
+	}
 	return Promise.reject(error);
 })
 

@@ -9,37 +9,40 @@
 	
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item>我的文章</el-breadcrumb-item>
+		<el-breadcrumb-item>我的文件</el-breadcrumb-item>
 	</el-breadcrumb>
 	
 	<el-card style="min-height: 100%;">
 		<template #header>
 			<el-button type="primary" :icon="Plus" @click="handleAdd">新增</el-button>
 			<div>
-				<el-input style="width: 200px; margin-top: 20px; margin-right: 10px; margin-left: 10px;" placeholder="请输入标题" v-model="title" clearable />
+				<el-input style="width: 200px; margin-top: 20px; margin-right: 10px; margin-left: 10px;" placeholder="请输入标题" v-model="file_name" clearable />
 				<el-button type="primary" @click="handleOption">搜索</el-button>
 			</div>
 		</template>
 
 		<el-table v-loading="loading" :data="tableData" stripe style="width: 100%">
-			<el-table-column prop="id" label="id" />
-			<el-table-column prop="title" label="标题" />
-			<el-table-column prop="release_time" label="发布时间" />
-			<el-table-column prop="num" label="浏览次数" />
-			<el-table-column prop="status" label="状态">
+			<el-table-column prop="id" label="id" width="100" />
+			<el-table-column prop="file_name" label="文件名" width="300" />
+			<el-table-column prop="file_size_m" label="文件大小(兆)" width="100">
 				<template #default="scope">
-					<span style="color: #67C23A;" v-if="scope.row.status == 1">已审核</span>
-					<span style="color: #E6A23C;" v-else-if="scope.row.status == 0">待审核</span>
-					<span style="color: #F56C6C;" v-else>已删除</span>
+					<span>{{ scope.row.files.file_size_m }}</span>
+				</template>
+			</el-table-column>
+			<el-table-column prop="file_type" label="文件类型" width="300">
+				<template #default="scope">
+					<span>{{ scope.row.files.file_type }}</span>
+				</template>
+			</el-table-column>
+			<el-table-column prop="extension" label="文件扩展名" width="100">
+				<template #default="scope">
+					<span>{{ scope.row.files.extension }}</span>
 				</template>
 			</el-table-column>
 			<el-table-column prop="created_at" label="创建时间" />
-		
 			<el-table-column label="操作" width="200">
 				<template #default="scope">
-					<a style="cursor: pointer; margin-right: 10px; color: #409EFF;" @click="handlePreview(scope.row.id)">预览</a>
-					<a style="cursor: pointer; margin-right: 10px; color: #409EFF;" v-if="scope.row.status != 2" @click="handleEdit(scope.row.id)">修改</a>
-					<a style="cursor: pointer; margin-right: 10px; color: #409EFF;" v-if="scope.row.status != 2" @click="handleStatus(scope.row.id, 2)">删除</a>
+					<a style="cursor: pointer; margin-right: 10px; color: #409EFF;" v-if="scope.row.status != 0" @click="handleStatus(scope.row.id, 0)">删除</a>
 					<!-- <a style="cursor: pointer; margin-right: 10px" v-if="scope.row.status == 1"
 						@click="handleStatus(scope.row.id, 0)">撤销审核</a> -->
 					<!-- <a style="cursor: pointer; margin-right: 10px" v-else-if="scope.row.status == 0" @click="handleStatus(scope.row.id, 1)">审核</a> -->
@@ -76,7 +79,7 @@
 		setup() {
 			const router = useRouter()
 			const state = reactive({
-				title: '',
+				file_name: '',
 				loading: false,
 				tableData: [], // 数据列表
 				total: 0, // 总条数
@@ -89,11 +92,11 @@
 			})
 			const getDynamicsList = () => {
 				state.loading = true
-				axios.get('/api/head/staffs', {
+				axios.get('/api/head/staffs/file_list', {
 					params: {
 						page: state.currentPage,
 						page_size: state.pageSize,
-						title: state.title,
+						file_name: state.file_name,
 					}
 				}).then(res => {					
 					state.tableData = res.data
@@ -122,34 +125,16 @@
 
 			const handleAdd = () => {
 				router.push({
-					path: '/employee-my-article-add'
-				})
-			}
-			
-			const handleEdit = (id) => {
-				router.push({
-					path: '/employee-my-article-add',
-					query: {
-						id
-					}
-				})
-			}
-			
-			const handlePreview = (id) => {
-				router.push({
-					path: '/employee-my-article-preview',
-					query: {
-						id
-					}
+					path: '/employee-my-file-add'
 				})
 			}
 
 			const handleStatus = (id, status) => {
-				axios.put('/api/head/staffs/status', {
+				axios.put('/api/head/staffs/file_delete', {
 					id: id,
 					status: status
 				}).then(() => {
-					ElMessage.success('修改成功')
+					ElMessage.success('删除成功')
 					getDynamicsList()
 				})
 			}
@@ -159,9 +144,7 @@
 				handleOption,
 				changePage,
 				handleAdd,
-				handleEdit,
 				handleStatus,
-				handlePreview,
 				Plus,
 			}
 		}

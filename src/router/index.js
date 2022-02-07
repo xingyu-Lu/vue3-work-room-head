@@ -407,6 +407,17 @@ const router = createRouter({
 		name: 'employee_my_article_preview',
 		component: () => import('../views/employee/my_article_preview.vue')
 	},
+	// 员工上传云盘文件
+	{
+		path: '/employee-my-file',
+		name: 'employee_my_file',
+		component: () => import('../views/employee/my_file.vue')
+	},
+	{
+		path: '/employee-my-file-add',
+		name: 'employee_my_file_add',
+		component: () => import('../views/employee/my_file_add.vue')
+	},
 	// 修改密码
 	{
 		path: '/change-password',

@@ -16,6 +16,9 @@
 		<el-col :md="3">
 			<el-button type="primary" @click="go_detail('/employee-my-article')">我的文章</el-button>
 		</el-col>
+		<el-col :md="3">
+			<el-button type="primary" @click="go_detail('/employee-my-file')">我的文件</el-button>
+		</el-col>
 	</el-row>
 	
 	<el-card>

@@ -118,6 +118,9 @@ export const pathMap = {
 	employee_my_article_add: '发表文章',
 	employee_my_article_preview: '预览文章',
 	
+	employee_my_file: '我的文件',
+	employee_my_file_add: '我的文件',
+	
 	// 搜索
 	search: '搜索',
 	
