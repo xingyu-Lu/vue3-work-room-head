@@ -171,10 +171,10 @@
 </template>
 
 <style scoped>
-	/* /deep/ .el-tabs__item.is-active, .el-tabs__item:hover{
+	/* :deep() .el-tabs__item.is-active, .el-tabs__item:hover{
 	  color: #c29101;
 	}
-	/deep/ .el-tabs__active-bar{
+	:deep() .el-tabs__active-bar{
 	  background-color: #c29101;
 	} */
 	.test:hover {
