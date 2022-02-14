@@ -15,7 +15,7 @@
 	<el-card style="min-height: 100%;">
 		<el-form :model="Form" :rules="rules" ref="Ref" label-width="100px">
 			<el-form-item label="附件" prop='attachment'>
-				<el-upload ref="attachmentRef" :headers="{ Authorization: token }" :action="uploadImgServer" :on-remove="handleAttachmentRemove" :on-success="handleAttachmentSuccess" :auto-upload="true" :data="{ basket: 'attachment' }" :limit="3" multiple :file-list="Form.attachmentFileList">
+				<el-upload ref="attachmentRef" :headers="{ Authorization: token }" :action="uploadImgServer" :before-upload="handleBeforeUpload" :on-remove="handleAttachmentRemove" :on-success="handleAttachmentSuccess" :auto-upload="true" :data="{ basket: 'attachment' }" :limit="3" multiple :file-list="Form.attachmentFileList">
 					<el-button type="primary">上传</el-button>
 				</el-upload>
 			</el-form-item>
@@ -122,6 +122,16 @@
 				state.Form.attachment = ''
 				state.Form.attachmentFileList = []
 			}
+			
+			const handleBeforeUpload = (file) => {
+				let file_arr = file.name.split('.')
+				let file_arr_length = file_arr.length
+				const sufix = file_arr[file_arr_length-1] || ''
+				if (!['jpg', 'jpeg', 'png', 'gif', 'doc', 'docx', 'xlsx', 'xls', 'pdf', 'zip', 'rar', 'mp4'].includes(sufix)) {
+					ElMessage.error('不能上传' + sufix  + '格式的文件')
+					return false
+				}
+			}
 
 			return {
 				...toRefs(state),
@@ -131,6 +141,7 @@
 				uploadImgServer,
 				handleAttachmentSuccess,
 				handleAttachmentRemove,
+				handleBeforeUpload,
 			}
 		}
 	}

@@ -76,6 +76,7 @@
 		onBeforeUnmount
 	} from 'vue'
 	import WangEditor from 'wangeditor'
+	import xss from 'xss'
 	import axios from '@/utils/axios'
 	import {
 		ElMessage
@@ -277,8 +278,8 @@
 
 			const handleBeforeUpload = (file) => {
 				const sufix = file.name.split('.')[1] || ''
-				if (!['jpg', 'jpeg', 'png'].includes(sufix)) {
-					ElMessage.error('请上传 jpg、jpeg、png 格式的图片')
+				if (!['jpg', 'jpeg', 'png', 'gif'].includes(sufix)) {
+					ElMessage.error('请上传 jpg、jpeg、png、gif 格式的图片')
 					return false
 				}
 			}
