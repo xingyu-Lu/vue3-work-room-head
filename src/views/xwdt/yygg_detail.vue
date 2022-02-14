@@ -84,6 +84,7 @@
 	:deep() table th {
 	 border-bottom: 2px solid #ccc;
 	  text-align: center;
+	  background-color: #f1f1f1
 	}
 	
 	/* blockquote 样式 */
