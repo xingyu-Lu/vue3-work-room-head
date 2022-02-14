@@ -9,7 +9,6 @@
 		</el-col>
 	</el-row> -->
 
-	<h2>v1版本：功能优先，尽快跑起来</h2>
 	<h3>前端地址：<el-link type="primary" :underline="false" target="_blank" href="http://120.26.124.151">http://120.26.124.151</el-link></h3>
 	<h3>后台地址：<el-link type="primary" :underline="false" target="_blank" href="http://120.26.124.151:8000">http://120.26.124.151:8000</el-link></h3>
 	<h3>账号：admin 密码：123456</h3>
