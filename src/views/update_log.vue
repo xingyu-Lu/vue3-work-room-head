@@ -15,7 +15,7 @@
 	<h3>前端代码仓库：<el-link type="primary" :underline="false" target="_blank" href="https://github.com/xingyu-Lu/vue3-vite-demo">https://github.com/xingyu-Lu/vue3-vite-demo</el-link></h3>
 	<h3>后台代码仓库：<el-link type="primary" :underline="false" target="_blank" href="https://github.com/xingyu-Lu/vue3-hospital-admin">https://github.com/xingyu-Lu/vue3-hospital-admin</el-link></h3>
 	<h3>api代码仓库：<el-link type="primary" :underline="false" target="_blank" href="https://github.com/xingyu-Lu/hospital_api">https://github.com/xingyu-Lu/hospital_api</el-link></h3>
-	<h3>更新记录</h3>
+	<!-- <h3>更新记录</h3>
 
 	<div class="block">
 		<el-timeline>
@@ -23,7 +23,7 @@
 				{{ activity.content }}
 			</el-timeline-item>
 		</el-timeline>
-	</div>
+	</div> -->
 </template>
 
 <script>
