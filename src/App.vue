@@ -246,6 +246,7 @@
 		pathMap
 	} from '@/utils'
 	import { localGet, localRemove } from '@/utils'
+	// import jwt from 'jsonwebtoken'
 
 	export default {
 		components: {
@@ -288,7 +289,14 @@
 
 			onMounted(() => {
 				if(localGet('token')) {
-					state.is_login = true
+					let jwt_str = atob(localGet('token').split('.')[1])
+					let jwt_exp = JSON.parse(jwt_str).exp
+					let now_time = Date.parse(new Date())/1000
+					if (now_time > jwt_exp) {
+						localRemove('token')
+					} else {
+						state.is_login = true
+					}
 				}
 			})
 
