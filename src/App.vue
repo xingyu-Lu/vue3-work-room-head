@@ -180,7 +180,7 @@
 						</ul>
 					</el-col>
 					<el-col :md="6" style="display: flex; justify-content: center; align-items: center;">
-						<div>
+						<div style="margin-right: 40px;">
 							<img style="height: 100px; margin-right: 20px;" src="/src/assets/img/wxgzh.png" alt="">
 							<p style="margin-left: 20px;">官方微信</p>
 						</div>
