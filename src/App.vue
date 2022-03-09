@@ -76,7 +76,7 @@
 					<el-menu-item index="/register" v-if="is_login == false">注册</el-menu-item>
 					<el-menu-item index="" v-if="is_login == true" @click="logout">退出登录</el-menu-item>
 					<el-menu-item index="/change-password" v-if="is_login == true">修改密码</el-menu-item>
-					<!-- <el-menu-item index="/update_log">更新记录</el-menu-item> -->
+					<el-menu-item index="/update_log">更新记录</el-menu-item>
 					<div style="margin-top: 10px; margin-left: 10px; width: 210px;">
 						<el-input v-model="input3" placeholder="请输入关键词" class="input-with-select" size="large">
 							<!-- <template #prepend>
@@ -134,9 +134,9 @@
 					</el-col>
 				</el-row>
 
-				<el-row :gutter="20" style="background: #516071; color: #CCC;">
+				<el-row :gutter="24" style="background: #516071; color: #CCC;">
 					<el-col :md="4" style="display: flex; justify-content: center; align-items: center;">
-						<div style="margin-right: 20px;">
+						<div style="margin-right: 40px;">
 							<a href="http://bszs.conac.cn/sitename?method=show&id=1354A7487A5C32CFE053012819ACA802"
 								target="_blank">
 								<img style="height: 70px;" src="/src/assets/img/qualification.png"
@@ -159,7 +159,7 @@
 							</ul>
 						</div>
 					</el-col> -->
-					<el-col :md="8" style="display: flex; justify-content: center; align-items: center;">
+					<el-col :md="7" style="justify-content: center; align-items: center;">
 						<ul style="list-style: none; line-height: 36px;">
 							<li>版权所有：@宜宾市第三人民医院</li>
 							<li>蜀ICP备12031661号-1</li>
@@ -171,7 +171,7 @@
 							</li>
 						</ul>
 					</el-col>
-					<el-col :md="8" style="display: flex; justify-content: center; align-items: center;">
+					<el-col :md="7" style="justify-content: center; align-items: center;">
 						<ul style="list-style: none; line-height: 36px;">
 							<li>医院邮箱：ybsdsrmyy@163.com</li>
 							<li>联系电话：0831-8224806</li>
@@ -179,7 +179,7 @@
 							<li>邮编：644000</li>
 						</ul>
 					</el-col>
-					<el-col :md="4" style="display: flex; justify-content: center; align-items: center;">
+					<el-col :md="6" style="display: flex; justify-content: center; align-items: center;">
 						<div>
 							<img style="height: 100px; margin-right: 20px;" src="/src/assets/img/wxgzh.png" alt="">
 							<p style="margin-left: 20px;">官方微信</p>
