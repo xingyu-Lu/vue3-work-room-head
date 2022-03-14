@@ -12,7 +12,7 @@
 		<el-breadcrumb-item>应聘流程</el-breadcrumb-item>
 	</el-breadcrumb>
 
-	<span v-html="res_data.content"></span>
+	<span v-if="res_data" v-html="res_data.content"></span>
 </template>
 
 <script>

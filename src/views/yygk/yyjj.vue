@@ -17,7 +17,7 @@
 		<el-breadcrumb-item>医院简介</el-breadcrumb-item>
 	</el-breadcrumb>
 	
-	<span v-html="res_data.content"></span>
+	<span v-if="res_data" v-html="res_data.content"></span>
 
 </template>
 

@@ -14,7 +14,7 @@
 	
 	<el-tabs v-model="active">
 	    <el-tab-pane label="历史沿革" name="first">
-			<span v-html="res_data.lsyg.content"></span>
+			<span v-if="res_data.lsyg" v-html="res_data.lsyg.content"></span>
 		</el-tab-pane>
 	    <el-tab-pane label="历任院长" name="second">
 			<!-- <span v-html="res_data.lryz.content"></span> -->
