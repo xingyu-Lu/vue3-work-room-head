@@ -2,17 +2,17 @@
 	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
 		<el-col :span="24">
 			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
-				<strong>科室介绍</strong>
+				<strong v-if="office_info">{{ office_info.name }}</strong>
 			</div>
 		</el-col>
 	</el-row>
 
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item>{{ res_data.office_name }}</el-breadcrumb-item>
+		<el-breadcrumb-item>科室介绍</el-breadcrumb-item>
 	</el-breadcrumb>
 	
-	<el-row :gutter="24" justify="space-around" align="middle" style="line-height: 36px; margin-bottom: 20px;">
+	<!-- <el-row :gutter="24" justify="space-around" align="middle" style="line-height: 36px; margin-bottom: 20px;">
 		<el-col :md="3">
 			<el-button type="primary" @click="go_detail('/ksjs_detail?id=' +id)">科室介绍</el-button>
 		</el-col>
@@ -34,9 +34,21 @@
 		<el-col :md="3">
 			<el-button type="primary" @click="go_detail('/ksjkkp?id=' + id)">健康科普</el-button>
 		</el-col>
+	</el-row> -->
+	
+	<el-row v-for="(item, index) in column_list" :gutter="24" justify="space-between" align="middle" style="line-height: 36px; margin-bottom: 20px;">
+		<el-col v-for="(item_1, index_1) in item" :md="3">
+			<el-button type="primary" @click="go_detail(item_1.url + '?id=' + id + '&column_id=' + item_1.id + '&column_name=' + item_1.name + '&column_type=' + item_1.type)">{{ item_1.name }}</el-button>
+		</el-col>
+	</el-row>
+	
+	<el-row v-if="is_login && is_self" :gutter="24" justify="space-between" align="middle" style="line-height: 36px; margin-bottom: 20px;">
+		<el-col :md="3">
+			<el-button type="primary" @click="go_detail('/kssz?id=' + id)">科室设置</el-button>
+		</el-col>
 	</el-row>
 
-	<span v-if="res_data.content" v-html="res_data.content"></span>
+	<span v-if="res_data" v-html="res_data.content"></span>
 </template>
 
 <script>
@@ -54,6 +66,10 @@
 		useRoute,
 		useRouter
 	} from 'vue-router'
+	import {
+		localGet,
+		localSet
+	} from '@/utils'
 	
 	export default {
 		name: 'ldtd',
@@ -66,12 +82,30 @@
 			} = route.query
 			
 			const state = reactive({
-				res_data: ref('')
+				office_info: '',
+				res_data: ref(''),
+				column_list: [],
+				is_login: 0,
+				is_self: 0,
 			})
 			
 			onMounted(() => {
 				get_data()
+				get_column_list()
+				is_login()
+				is_self()
+				get_office_info()
 			})
+			
+			const get_office_info = () => {
+				axios.get('/api/head/offices/info', {
+					params: {
+						id: id
+					}
+				}).then(res => {
+					state.office_info = res.data
+				})
+			}
 			
 			const get_data = () => {
 				axios.get('/api/head/offices/ksjs_detail', {
@@ -81,6 +115,28 @@
 				}).then(res => {
 					state.res_data = res.data
 				})
+			}
+			
+			const get_column_list = () => {
+				axios.get('/api/head/technicalOfficeColumnSets/list', {
+					params: {
+						office_id: id
+					}
+				}).then(res => {
+					state.column_list = res.data
+				})
+			}
+			
+			const is_login = () => {
+				if (localGet('token')) {
+					state.is_login = 1
+				}
+			}
+			
+			const is_self = () => {
+				if (localGet('userinfo') && localGet('userinfo').office.office_id == id) {
+					state.is_self = 1
+				}
 			}
 			
 			const go_detail = (url) => {

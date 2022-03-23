@@ -63,6 +63,22 @@ export const pathMap = {
 	ksjkkp: '健康科普',
 	ksjkkp_detail: '健康科普',
 	
+	kssz: '科室设置',
+	kssz_ksdt_index: '科室动态列表',
+	kssz_ksdt_add: '科室动态新增',
+	kssz_ksdt_preview: '科室动态预览',
+	kssz_outpatient_index: '科室门诊列表',
+	kssz_outpatient_add: '科室门诊新增',
+	kssz_member_index: '科室成员列表',
+	kssz_member_add: '科室成员新增',
+	kssz_columnset_index: '栏目设置列表',
+	kssz_columnset_add: '栏目设置新增',
+	kssz_column_index: '科室栏目列表',
+	kssz_column_add: '科室栏目新增',
+	kssz_column_preview: '科室栏目预览',
+	ksjs_column: '科室栏目',
+	ksjs_column_detail: '科室栏目',
+	
 	// 专家介绍
 	zjjs: '专家介绍',
 	zjjs_detail: '专家介绍',

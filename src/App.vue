@@ -314,6 +314,7 @@
 				//   window.location.reload()
 				// })
 				localRemove('token')
+				localRemove('userinfo')
 				window.location.reload()
 			}
 

@@ -2,39 +2,15 @@
 	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
 		<el-col :span="24">
 			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
-				<strong>科室动态</strong>
+				<strong v-if="office_info">{{ office_info.name }}</strong>
 			</div>
 		</el-col>
 	</el-row>
-
+	
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item>{{res_data.office_name}}</el-breadcrumb-item>
+		<el-breadcrumb-item>科室动态</el-breadcrumb-item>
 	</el-breadcrumb>
-	
-	<el-row :gutter="24" justify="space-around" align="middle" style="line-height: 36px; margin-bottom: 20px;">
-		<el-col :md="3">
-			<el-button type="primary" @click="go_detail('/ksjs_detail?id=' +id)">科室介绍</el-button>
-		</el-col>
-		<el-col :md="3">
-			<el-button type="primary" @click="go_detail('/ksjs-ksdt?id=' + id)">科室动态</el-button>
-		</el-col>
-		<el-col :md="3">
-			<el-button type="primary" @click="go_detail('/ksjs-ksys?id=' + id)">科室医生</el-button>
-		</el-col>
-		<el-col :md="3">
-			<el-button type="primary" @click="go_detail('/ksmz?id=' + id)">科室门诊</el-button>
-		</el-col>
-		<el-col :md="3">
-			<el-button type="primary" @click="go_detail('/kstsyl?id=' + id)">特色医疗</el-button>
-		</el-col>
-		<el-col :md="3">
-			<el-button type="primary" @click="go_detail('/kstp?id=' + id)">科室图片</el-button>
-		</el-col>
-		<el-col :md="3">
-			<el-button type="primary" @click="go_detail('/ksjkkp?id=' + id)">健康科普</el-button>
-		</el-col>
-	</el-row>
 	
 	<div style="display: flex; justify-content: center;"><strong v-html="res_data.title"></strong></div>
 	<div style="display: flex; justify-content: center; font-size: 12px; color: #5B5B5B; margin-top: 10px; margin-bottom: 20px;">
@@ -73,12 +49,24 @@
 			} = route.query
 			
 			const state = reactive({
+				office_info: '',
 				res_data: ref('')
 			})
 			
 			onMounted(() => {
 				get_data()
+				get_office_info()
 			})
+			
+			const get_office_info = () => {
+				axios.get('/api/head/offices/info', {
+					params: {
+						id: id
+					}
+				}).then(res => {
+					state.office_info = res.data
+				})
+			}
 			
 			const get_data = () => {
 				axios.get('/api/head/offices/ksdt_detail', {

@@ -148,6 +148,88 @@ const router = createRouter({
 		name: 'ksjkkp_detail',
 		component: () => import('../views/ksjs/ksjkkp_detail.vue')
 	},
+	// 科室设置
+	{
+		path: '/kssz',
+		name: 'kssz',
+		component: () => import('../views/ksjs/kssz/index.vue')
+	},
+	// 科室动态管理
+	{
+		path: '/kssz-ksdt-index',
+		name: 'kssz_ksdt_index',
+		component: () => import('../views/ksjs/kssz/ksdt/index.vue')
+	},
+	{
+		path: '/kssz-ksdt-add',
+		name: 'kssz_ksdt_add',
+		component: () => import('../views/ksjs/kssz/ksdt/add.vue')
+	},
+	{
+		path: '/kssz-ksdt-preview',
+		name: 'kssz_ksdt_preview',
+		component: () => import('../views/ksjs/kssz/ksdt/preview.vue')
+	},
+	// 科室门诊管理
+	{
+		path: '/kssz-outpatient-index',
+		name: 'kssz_outpatient_index',
+		component: () => import('../views/ksjs/kssz/outpatient/index.vue')
+	},
+	{
+		path: '/kssz-outpatient-add',
+		name: 'kssz_outpatient_add',
+		component: () => import('../views/ksjs/kssz/outpatient/add.vue')
+	},
+	// 科室成员管理
+	{
+		path: '/kssz-member-index',
+		name: 'kssz_member_index',
+		component: () => import('../views/ksjs/kssz/member/index.vue')
+	},
+	{
+		path: '/kssz-member-add',
+		name: 'kssz_member_add',
+		component: () => import('../views/ksjs/kssz/member/add.vue')
+	},
+	// 栏目设置管理
+	{
+		path: '/kssz-columnset-index',
+		name: 'kssz_columnset_index',
+		component: () => import('../views/ksjs/kssz/columnset/index.vue')
+	},
+	{
+		path: '/kssz-columnset-add',
+		name: 'kssz_columnset_add',
+		component: () => import('../views/ksjs/kssz/columnset/add.vue')
+	},
+	// 科室栏目管理
+	{
+		path: '/kssz-column-index',
+		name: 'kssz_column_index',
+		component: () => import('../views/ksjs/kssz/column/index.vue')
+	},
+	{
+		path: '/kssz-column-add',
+		name: 'kssz_column_add',
+		component: () => import('../views/ksjs/kssz/column/add.vue')
+	},
+	{
+		path: '/kssz-column-preview',
+		name: 'kssz_column_preview',
+		component: () => import('../views/ksjs/kssz/column/preview.vue')
+	},
+	// 科室栏目
+	{
+		path: '/ksjs-column',
+		name: 'ksjs_column',
+		component: () => import('../views/ksjs/ksjs-column.vue')
+	},
+	{
+		path: '/ksjs-column-detail',
+		name: 'ksjs_column_detail',
+		component: () => import('../views/ksjs/ksjs-column-detail.vue')
+	},
 	
 	
 	// 专家介绍
