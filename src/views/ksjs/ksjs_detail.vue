@@ -95,7 +95,14 @@
 				is_login()
 				is_self()
 				get_office_info()
+				get_user_info()
 			})
+			
+			const get_user_info = () => {
+				axios.get('/api/head/staffs/info').then(res => {
+					localSet('userinfo', res.data)
+				})
+			}
 			
 			const get_office_info = () => {
 				axios.get('/api/head/offices/info', {
