@@ -19,7 +19,7 @@
 		<el-col :md="3">
 			<el-button type="primary" @click="go_detail('/kssz-outpatient-index?id=' + id)">科室门诊</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col v-if="res_data.office.is_head == 1" :md="3">
 			<el-button type="primary" @click="go_detail('/kssz-member-index?id=' + id)">科室成员</el-button>
 		</el-col>
 		<el-col :md="3">
