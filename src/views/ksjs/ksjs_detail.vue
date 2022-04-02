@@ -13,37 +13,37 @@
 	</el-breadcrumb>
 	
 	<!-- <el-row :gutter="24" justify="space-around" align="middle" style="line-height: 36px; margin-bottom: 20px;">
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/ksjs_detail?id=' +id)">科室介绍</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/ksjs-ksdt?id=' + id)">科室动态</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/ksjs-ksys?id=' + id)">科室医生</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/ksmz?id=' + id)">科室门诊</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/kstsyl?id=' + id)">特色医疗</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/kstp?id=' + id)">科室图片</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/ksjkkp?id=' + id)">健康科普</el-button>
 		</el-col>
 	</el-row> -->
 	
 	<el-row v-for="(item, index) in column_list" :gutter="24" justify="space-between" align="middle" style="line-height: 36px; margin-bottom: 20px;">
-		<el-col v-for="(item_1, index_1) in item" :md="3">
+		<el-col v-for="(item_1, index_1) in item" :sm="3">
 			<el-button type="primary" @click="go_detail(item_1.url + '?id=' + id + '&column_id=' + item_1.id + '&column_name=' + item_1.name + '&column_type=' + item_1.type)">{{ item_1.name }}</el-button>
 		</el-col>
 	</el-row>
 	
 	<el-row v-if="is_login && is_self" :gutter="24" justify="space-between" align="middle" style="line-height: 36px; margin-bottom: 20px;">
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/kssz?id=' + id)">科室设置</el-button>
 		</el-col>
 	</el-row>

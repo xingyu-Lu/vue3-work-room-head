@@ -8,10 +8,10 @@
 	</el-row>
 
 	<el-row :gutter="20" align="middle">
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-image :src="res_data.img_url"></el-image>
 		</el-col>
-		<el-col :md="21">
+		<el-col :sm="21">
 			<h2 style="color: rgb(64 158 255);">{{res_data.name}}</h2>
 			<div style="line-height: 36px;">
 				<div><span style="color: #999;">科室：</span><span style="color: #444;">{{res_data.office_name}}</span></div>

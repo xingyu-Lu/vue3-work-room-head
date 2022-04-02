@@ -21,7 +21,7 @@
 	</el-space>
 	
 	<el-row :gutter="20" style="margin-bottom: 20px; margin-top: 40px;" justify="space-around" v-for="(item, index) in res_data">
-		<el-col :md="8" v-for="(item_1, index_1) in item">
+		<el-col :sm="8" v-for="(item_1, index_1) in item">
 			<el-card shadow="hover" style="margin-bottom: 20px; cursor: pointer;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">
 				<template #header>
 					<div class="card-header">

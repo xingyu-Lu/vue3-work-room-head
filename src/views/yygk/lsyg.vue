@@ -19,7 +19,7 @@
 	    <el-tab-pane label="历任院长" name="second">
 			<!-- <span v-html="res_data.lryz.content"></span> -->
 			<el-row :gutter="20" justify="space-around" style="margin-bottom: 20px;" v-for="(item, index) in res_data.lryz">
-				<el-col :md="6" v-for="(item_1, index_1) in item">
+				<el-col :sm="6" v-for="(item_1, index_1) in item">
 					<el-card :body-style="{ padding: '0px' }">
 						<img :src="item_1.img_url" style="width: 100%;" />
 						<div style="padding: 14px; line-height: 36px; font-size: 14px;">
@@ -35,7 +35,7 @@
 		</el-tab-pane>
 	    <el-tab-pane label="历史照片" name="third">
 			<el-row :gutter="20" justify="space-around" style="margin-bottom: 20px;" v-for="(item, index) in res_data.lszp">
-				<el-col :md="6" v-for="(item_1, index_1) in item">
+				<el-col :sm="6" v-for="(item_1, index_1) in item">
 					<el-card :body-style="{ padding: '0px' }">
 						<img :src="item_1.img_url"
 							style="width: 100%;" />

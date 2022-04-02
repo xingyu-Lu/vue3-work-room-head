@@ -13,10 +13,10 @@
 	</el-breadcrumb>
 	
 	<el-row :gutter="24" style="margin-bottom: 20px;" v-if="is_login">
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/employee-my-article')">我的文章</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/employee-my-file')">我的文件</el-button>
 		</el-col>
 	</el-row>

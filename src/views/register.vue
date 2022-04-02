@@ -1,6 +1,6 @@
 <template>
 	<el-row style="min-height: 100%;" justify="space-around" align="middle">
-		<el-col :md="8">
+		<el-col :sm="8">
 			<el-card>
 				<div
 					style="justify-content: center; display: flex; font-size: 28px; color: #1BAEAE; font-weight: bold; margin-bottom: 20px;">
@@ -20,11 +20,11 @@
 					</el-form-item>
 					<el-form-item label="验证码" prop="code">
 						<el-row :gutter="20">
-							<el-col :md="16">
+							<el-col :sm="16">
 								<el-input type="text" v-model.trim="loginModel.code" autocomplete="off"
 									placeholder="请输入验证码"></el-input>
 							</el-col>
-							<el-col :md="4">
+							<el-col :sm="4">
 								<el-button type="primary"><span v-show="show" @click="Verification">获取邮箱验证码</span>
 									<span v-show="!show">{{ count }} s 后获取</span>
 								</el-button>

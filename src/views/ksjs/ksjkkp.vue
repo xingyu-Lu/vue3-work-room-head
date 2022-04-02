@@ -13,25 +13,25 @@
 	</el-breadcrumb>
 	
 	<el-row :gutter="24" justify="space-around" align="middle" style="line-height: 36px; margin-bottom: 20px;">
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/ksjs_detail?id=' +id)">科室介绍</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/ksjs-ksdt?id=' + id)">科室动态</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/ksjs-ksys?id=' + id)">科室医生</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/ksmz?id=' + id)">科室门诊</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/kstsyl?id=' + id)">特色医疗</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/kstp?id=' + id)">科室图片</el-button>
 		</el-col>
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/ksjkkp?id=' + id)">健康科普</el-button>
 		</el-col>
 	</el-row>
@@ -39,14 +39,14 @@
 	<el-card class="box-card">
 		<el-row :gutter="20" v-for="(item,index) in res_data" style="margin-bottom: 20px;" justify="space-around"
 			align="middle">
-			<el-col :md="24">
+			<el-col :sm="24">
 				<el-row :gutter="20">
-					<el-col :md="4">
+					<el-col :sm="4">
 						<el-image v-if="item.img_url" style="width: 100%; height: auto; cursor: pointer;"
 							:src="item.img_url" :key="item.img_url" @click="go_detail('/ksjkkp-detail?id=' + item.id)">
 						</el-image>
 					</el-col>
-					<el-col :md="20">
+					<el-col :sm="20">
 						<div style="line-height: 50px; margin-left: 40px;">
 							<div>
 								<el-link :underline="false" :href="'/ksjkkp-detail?id=' + item.id" target="_blank">

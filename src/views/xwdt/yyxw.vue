@@ -17,14 +17,14 @@
 	<el-card class="box-card">
 		<el-row :gutter="20" v-for="(item,index) in res_data" style="margin-bottom: 20px;" justify="space-around"
 			align="middle">
-			<el-col :md="24">
+			<el-col :sm="24">
 				<el-row :gutter="20">
-					<el-col :md="4">
+					<el-col :sm="4">
 						<el-image v-if="item.img_url" style="width: 100%; height: auto; cursor: pointer;"
 							:src="item.img_url" :key="item.img_url" @click="go_detail('/yyxw_detail?id=' + item.id)">
 						</el-image>
 					</el-col>
-					<el-col :md="20">
+					<el-col :sm="20">
 						<div style="line-height: 50px; margin-left: 40px;">
 							<div>
 								<el-link :underline="false" :href="'/yyxw_detail?id=' + item.id" target="_blank">

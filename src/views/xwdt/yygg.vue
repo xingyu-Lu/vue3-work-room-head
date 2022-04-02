@@ -15,7 +15,7 @@
 	<el-card class="box-card">
 		<el-row :gutter="20" v-for="(item,index) in res_data" style="margin-bottom: 20px;"
 			justify="space-between" align="middle">
-			<el-col :md="24">
+			<el-col :sm="24">
 				<div style="display: flex; justify-content: space-between; cursor: pointer;"
 					@click="go_detail('/yygg_detail?id=' + item.id)">
 					<!-- <el-image v-if="item.img_url" style="width: 30%; height: auto;"

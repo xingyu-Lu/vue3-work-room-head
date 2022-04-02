@@ -13,13 +13,13 @@
 	</el-breadcrumb>
 	
 	<el-row v-for="(item, index) in column_list" :gutter="24" justify="space-between" align="middle" style="line-height: 36px; margin-bottom: 20px;">
-		<el-col v-for="(item_1, index_1) in item" :md="3">
+		<el-col v-for="(item_1, index_1) in item" :sm="3">
 			<el-button type="primary" @click="go_detail(item_1.url + '?id=' + id + '&column_id=' + item_1.id + '&column_name=' + item_1.name + '&column_type=' + item_1.type)">{{ item_1.name }}</el-button>
 		</el-col>
 	</el-row>
 	
 	<el-row v-if="is_login && is_self" :gutter="24" justify="space-between" align="middle" style="line-height: 36px; margin-bottom: 20px;">
-		<el-col :md="3">
+		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/kssz?id=' + id)">科室设置</el-button>
 		</el-col>
 	</el-row>
@@ -40,7 +40,7 @@
 	</el-card>
 	
 	<el-row v-if="column_type == 1" :gutter="20" justify="space-around" style="margin-bottom: 20px;" v-for="(item, index) in res_data">
-		<el-col :md="6" v-for="(item_1, index_1) in item">
+		<el-col :sm="6" v-for="(item_1, index_1) in item">
 			<el-card :body-style="{ padding: '0px' }">
 				<img :src="item_1.url"
 					style="width: 100%; cursor: pointer;" @click="go_detail('/ksjs-column-detail?id=' + item_1.id + '&office_id=' + item_1.office_id + '&column_name=' + item_1.column_name + '&column_type=' + column_type)" />
