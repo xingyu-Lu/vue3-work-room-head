@@ -117,6 +117,7 @@ export const pathMap = {
 	dflz_detail: '党风廉政',
 	ygzj: '员工之家',
 	ygzj_detail: '员工之家',
+	ydyf: '医德医风',
 	ydyf_detail: '医德医风',
 	qnjyz: '青年加油站',
 	qnjyz_detail: '青年加油站',
