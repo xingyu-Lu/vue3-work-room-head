@@ -263,7 +263,7 @@
 							</el-link>
 						</div>
 					</el-col> -->
-					<el-col :sm="20">
+					<el-col :sm="24">
 						<div
 							style="line-height: 16px; margin-left: 20px; display: flex; justify-content: space-between;">
 							<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">
@@ -295,7 +295,7 @@
 							</el-link>
 						</div>
 					</el-col> -->
-					<el-col :sm="20">
+					<el-col :sm="24">
 						<div
 							style="line-height: 16px; margin-left: 20px; display: flex; justify-content: space-between;">
 							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">
