@@ -13,6 +13,7 @@
 	<h3>后台地址：<el-link type="primary" :underline="false" target="_blank" href="http://120.26.124.151:8000">http://120.26.124.151:8000</el-link></h3>
 	<h3>账号：admin 密码：123456</h3>
 	<h3>运营系统：<el-link type="primary" :underline="false" target="_blank" href="http://120.26.124.151:9000">http://120.26.124.151:9000</el-link></h3>
+	<h3>病例系统：<el-link type="primary" :underline="false" target="_blank" href="http://120.26.124.151:7000">http://120.26.124.151:7000</el-link></h3>
 	<h3>前端代码仓库：<el-link type="primary" :underline="false" target="_blank" href="https://github.com/xingyu-Lu/vue3-vite-demo">https://github.com/xingyu-Lu/vue3-vite-demo</el-link></h3>
 	<h3>后台代码仓库：<el-link type="primary" :underline="false" target="_blank" href="https://github.com/xingyu-Lu/vue3-hospital-admin">https://github.com/xingyu-Lu/vue3-hospital-admin</el-link></h3>
 	<h3>api代码仓库：<el-link type="primary" :underline="false" target="_blank" href="https://github.com/xingyu-Lu/hos_api">https://github.com/xingyu-Lu/hos_api</el-link></h3>
