@@ -48,12 +48,12 @@
 				checked: true,
 				rules: {
 					mobile: [{
-						required: 'true',
+						required: true,
 						message: '手机号不能为空',
 						trigger: 'blur'
 					}],
 					password: [{
-						required: 'true',
+						required: true,
 						message: '密码不能为空',
 						trigger: 'blur'
 					}]

@@ -15,7 +15,7 @@
 						</el-input>
 					</el-form-item>
 					<el-form-item label="邮箱" prop="email">
-						<el-input type="text" v-model.trim="loginModel.email" autocomplete="off" placeholder="请输入手机号">
+						<el-input type="text" v-model.trim="loginModel.email" autocomplete="off" placeholder="请输入邮箱">
 						</el-input>
 					</el-form-item>
 					<el-form-item label="验证码" prop="code">
@@ -77,27 +77,27 @@
 				checked: true,
 				rules: {
 					name: [{
-						required: 'true',
+						required: true,
 						message: '姓名不能为空',
 						trigger: 'blur'
 					}],
 					mobile: [{
-						required: 'true',
+						required: true,
 						message: '手机号不能为空',
 						trigger: 'blur'
 					}],
 					email: [{
-						required: 'true',
+						required: true,
 						message: '邮箱不能为空',
 						trigger: 'blur'
 					}],
 					code: [{
-						required: 'true',
+						required: true,
 						message: '验证码不能为空',
 						trigger: 'blur'
 					}],
 					password: [{
-						required: 'true',
+						required: true,
 						message: '密码不能为空',
 						trigger: 'blur'
 					}]
