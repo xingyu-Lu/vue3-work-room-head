@@ -76,6 +76,11 @@ export const pathMap = {
 	kssz_column_index: '科室栏目列表',
 	kssz_column_add: '科室栏目新增',
 	kssz_column_preview: '科室栏目预览',
+	kssz_ksjs_index: '科室介绍',
+	kssz_ksjs_add: '科室介绍新增',
+	kssz_ksys_index: '科室医生',
+	kssz_ksys_add: '科室医生',
+	
 	ksjs_column: '科室栏目',
 	ksjs_column_detail: '科室栏目',
 	

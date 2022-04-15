@@ -92,15 +92,18 @@
 			onMounted(() => {
 				get_data()
 				get_column_list()
-				is_login()
-				is_self()
 				get_office_info()
 				get_user_info()
+				is_login()
+				is_self()
 			})
 			
 			const get_user_info = () => {
 				axios.get('/api/head/staffs/info').then(res => {
 					localSet('userinfo', res.data)
+					if (res.data.office.office_id == id) {
+						state.is_self = 1
+					}
 				})
 			}
 			

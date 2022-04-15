@@ -24,6 +24,12 @@
 					<el-radio label=0>图文或视频</el-radio>
 				</el-radio-group>
 			</el-form-item>
+			<el-form-item label="状态" prop="status">
+				<el-radio-group v-model="Form.status" disabled>
+					<el-radio label=1>已审核</el-radio>
+					<el-radio label=0>待审核</el-radio>
+				</el-radio-group>
+			</el-form-item>
 			<el-form-item>
 				<el-button type="primary" @click="submitAdd()">{{ id ? '立即修改' : '立即创建' }}</el-button>
 			</el-form-item>
@@ -76,6 +82,7 @@
 				Form: {
 					name: '',
 					type: '0',
+					status: '0',
 				},
 				
 				rules: {
@@ -98,6 +105,7 @@
 						state.Form = {
 							name: res.data.name,
 							type: String(res.data.type),
+							status: String(res.data.status)
 						}
 					})
 				}

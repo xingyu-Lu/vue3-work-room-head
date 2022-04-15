@@ -28,6 +28,13 @@
 					<span style="color: #E6A23C;" v-else-if="scope.row.type == 0">图文或视频</span>
 				</template>
 			</el-table-column>
+			<el-table-column prop="status" label="状态">
+				<template #default="scope">
+					<span style="color: #67C23A;" v-if="scope.row.status == 1">已审核</span>
+					<span style="color: #E6A23C;" v-else-if="scope.row.status == 0">待审核</span>
+					<span style="color: #F56C6C;" v-else>审核不过</span>
+				</template>
+			</el-table-column>
 			<el-table-column prop="created_at" label="创建时间" />
 			
 			<el-table-column label="操作" width="200">

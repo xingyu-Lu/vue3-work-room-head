@@ -17,7 +17,7 @@
 			<el-button type="primary" @click="go_detail('/employee-my-article')">我的文章</el-button>
 		</el-col>
 		<el-col :sm="3">
-			<el-button type="primary" @click="go_detail('/employee-my-file')">我的文件</el-button>
+			<el-button type="primary" @click="go_detail('/employee-my-file')">我的云盘</el-button>
 		</el-col>
 	</el-row>
 	

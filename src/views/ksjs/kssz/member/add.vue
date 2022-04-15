@@ -22,7 +22,7 @@
 				</el-select>
 			</el-form-item>
 			<el-form-item label="是否负责人" prop="is_head">
-				<el-radio-group v-model="Form.is_head">
+				<el-radio-group v-model="Form.is_head" disabled>
 					<el-radio label=1>是</el-radio>
 					<el-radio label=0>否</el-radio>
 				</el-radio-group>

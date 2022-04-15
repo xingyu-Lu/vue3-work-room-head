@@ -230,6 +230,28 @@ const router = createRouter({
 		name: 'ksjs_column_detail',
 		component: () => import('../views/ksjs/ksjs-column-detail.vue')
 	},
+	// 科室介绍管理
+	{
+		path: '/kssz-ksjs-index',
+		name: 'kssz_ksjs_index',
+		component: () => import('../views/ksjs/kssz/ksjs/index.vue')
+	},
+	{
+		path: '/kssz-ksjs-add',
+		name: 'kssz_ksjs_add',
+		component: () => import('../views/ksjs/kssz/ksjs/add.vue')
+	},
+	// 科室医生管理
+	{
+		path: '/kssz-ksys-index',
+		name: 'kssz_ksys_index',
+		component: () => import('../views/ksjs/kssz/ksys/index.vue')
+	},
+	{
+		path: '/kssz-ksys-add',
+		name: 'kssz_ksys_add',
+		component: () => import('../views/ksjs/kssz/ksys/add.vue')
+	},
 	
 	
 	// 专家介绍
