@@ -28,10 +28,10 @@
 						<strong>{{ item_1.name }}</strong>
 					</div>
 				</template>
-				<div style="line-height: 32px;">
+				<!-- <div style="line-height: 32px;">
 					<div style="color: #999;">科室地址：{{ item_1.address }}</div>
 					<div style="color: #999;">科室电话：{{ item_1.phone }}</div>
-				</div>
+				</div> -->
 			</el-card>
 		</el-col>
 	</el-row>
