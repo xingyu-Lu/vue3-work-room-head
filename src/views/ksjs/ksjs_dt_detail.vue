@@ -2,7 +2,7 @@
 	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
 		<el-col :span="24">
 			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
-				<strong v-if="office_info">{{ office_info.name }}</strong>
+				<strong v-if="res_data">{{ res_data.office_name }}</strong>
 			</div>
 		</el-col>
 	</el-row>
@@ -55,18 +55,18 @@
 			
 			onMounted(() => {
 				get_data()
-				get_office_info()
+				// get_office_info()
 			})
 			
-			const get_office_info = () => {
-				axios.get('/api/head/offices/info', {
-					params: {
-						id: id
-					}
-				}).then(res => {
-					state.office_info = res.data
-				})
-			}
+			// const get_office_info = () => {
+			// 	axios.get('/api/head/offices/info', {
+			// 		params: {
+			// 			id: id
+			// 		}
+			// 	}).then(res => {
+			// 		state.office_info = res.data
+			// 	})
+			// }
 			
 			const get_data = () => {
 				axios.get('/api/head/offices/ksdt_detail', {

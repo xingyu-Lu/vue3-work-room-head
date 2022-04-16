@@ -126,7 +126,15 @@
 					</div>
 				</template>
 
-				<el-row v-for="(item,index) in office_arr" justify="space-around"
+				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="space-around" v-for="(item, index) in office_arr">
+					<el-col :sm="3" v-for="(item_1, index_1) in item">
+						<el-card shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">
+								<strong>{{ item_1.name }}</strong>
+						</el-card>
+					</el-col>
+				</el-row>
+
+				<!-- <el-row v-for="(item,index) in office_arr" justify=" start"
 					style="color: #409EFF; line-height: 38px; list-style: none;">
 					<li v-for="(item_1, index_1) in item">
 						<el-button>
@@ -135,7 +143,7 @@
 							</el-link>
 						</el-button>
 					</li>
-				</el-row>
+				</el-row> -->
 			</el-card>
 		</el-col>
 	</el-row>
