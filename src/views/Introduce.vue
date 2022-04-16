@@ -1,7 +1,7 @@
 <template>
 	<el-row v-if="flag" style="margin-bottom: 20px;">
 		<el-col :sm="24">
-			<el-carousel height="600px">
+			<el-carousel height="450px">
 				<el-carousel-item v-for="item in carousel_arr" :key="item">
 					<!-- <img :src=item.url alt="" style="width: 100%; height: 100%; cursor: pointer;" @click="go_detail(item.click_url)"> -->
 					<el-image style="width: 100%; height: 100%" :key="item.url" :src="item.url">
