@@ -16,13 +16,16 @@
 		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/kssz-ksjs-index?id=' + id)">科室介绍</el-button>
 		</el-col>
-		<el-col :sm="3">
+		<el-col :sm="3" v-if="res_data.office && res_data.office.office_name == '门诊部'">
+			<el-button type="primary" @click="go_detail('/kssz-ksys-index?id=' + id)">门诊坐诊医生简介</el-button>
+		</el-col>
+		<el-col :sm="3" v-else>
 			<el-button type="primary" @click="go_detail('/kssz-ksys-index?id=' + id)">科室医生</el-button>
 		</el-col>
 		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/kssz-ksdt-index?id=' + id)">科室动态</el-button>
 		</el-col>
-		<el-col :sm="3">
+		<el-col :sm="3" v-if="res_data.office && res_data.office.office_name != '门诊部'">
 			<el-button type="primary" @click="go_detail('/kssz-outpatient-index?id=' + id)">科室门诊</el-button>
 		</el-col>
 		<el-col v-if="res_data && res_data.office.is_head == 1" :sm="3">
