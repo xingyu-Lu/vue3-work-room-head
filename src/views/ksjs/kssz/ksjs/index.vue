@@ -101,7 +101,10 @@
 			
 			const handleAdd = () => {
 				router.push({
-					path: '/kssz-ksjs-add'
+					path: '/kssz-ksjs-add',
+					query: {
+						id
+					}
 				})
 			}
 			
