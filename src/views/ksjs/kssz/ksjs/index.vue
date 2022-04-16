@@ -15,7 +15,7 @@
 	
 	<el-card style="min-height: 100%;">
 		<template #header>
-			<el-button v-if="flag" type="primary" :icon="Plus" @click="handleEdit(data.id)">编辑</el-button>
+			<el-button v-if="flag" type="primary" :icon="Plus" @click="handleEdit">编辑</el-button>
 			<el-button v-else type="primary" :icon="Plus" @click="handleAdd">新增</el-button>
 			<div style="margin-top: 20px; margin-bottom: 20px;" v-if="flag">
 				<span>状态：</span>
@@ -105,7 +105,7 @@
 				})
 			}
 			
-			const handleEdit = (id) => {
+			const handleEdit = () => {
 				router.push({
 					path: '/kssz-ksjs-add',
 					query: {
