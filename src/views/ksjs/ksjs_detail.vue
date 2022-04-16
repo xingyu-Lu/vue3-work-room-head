@@ -101,9 +101,11 @@
 			const get_user_info = () => {
 				axios.get('/api/head/staffs/info').then(res => {
 					localSet('userinfo', res.data)
-					if (res.data.office.office_id == id) {
-						state.is_self = 1
-					}
+					res.data.office.forEach ((repo) => {
+						if (repo.office_id == id) {
+							state.is_self = 1
+						}
+					})
 				})
 			}
 			
@@ -144,8 +146,12 @@
 			}
 			
 			const is_self = () => {
-				if (localGet('userinfo') && localGet('userinfo').office.office_id == id) {
-					state.is_self = 1
+				if (localGet('userinfo')) {
+					localGet('userinfo').office.forEach ((repo) => {
+						if (repo.office_id == id) {
+							state.is_self = 1
+						}
+					})
 				}
 			}
 			

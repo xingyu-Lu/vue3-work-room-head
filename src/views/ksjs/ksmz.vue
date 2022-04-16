@@ -164,8 +164,12 @@
 			}
 			
 			const is_self = () => {
-				if (localGet('userinfo') && localGet('userinfo').office.office_id == id) {
-					state.is_self = 1
+				if (localGet('userinfo')) {
+					localGet('userinfo').office.forEach ((repo) => {
+						if (repo.office_id == id) {
+							state.is_self = 1
+						}
+					})
 				}
 			}
 			
