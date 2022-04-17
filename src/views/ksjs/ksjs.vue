@@ -13,7 +13,7 @@
 	</el-breadcrumb>
 	
 	<span style="color: #999;">索引：</span>
-	<el-space wrap spacer="|" size="default" style="cursor: pointer; color: #444; margin-bottom: 20px;">
+	<el-space wrap spacer="|" size="default" style="cursor: pointer; color: #444; margin-bottom: 5px;">
 		<template v-for="(item, index) in index_arr" :key="index">
 			<span v-if="index == default_index" class="active" @click="search_index(index)">{{ item }}</span>
 			<span v-else @click="search_index(index)">{{ item }}</span>
