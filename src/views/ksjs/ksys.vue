@@ -32,7 +32,7 @@
 						<img :src="item_1.img_url" />
 					</div>
 	
-					<div style="padding: 14px; line-height: 36px; font-size: 14px;">
+					<div style="padding: 14px; line-height: 36px; font-size: 14px; text-align: center;">
 						<span style="color: #DC8C00;">{{ item_1.name }}</span>
 						<div style="display: flex; justify-content: space-around;">
 							<div style="list-style: none;">
