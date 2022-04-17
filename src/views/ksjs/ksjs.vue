@@ -23,7 +23,7 @@
 	<div v-if="res_data && res_data.index == 'all'">
 		<strong>临床部门</strong>
 		<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="space-between" v-for="(item, index) in res_data.office_0">
-			<el-col :sm="3" :md="3" v-for="(item_1, index_1) in item">
+			<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
 				<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
 						<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
 				<!-- </el-card> -->
@@ -31,7 +31,7 @@
 		</el-row>
 		<strong>医技部门</strong>
 		<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="space-between" v-for="(item, index) in res_data.office_1">
-			<el-col :sm="3" :md="3" v-for="(item_1, index_1) in item">
+			<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
 				<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
 						<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
 				<!-- </el-card> -->
@@ -39,7 +39,7 @@
 		</el-row>
 		<strong>保障部门</strong>
 		<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="space-between" v-for="(item, index) in res_data.office_2">
-			<el-col :sm="3" :md="3" v-for="(item_1, index_1) in item">
+			<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
 				<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
 						<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
 				<!-- </el-card> -->
@@ -49,7 +49,7 @@
 	
 	<div v-if="res_data && res_data.index != 'all'">
 		<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 20px;" justify="space-between" v-for="(item, index) in res_data.search">
-			<el-col :sm="3" v-for="(item_1, index_1) in item">
+			<el-col :sm="4" v-for="(item_1, index_1) in item">
 				<!-- <el-card shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
 					<!-- <template #header> -->
 						<!-- <div class="card-header"> -->
