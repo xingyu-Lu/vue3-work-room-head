@@ -126,7 +126,7 @@
 					</div>
 				</template>
 
-				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="space-around" v-for="(item, index) in office_arr">
+				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="space-between" v-for="(item, index) in office_arr">
 					<el-col :sm="4" v-for="(item_1, index_1) in item">
 						<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
 								<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>

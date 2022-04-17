@@ -20,19 +20,19 @@
 		</template>
 	</el-space>
 	
-	<el-row :gutter="20" style="margin-bottom: 20px; margin-top: 40px;" justify="space-around" v-for="(item, index) in res_data">
+	<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 20px;" justify="space-between" v-for="(item, index) in res_data">
 		<el-col :sm="3" v-for="(item_1, index_1) in item">
-			<el-card shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">
+			<!-- <el-card shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
 				<!-- <template #header> -->
 					<!-- <div class="card-header"> -->
-						<strong>{{ item_1.name }}</strong>
+						<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
 					<!-- </div> -->
 				<!-- </template> -->
 				<!-- <div style="line-height: 32px;">
 					<div style="color: #999;">科室地址：{{ item_1.address }}</div>
 					<div style="color: #999;">科室电话：{{ item_1.phone }}</div>
 				</div> -->
-			</el-card>
+			<!-- </el-card> -->
 		</el-col>
 	</el-row>
 </template>
