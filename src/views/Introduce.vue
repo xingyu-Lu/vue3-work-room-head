@@ -125,9 +125,26 @@
 							:icon="Plus">更多</el-link>
 					</div>
 				</template>
-
-				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="space-between" v-for="(item, index) in office_arr">
-					<el-col :sm="4" v-for="(item_1, index_1) in item">
+				
+				<strong>临床部门</strong>
+				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="space-between" v-for="(item, index) in office_arr_0">
+					<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
+						<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
+								<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
+						<!-- </el-card> -->
+					</el-col>
+				</el-row>
+				<strong>医技部门</strong>
+				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="space-between" v-for="(item, index) in office_arr_1">
+					<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
+						<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
+								<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
+						<!-- </el-card> -->
+					</el-col>
+				</el-row>
+				<strong>保障部门</strong>
+				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="space-between" v-for="(item, index) in office_arr_2">
+					<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
 						<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
 								<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
 						<!-- </el-card> -->
@@ -489,7 +506,9 @@
 			const state = reactive({
 				flag: false,
 				carousel_arr: [],
-				office_arr: [],
+				office_arr_0: [],
+				office_arr_1: [],
+				office_arr_2: [],
 				expert_arr: [],
 				news_xw: [],
 				news_rotate: [],
@@ -505,7 +524,9 @@
 			const get_lunbo = async () => {
 				const index = await axios.get('/api/head/indexs')
 				state.carousel_arr = index.data.rotates
-				state.office_arr = index.data.offices
+				state.office_arr_0 = index.data.offices_0
+				state.office_arr_1 = index.data.offices_1
+				state.office_arr_2 = index.data.offices_2
 				state.expert_arr = index.data.expert
 				state.news_xw = index.data.news_xw
 				state.news_rotate = index.data.news_rotate
