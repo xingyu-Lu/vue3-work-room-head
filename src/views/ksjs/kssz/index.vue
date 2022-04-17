@@ -12,7 +12,7 @@
 		<el-breadcrumb-item>科室设置</el-breadcrumb-item>
 	</el-breadcrumb>
 	
-	<el-row :gutter="24" justify="space-between" align="middle" style="line-height: 36px; margin-bottom: 20px;">
+<!-- 	<el-row :gutter="24" justify="space-between" align="middle" style="line-height: 36px; margin-bottom: 20px;">
 		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/kssz-ksjs-index?id=' + id)">科室介绍</el-button>
 		</el-col>
@@ -36,6 +36,12 @@
 		</el-col>
 		<el-col :sm="3">
 			<el-button type="primary" @click="go_detail('/kssz-column-index?id=' + id)">科室栏目</el-button>
+		</el-col>
+	</el-row> -->
+	
+	<el-row v-for="(item,index) in technical_office_set_list" :gutter="24" justify="space-between" align="middle" style="line-height: 36px; margin-bottom: 20px;">
+		<el-col v-for="(item_1, index_1) in item" :sm="4">
+			<el-button type="primary" @click="go_detail(item_1.url + id)">{{ item_1.name }}</el-button>
 		</el-col>
 	</el-row>
 	
@@ -74,6 +80,7 @@
 			const state = reactive({
 				res_data: ref(''),
 				column_list: [],
+				technical_office_set_list: [],
 			})
 			
 			onMounted(() => {
@@ -82,7 +89,19 @@
 				} else {
 					state.res_data = localGet('userinfo')
 				}
+				
+				get_technical_office_set_list()
 			})
+			
+			const get_technical_office_set_list = () => {
+				axios.get('/api/head/technicalOfficeSets', {
+					params: {
+						id: id,
+					}
+				}).then(res => {
+					state.technical_office_set_list = res.data
+				})
+			}
 			
 			const get_user_info = () => {
 				axios.get('/api/head/staffs/info').then(res => {
