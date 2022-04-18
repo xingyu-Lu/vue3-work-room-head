@@ -135,7 +135,7 @@
 					</el-col>
 				</el-row>
 
-				<el-row :gutter="24" style="background: #516071; color: #CCC;">
+				<!-- <el-row :gutter="24" style="background: #516071; color: #CCC;">
 					<el-col :sm="4" style="display: flex; justify-content: center; align-items: center;">
 						<div style="margin-right: 40px;">
 							<a href="http://bszs.conac.cn/sitename?method=show&id=1354A7487A5C32CFE053012819ACA802"
@@ -151,15 +151,6 @@
 							</a>
 						</div>
 					</el-col>
-					<!-- <el-col :md="6" style="display: flex; justify-content: flex-start; align-items: center;">
-						<div>
-							<ul style="list-style: none; line-height: 36px;">
-								<li>宜宾市第三人民医院</li>
-								<li>THE THIRD PEOPLE'S HOSPITAL OF YIBIN</li>
-								<li>同舟共济 厚德精医</li>
-							</ul>
-						</div>
-					</el-col> -->
 					<el-col :sm="7" style="justify-content: center; align-items: center;">
 						<ul style="list-style: none; line-height: 36px;">
 							<li>版权所有：@宜宾市第三人民医院</li>
@@ -190,7 +181,7 @@
 							<p style="margin-left: 20px;">官方微博</p>
 						</div>
 					</el-col>
-				</el-row>
+				</el-row> -->
 			</el-footer>
 		</el-container>
 		<el-container v-else>
