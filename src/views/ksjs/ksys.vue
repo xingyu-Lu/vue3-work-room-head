@@ -34,7 +34,7 @@
 	
 					<div style="padding: 14px; line-height: 36px; font-size: 14px; text-align: center;">
 						<span style="color: #DC8C00;">{{ item_1.name }}</span>
-						<div style="display: flex; justify-content: flex-start;">
+						<div style="display: flex; justify-content: center;">
 							<div style="list-style: none; margin-bottom: 10px;">
 								<!-- <li v-for="(item_2, index_2) in item_1.position">{{ item_2 }}</li> -->
 								<li v-for="(item_3, index_3) in item_1.professional">{{ item_3 }}</li>
