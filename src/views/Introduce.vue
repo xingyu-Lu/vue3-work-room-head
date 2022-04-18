@@ -178,7 +178,7 @@
 							:icon="Plus">更多</el-link>
 					</div>
 				</template>
-				<el-row v-for="(item,index) in expert_arr" :gutter="20" justify="space-around">
+				<el-row v-for="(item,index) in expert_arr" :gutter="20" justify="start">
 					<el-col v-for="(item_1, index_1) in item" :sm="4">
 						<el-link :href="'/zjjs_detail?id=' + item_1.id" :underline="false" target="_blank">
 							<el-card :body-style="{ padding: '10px'}" shadow="never">
@@ -188,7 +188,7 @@
 
 								<div style="padding: 14px; line-height: 36px; font-size: 14px;">
 									<span style="color: #DC8C00;">{{ item_1.name }}</span>
-									<div style="display: flex; justify-content: space-around;">
+									<div style="display: flex; justify-content: start;">
 										<div style="list-style: none;">
 											<!-- <li v-for="(item_2, index_2) in item_1.position">{{ item_2 }}</li> -->
 											<li v-for="(item_3, index_3) in item_1.professional">{{ item_3 }}</li>
@@ -209,7 +209,7 @@
 		<el-skeleton :rows="5" animated />
 	</el-row>
 
-	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="space-around">
+	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="start">
 		<el-col :sm="24">
 			<el-card class="box-card" shadow="hover">
 				<template #header>
@@ -231,7 +231,7 @@
 					</el-col>
 					<el-col :sm="16">
 						<el-row :gutter="20" v-for="(item,index) in news_xw" style="margin-bottom: 10px;"
-							justify="space-around" align="middle">
+							justify="start" align="middle">
 							<el-col :sm="12" v-for="(item_1, index_1) in item">
 								<div style="display: flex; justify-content: flex-start; cursor: pointer;"
 									@click="go_detail('/yyxw_detail?id=' + item_1.id)">
@@ -267,7 +267,7 @@
 		<el-skeleton :rows="5" animated />
 	</el-row>
 
-	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="space-around">
+	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="start">
 		<el-col :sm="12">
 			<el-card class="box-card" shadow="hover">
 				<template #header>
@@ -280,7 +280,7 @@
 				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in news_gg"
 					justify="space-between" align="top">
 					<!-- <el-col :md="4" v-if="item.img_url">
-						<div style="display: flex; justify-content: space-around;">
+						<div style="display: flex; justify-content: start;">
 							<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">
 								<el-image v-if="item.img_url" style="width: 100%;" :src="item.img_url"
 									:key="item.img_url">
@@ -312,7 +312,7 @@
 				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in job" justify="space-between"
 					align="top">
 					<!-- <el-col :md="4" v-if="item.img_url">
-						<div style="display: flex; justify-content: space-around;">
+						<div style="display: flex; justify-content: start;">
 							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">
 								<el-image v-if="item.img_url" style="width: 100%;" :src="item.img_url"
 									:key="item.img_url">
@@ -460,7 +460,7 @@
 					:icon="Plus">更多</el-link>
 			</div>
 		</template>
-		<el-row :gutter="20" justify="space-around" align="top">
+		<el-row :gutter="20" justify="start" align="top">
 			<el-col :sm="8">
 				<img src="/src/assets/img/health.jpg" style="width: 100%;" lazy />
 			</el-col>
