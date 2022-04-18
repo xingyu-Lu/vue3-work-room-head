@@ -24,7 +24,7 @@
 		</el-col>
 	</el-row>
 
-	<el-row v-for="(item,index) in res_data" :gutter="20" justify="start">
+	<el-row v-for="(item,index) in res_data" :gutter="20" justify="start" style="margin-bottom: 20px;">
 		<el-col v-for="(item_1, index_1) in item" :sm="4">
 			<el-link :href="'/ksjs_ys_detail?id=' + item_1.id" :underline="false" target="_blank">
 				<el-card :body-style="{ padding: '10px'}" shadow="never">
