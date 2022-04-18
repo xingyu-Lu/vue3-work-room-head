@@ -15,7 +15,7 @@
 	
 	<el-card style="min-height: 100%;">
 		<el-form :model="Form" :rules="rules" ref="Ref" label-width="100px">
-			<el-form-item label="内容" prop="content">
+			<el-form-item label="内容" prop="content" style="margin-top: 35px;">
 				<div ref='editor' style="z-index: 1;"></div>
 			</el-form-item>
 			<el-form-item label="状态" prop="status">
