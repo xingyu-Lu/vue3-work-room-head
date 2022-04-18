@@ -24,7 +24,7 @@
 		</el-col>
 	</el-row>
 
-	<el-row v-for="(item,index) in res_data" :gutter="20" justify="space-around">
+	<el-row v-for="(item,index) in res_data" :gutter="20" justify="start">
 		<el-col v-for="(item_1, index_1) in item" :sm="4">
 			<el-link :href="'/ksjs_ys_detail?id=' + item_1.id" :underline="false" target="_blank">
 				<el-card :body-style="{ padding: '10px'}" shadow="never">
@@ -34,8 +34,8 @@
 	
 					<div style="padding: 14px; line-height: 36px; font-size: 14px; text-align: center;">
 						<span style="color: #DC8C00;">{{ item_1.name }}</span>
-						<div style="display: flex; justify-content: space-around;">
-							<div style="list-style: none;">
+						<div style="display: flex; justify-content: flex-start;">
+							<div style="list-style: none; margin-bottom: 10px;">
 								<!-- <li v-for="(item_2, index_2) in item_1.position">{{ item_2 }}</li> -->
 								<li v-for="(item_3, index_3) in item_1.professional">{{ item_3 }}</li>
 							</div>
