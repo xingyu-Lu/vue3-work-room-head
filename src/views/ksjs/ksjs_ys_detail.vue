@@ -12,7 +12,7 @@
 		<el-breadcrumb-item>科室医生</el-breadcrumb-item>
 	</el-breadcrumb>
 	
-	<el-row :gutter="20" align="top">
+	<el-row :gutter="20" align="middle">
 		<el-col :sm="3">
 			<el-image :src="res_data.img_url"></el-image>
 		</el-col>
@@ -20,8 +20,8 @@
 			<div style="line-height: 32px;">
 				<strong style="color: rgb(64 158 255);">{{res_data.name}}</strong>
 				<!-- <div><span style="color: #999;">科室：</span><span style="color: #444;">{{res_data.office_name}}</span></div> -->
-				<!-- <div><span style="color: #999;">职称：</span><span style="color: #444;">{{res_data.professional}}</span></div> -->
-				<div><span style="color: #999;">擅长：</span><span style="color: #444;">{{res_data.excel}}</span></div>
+				<div><span style="color: #999;">职称：</span><span style="color: #444;">{{res_data.professional}}</span></div>
+				<!-- <div><span style="color: #999;">擅长：</span><span style="color: #444;">{{res_data.excel}}</span></div> -->
 			</div>
 		</el-col>
 	</el-row>
