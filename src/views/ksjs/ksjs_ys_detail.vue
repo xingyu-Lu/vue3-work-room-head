@@ -12,19 +12,24 @@
 		<el-breadcrumb-item>科室医生</el-breadcrumb-item>
 	</el-breadcrumb>
 	
-	<el-row :gutter="20" align="top">
-		<el-col :sm="4">
-			<el-image :src="res_data.img_url"></el-image>
-		</el-col>
-		<el-col :sm="20">
-			<h3 style="color: rgb(64 158 255);">{{res_data.name}}</h3>
+	<!-- <el-row :gutter="20" align="top"> -->
+	<div>
+		<!-- <el-col :sm="4"> -->
+		<div style="display: flex; justify-content: center;">
+			<el-image style="width: 15%;" :src="res_data.img_url"></el-image>
+		</div>
+		<!-- </el-col> -->
+		<!-- <el-col :sm="20"> -->
+			<!-- <div style="color: #999;">职称：</div><h3 style="color: rgb(64 158 255);">{{res_data.name}}</h3> -->
 			<div style="line-height: 32px;">
+				<div><span style="color: #999;">姓名：</span><strong style="color: rgb(64 158 255);">{{res_data.name}}</strong></div>
 				<!-- <div><span style="color: #999;">科室：</span><span style="color: #444;">{{res_data.office_name}}</span></div> -->
 				<div><span style="color: #999;">职称：</span><span style="color: #444;">{{res_data.professional}}</span></div>
-				<!-- <div><span style="color: #999;">擅长：</span><span style="color: #444;">{{res_data.excel}}</span></div> -->
+				<div><span style="color: #999;">擅长：</span><span style="color: #444;">{{res_data.excel}}</span></div>
 			</div>
-		</el-col>
-	</el-row>
+		<!-- </el-col> -->
+	</div>
+	<!-- </el-row> -->
 	
 	<el-divider></el-divider>
 		
