@@ -17,7 +17,7 @@
 			<el-image :src="res_data.img_url"></el-image>
 		</el-col>
 		<el-col :sm="20">
-			<strong style="color: rgb(64 158 255); font-size: 36px;">{{res_data.name}}</strong>
+			<strong style="color: rgb(64 158 255);">{{res_data.name}}</strong>
 			<div style="line-height: 32px;">
 				<!-- <div><span style="color: #999;">科室：</span><span style="color: #444;">{{res_data.office_name}}</span></div> -->
 				<!-- <div><span style="color: #999;">职称：</span><span style="color: #444;">{{res_data.professional}}</span></div> -->
