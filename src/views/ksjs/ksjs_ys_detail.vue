@@ -12,7 +12,7 @@
 		<el-breadcrumb-item>科室医生</el-breadcrumb-item>
 	</el-breadcrumb>
 	
-	<el-row :gutter="20" align="middle">
+	<el-row :gutter="20" align="top">
 		<el-col :sm="3">
 			<el-image :src="res_data.img_url"></el-image>
 		</el-col>
