@@ -36,7 +36,7 @@
 		</el-col>
 	</el-row> -->
 	
-	<el-row v-for="(item, index) in column_list" :gutter="24" justify="start" align="middle" style="line-height: 36px; margin-bottom: 20px;">
+	<el-row v-for="(item, index) in column_list" :gutter="20" justify="start" align="middle" style="line-height: 36px; margin-bottom: 20px;">
 		<el-col v-for="(item_1, index_1) in item" :sm="3">
 			<el-button type="primary" @click="go_detail(item_1.url + '?id=' + id + '&column_id=' + item_1.id + '&column_name=' + item_1.name + '&column_type=' + item_1.type)">{{ item_1.name }}</el-button>
 		</el-col>
