@@ -18,7 +18,7 @@
 		</el-col>
 		<el-col :sm="20">
 			<strong style="color: rgb(64 158 255);">{{res_data.name}}</strong>
-			<div style="line-height: 32px;">
+			<div style="line-height: 26px;">
 				<!-- <div><span style="color: #999;">科室：</span><span style="color: #444;">{{res_data.office_name}}</span></div> -->
 				<!-- <div><span style="color: #999;">职称：</span><span style="color: #444;">{{res_data.professional}}</span></div> -->
 				<div><span style="color: #999;">擅长：</span><span style="color: #444;">{{res_data.excel}}</span></div>
