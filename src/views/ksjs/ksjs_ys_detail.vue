@@ -13,15 +13,15 @@
 	</el-breadcrumb>
 	
 	<el-row :gutter="20" align="top">
-		<el-col :sm="3">
+		<el-col :sm="4">
 			<el-image :src="res_data.img_url"></el-image>
 		</el-col>
-		<el-col :sm="21">
-			<div style="">
-				<h2 style="color: rgb(64 158 255);">{{res_data.name}}</h2>
+		<el-col :sm="20">
+			<strong style="color: rgb(64 158 255); font-size: 36px;">{{res_data.name}}</strong>
+			<div style="line-height: 32px;">
 				<!-- <div><span style="color: #999;">科室：</span><span style="color: #444;">{{res_data.office_name}}</span></div> -->
 				<div><span style="color: #999;">职称：</span><span style="color: #444;">{{res_data.professional}}</span></div>
-				<!-- <div><span style="color: #999;">擅长：</span><span style="color: #444;">{{res_data.excel}}</span></div> -->
+				<div><span style="color: #999;">擅长：</span><span style="color: #444;">{{res_data.excel}}</span></div>
 			</div>
 		</el-col>
 	</el-row>
