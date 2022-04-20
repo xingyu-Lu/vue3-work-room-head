@@ -150,6 +150,11 @@
 						message: '擅长必须',
 						trigger: ['change'],
 					}],
+					sort: [{
+						required: false,
+						message: '排序必须',
+						trigger: ['change'],
+					}],
 					status: [{
 						required: true,
 						message: '状态必须',
