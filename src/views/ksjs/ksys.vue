@@ -14,7 +14,8 @@
 	
 	<el-row v-for="(item, index) in column_list" :gutter="20" justify="start" align="middle" style="line-height: 36px; margin-bottom: 20px;">
 		<el-col v-for="(item_1, index_1) in item" :sm="4">
-			<el-button type="primary" @click="go_detail(item_1.url + '?id=' + id + '&column_id=' + item_1.id + '&column_name=' + item_1.name + '&column_type=' + item_1.type)">{{ item_1.name }}</el-button>
+			<el-button v-if="column_name == item_1.name || item_1.name == '科室介绍' && column_name == undefined" type="primary" @click="go_detail(item_1.url + '?id=' + id + '&column_id=' + item_1.id + '&column_name=' + item_1.name + '&column_type=' + item_1.type)">{{ item_1.name }}</el-button>
+			<el-button v-else @click="go_detail(item_1.url + '?id=' + id + '&column_id=' + item_1.id + '&column_name=' + item_1.name + '&column_type=' + item_1.type)">{{ item_1.name }}</el-button>
 		</el-col>
 	</el-row>
 	
@@ -79,7 +80,8 @@
 			const route = useRoute()
 			const router = useRouter()
 			const {
-				id
+				id,
+				column_name,
 			} = route.query
 			
 			const state = reactive({
@@ -126,7 +128,7 @@
 			}
 			
 			const go_detail = (url) => {
-				window.open(url, '_blank')
+				window.open(url, '_self')
 			}
 			
 			const get_column_list = () => {
@@ -161,6 +163,7 @@
 				go_detail,
 				Plus,
 				id,
+				column_name,
 			}
 		}
 	}
