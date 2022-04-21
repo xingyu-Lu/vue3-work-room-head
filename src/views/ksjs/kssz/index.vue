@@ -41,7 +41,8 @@
 	
 	<el-row v-for="(item,index) in technical_office_set_list" :gutter="24" justify="space-between" align="middle" style="line-height: 36px; margin-bottom: 20px;">
 		<el-col v-for="(item_1, index_1) in item" :sm="4">
-			<el-button type="primary" @click="go_detail(item_1.url + id)">{{ item_1.name }}</el-button>
+			<el-button v-if="current_name == item_1.name" type="primary" @click="go_detail(item_1.url + id, item_1.name)">{{ item_1.name }}</el-button>
+			<el-button v-else @click="go_detail(item_1.url + id, item_1.name)">{{ item_1.name }}</el-button>
 		</el-col>
 	</el-row>
 	
@@ -78,6 +79,7 @@
 			} = route.query
 			
 			const state = reactive({
+				current_name: '',
 				res_data: ref(''),
 				column_list: [],
 				technical_office_set_list: [],
@@ -110,7 +112,8 @@
 				})
 			}
 			
-			const go_detail = (url) => {
+			const go_detail = (url, name) => {
+				state.current_name = name
 				window.open(url, '_blank')
 			}
 			
