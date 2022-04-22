@@ -146,7 +146,7 @@
 						</el-carousel>
 					</el-col> -->
 					<el-col :sm="24">
-						<el-row :gutter="20" v-for="(item,index) in news_xw" style="margin-bottom: 10px;"
+						<el-row :gutter="20" v-for="(item,index) in news_xw" style="margin-bottom: 20px;"
 							justify="start" align="middle">
 							<el-col :gutter="20" :sm="12" v-for="(item_1, index_1) in item">
 								<div style="display: flex; justify-content: flex-start; cursor: pointer;"
