@@ -40,7 +40,7 @@
 			:current-page="currentPage" @current-change="changePage" />
 	</el-card>
 	
-	<el-row v-if="column_type == 1" :gutter="20" justify="space-around" style="margin-bottom: 20px;" v-for="(item, index) in res_data">
+	<el-row v-if="column_type == 1" :gutter="20" justify="start" style="margin-bottom: 20px;" v-for="(item, index) in res_data">		
 		<el-col :sm="4" v-for="(item_1, index_1) in item">
 			<el-card :body-style="{ padding: '0px' }">
 				<img :src="item_1.url"
