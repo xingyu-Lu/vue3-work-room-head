@@ -146,9 +146,8 @@
 						</el-carousel>
 					</el-col> -->
 					<!-- <el-col :sm="24"> -->
-						<el-row :gutter="20" v-for="(item,index) in news_xw" style="margin-bottom: 20px;"
-							justify="start" align="top">
-							<el-col :gutter="20" :sm="12" v-for="(item_1, index_1) in item">
+						<el-row :gutter="20" v-for="(item,index) in news_xw" justify="start" align="top">
+							<el-col :gutter="20" :sm="12" v-for="(item_1, index_1) in item" style="margin-bottom: 20px;">
 								<div style="display: flex; justify-content: flex-start; cursor: pointer;"
 									@click="go_detail('/yyxw_detail?id=' + item_1.id)">
 									<el-image v-if="item_1.img_url" style="width: 30%; height: auto;"
