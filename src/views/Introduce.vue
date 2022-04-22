@@ -135,7 +135,7 @@
 							:icon="Plus">更多</el-link>
 					</div>
 				</template>
-				<el-row :gutter="20">
+				<!-- <el-row :gutter="20"> -->
 					<!-- <el-col :sm="8">
 						<el-carousel height="250px">
 							<el-carousel-item v-for="item in news_rotate" :key="item" indicator-position="none">
@@ -145,7 +145,7 @@
 							</el-carousel-item>
 						</el-carousel>
 					</el-col> -->
-					<el-col :sm="24">
+					<!-- <el-col :sm="24"> -->
 						<el-row :gutter="20" v-for="(item,index) in news_xw" style="margin-bottom: 20px;"
 							justify="start" align="middle">
 							<el-col :gutter="20" :sm="12" v-for="(item_1, index_1) in item">
@@ -174,8 +174,8 @@
 								
 							</el-col> -->
 						</el-row>
-					</el-col>
-				</el-row>
+					<!-- </el-col> -->
+				<!-- </el-row> -->
 			</el-card>
 		</el-col>
 	</el-row>
