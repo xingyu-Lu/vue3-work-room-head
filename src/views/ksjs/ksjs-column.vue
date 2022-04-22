@@ -41,7 +41,7 @@
 	</el-card>
 	
 	<el-row v-if="column_type == 1" :gutter="20" justify="space-around" style="margin-bottom: 20px;" v-for="(item, index) in res_data">
-		<el-col :sm="6" v-for="(item_1, index_1) in item">
+		<el-col :sm="4" v-for="(item_1, index_1) in item">
 			<el-card :body-style="{ padding: '0px' }">
 				<img :src="item_1.url"
 					style="width: 100%; cursor: pointer;" @click="go_detail('/ksjs-column-detail?id=' + item_1.id + '&office_id=' + item_1.office_id + '&column_name=' + item_1.column_name + '&column_type=' + column_type)" />
