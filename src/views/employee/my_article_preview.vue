@@ -18,7 +18,7 @@
 		</template>
 
 		<div style="display: flex; justify-content: center;"><h1 style="font-size: 30px; color: #333; font-weight: bold;" v-html="data.title"></h1></div>
-		<div style="display: flex; justify-content: center; font-size: 12px; color: #5B5B5B; margin-top: 10px;">
+		<div style="display: flex; justify-content: center; font-size: 12px; color: #5B5B5B; margin-top: -10px; margin-bottom: 20px;">
 			发布时间：<span v-html="data.release_time"></span>
 			<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 			访问次数：<span v-html="data.num"></span>
