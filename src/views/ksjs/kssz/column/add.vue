@@ -15,7 +15,7 @@
 	
 	<el-card style="min-height: 100%;">
 		<el-descriptions title="提示">
-		    <el-descriptions-item>栏目类型为仅图：则必须传图片；栏目类型为图文或视频：则内容必须</el-descriptions-item>
+		    <el-descriptions-item>栏目类型为仅图：则必须传图片；栏目类型为图文或视频：则内容必须；排序只对仅图的有效(数字越小越靠前)</el-descriptions-item>
 		</el-descriptions>
 		<el-divider></el-divider>
 		<el-form :model="Form" :rules="rules" ref="Ref" label-width="100px">
