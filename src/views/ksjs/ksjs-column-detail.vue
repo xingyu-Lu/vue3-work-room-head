@@ -19,6 +19,7 @@
 		访问次数：<span v-html="res_data.num"></span>
 	</div>
 	<el-image v-if="res_data.url && column_type == 1" :src="res_data.url" :lazy=true :initial-index="1">
+	<div v-if="res_data && column_type == 1" v-html="res_data.content"></div>
 	</el-image>
 	<span v-if="res_data && column_type == 0" v-html="res_data.content"></span>
 </template>
