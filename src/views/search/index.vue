@@ -74,7 +74,9 @@
 				axios.get('/api/head/searchs/index', {
 					params: {
 						keyword: state.keyword,
-						type: state.type
+						type: state.type,
+						page: state.currentPage,
+						page_size: state.pageSize,
 					}
 				}).then(res => {
 					state.res_data = res.data
