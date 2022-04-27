@@ -176,7 +176,7 @@
 				instance.config.showLinkImg = false
 				instance.config.showLinkImgAlt = false
 				instance.config.showLinkImgHref = false
-				instance.config.uploadImgMaxSize = 2 * 1024 * 1024 // 5M
+				instance.config.uploadImgMaxSize = 1 * 1024 * 1024 // 5M
 				instance.config.uploadImgMaxLength = 1
 				instance.config.uploadImgAccept = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']
 				instance.config.uploadFileName = 'file'
@@ -325,8 +325,8 @@
 
 			const handleBeforeUpload = (file) => {
 				const file_size = (file.size/1024/1024).toFixed(2)
-				if (file_size > 2) {
-					ElMessage.error('上传的图片大于2兆')
+				if (file_size > 1) {
+					ElMessage.error('上传的图片大于1兆')
 					return false
 				}
 				
