@@ -16,7 +16,7 @@
 	<div>
 		<!-- <el-col :sm="4"> -->
 		<div style="display: flex; justify-content: center;">
-			<el-image style="width: 15%;" :src="res_data.img_url"></el-image>
+			<el-image style="width: 15%;" :src="res_data.img_url" :preview-src-list="srcList" :hide-on-click-modal="true"></el-image>
 		</div>
 		<!-- </el-col> -->
 		<!-- <el-col :sm="20"> -->
@@ -70,7 +70,8 @@
 			
 			const state = reactive({
 				office_info: '',
-				res_data: ref('')
+				res_data: ref(''),
+				srcList: [],
 			})
 			
 			onMounted(() => {
@@ -95,6 +96,9 @@
 					}
 				}).then(res => {
 					state.res_data = res.data
+					state.srcList = [
+						res.data.img_url
+					]
 				})
 			}
 			
