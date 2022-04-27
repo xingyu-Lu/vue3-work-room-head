@@ -94,10 +94,11 @@
 			let instance
 			onMounted(() => {
 				instance = new WangEditor(editor.value)
+				instance.config.lineHeights = ['1', '1.15', '1.5', '2', '2.5', '3']
 				instance.config.showLinkImg = false
 				instance.config.showLinkImgAlt = false
 				instance.config.showLinkImgHref = false
-				instance.config.uploadImgMaxSize = 10 * 1024 * 1024 // 5M
+				instance.config.uploadImgMaxSize = 2 * 1024 * 1024 // 5M
 				instance.config.uploadImgMaxLength = 1
 				instance.config.uploadImgAccept = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']
 				instance.config.uploadFileName = 'file'
@@ -129,7 +130,7 @@
 				})
 
 				instance.config.uploadVideoServer = uploadImgsServer
-				instance.config.uploadVideoMaxSize = 1 * 200 * 1024 * 1024 // 1024m
+				instance.config.uploadVideoMaxSize = 1 * 200 * 1024 * 300 // 1024m
 				instance.config.uploadVideoAccept = ['mp4']
 				instance.config.uploadVideoParams = {
 					basket: 'video',

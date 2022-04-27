@@ -14,6 +14,10 @@
 	</el-breadcrumb>
 	
 	<el-card style="min-height: 100%;">
+		<el-descriptions title="提示">
+		    <el-descriptions-item>擅长栏的内容也需要写到医生介绍内容里(展示的时候擅长栏填写的不会单独展示)</el-descriptions-item>
+		</el-descriptions>
+		<el-divider></el-divider>
 		<el-form :model="Form" :rules="rules" ref="Ref" label-width="100px">
 			<el-form-item label="图片" prop="img">
 				<el-upload ref="uploadRef" :action="uploadImgServer" :data="{ basket: 'img' }" :limit="1"
@@ -44,8 +48,16 @@
 				<el-input v-model="Form.name" placeholder="请输入医生名字" type="text"></el-input>
 			</el-form-item>
 			<el-form-item label="职称" prop="professional">
-				<el-input v-model="Form.professional" placeholder="请输入职称" type="text"></el-input>
+				<el-select v-model="Form.professional" placeholder="Select" filterable>
+					<el-option value="主任医师" label="主任医师"></el-option>
+					<el-option value="副主任医师" label="副主任医师"></el-option>
+					<el-option value="主治医师" label="主治医师"></el-option>
+					<el-option value="医师" label="医师"></el-option>
+				</el-select>
 			</el-form-item>
+			<!-- <el-form-item label="职称" prop="professional">
+				<el-input v-model="Form.professional" placeholder="请输入职称" type="text"></el-input>
+			</el-form-item> -->
 			<el-form-item label="擅长" prop="excel">
 				<el-input v-model="Form.excel" placeholder="请输入擅长" type="text"></el-input>
 			</el-form-item>
@@ -166,10 +178,12 @@
 			let instance
 			onMounted(() => {
 				instance = new WangEditor(editor.value)
+				instance.config.lineHeights = ['1', '1.15', '1.5', '2', '2.5', '3']
+				
 				instance.config.showLinkImg = false
 				instance.config.showLinkImgAlt = false
 				instance.config.showLinkImgHref = false
-				instance.config.uploadImgMaxSize = 10 * 1024 * 1024 // 5M
+				instance.config.uploadImgMaxSize = 2 * 1024 * 1024 // 5M
 				instance.config.uploadImgMaxLength = 1
 				instance.config.uploadImgAccept = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']
 				instance.config.uploadFileName = 'file'
@@ -201,7 +215,7 @@
 				})
 
 				instance.config.uploadVideoServer = uploadImgsServer
-				instance.config.uploadVideoMaxSize = 1 * 200 * 1024 * 1024 // 1024m
+				instance.config.uploadVideoMaxSize = 1 * 200 * 1024 * 300 // 1024m
 				instance.config.uploadVideoAccept = ['mp4']
 				instance.config.uploadVideoParams = {
 					basket: 'video',
@@ -306,6 +320,11 @@
 			}
 
 			const handleBeforeUpload = (file) => {
+				const file_size = (file.size/1024/1024).toFixed(2)
+				if (file_size > 2) {
+					ElMessage.error('上传的图片大于2兆')
+					return false
+				}
 				const sufix = file.name.split('.')[1] || ''
 				if (!['jpg', 'jpeg', 'png', 'gif'].includes(sufix)) {
 					ElMessage.error('请上传 jpg、jpeg、png、gif 格式的图片')

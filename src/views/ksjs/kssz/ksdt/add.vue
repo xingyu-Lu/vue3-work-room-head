@@ -151,10 +151,11 @@
 			let instance
 			onMounted(() => {
 				instance = new WangEditor(editor.value)
+				instance.config.lineHeights = ['1', '1.15', '1.5', '2', '2.5', '3']
 				instance.config.showLinkImg = false
 				instance.config.showLinkImgAlt = false
 				instance.config.showLinkImgHref = false
-				instance.config.uploadImgMaxSize = 10 * 1024 * 1024 // 5M
+				instance.config.uploadImgMaxSize = 2 * 1024 * 1024 // 5M
 				instance.config.uploadImgMaxLength = 1
 				instance.config.uploadImgAccept = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']
 				instance.config.uploadFileName = 'file'
@@ -186,7 +187,7 @@
 				})
 
 				instance.config.uploadVideoServer = uploadImgsServer
-				instance.config.uploadVideoMaxSize = 1 * 200 * 1024 * 1024 // 1024m
+				instance.config.uploadVideoMaxSize = 1 * 200 * 1024 * 300 // 1024m
 				instance.config.uploadVideoAccept = ['mp4']
 				instance.config.uploadVideoParams = {
 					basket: 'video',
@@ -290,6 +291,11 @@
 			}
 
 			const handleBeforeUpload = (file) => {
+				const file_size = (file.size/1024/1024).toFixed(2)
+				if (file_size > 2) {
+					ElMessage.error('上传的图片大于2兆')
+					return false
+				}
 				const sufix = file.name.split('.')[1] || ''
 				if (!['jpg', 'jpeg', 'png', 'gif'].includes(sufix)) {
 					ElMessage.error('请上传 jpg、jpeg、png、gif 格式的图片')
