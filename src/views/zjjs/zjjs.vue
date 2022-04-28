@@ -13,6 +13,7 @@
 	</el-breadcrumb>
 
 	<el-select v-model="office_id" placeholder="请选择" filterable style="margin-bottom: 20px; margin-right: 10px;">
+		<el-option value="" label="无"></el-option>
 		<el-option v-for="item in list" :key="item.id" :label="item.name" :value="item.id">
 		</el-option>
 	</el-select>

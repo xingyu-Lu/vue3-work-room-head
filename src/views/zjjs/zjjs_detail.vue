@@ -11,7 +11,7 @@
 	<div>
 		<!-- <el-col :sm="3"> -->
 		<div style="display: flex; justify-content: center;">
-			<el-image style="width: 15%;" :src="res_data.img_url"></el-image>
+			<el-image style="width: 15%;" :src="res_data.img_url" :preview-src-list="srcList" :hide-on-click-modal="true"></el-image>
 		</div>
 		<!-- </el-col> -->
 		<!-- <el-col :sm="21"> -->
@@ -65,7 +65,8 @@
 			} = route.query
 			
 			const state = reactive({
-				res_data: ref('')
+				res_data: ref(''),
+				srcList: [],
 			})
 			
 			onMounted(() => {
@@ -79,6 +80,9 @@
 					}
 				}).then(res => {
 					state.res_data = res.data
+					state.srcList = [
+						res.data.img_url
+					]
 				})
 			}
 			
