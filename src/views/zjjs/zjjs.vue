@@ -13,7 +13,7 @@
 	</el-breadcrumb>
 
 	<el-select v-model="office_id" placeholder="请选择" filterable style="margin-bottom: 20px; margin-right: 10px;">
-		<el-option value="" label="无"></el-option>
+		<el-option value="" label="所有"></el-option>
 		<el-option v-for="item in list" :key="item.id" :label="item.name" :value="item.id">
 		</el-option>
 	</el-select>
@@ -22,7 +22,8 @@
 	<el-row v-for="(item,index) in res_data" :gutter="20" justify="start">
 		<el-col v-for="(item_1, index_1) in item" :sm="4">
 			<el-link :href="'/zjjs_detail?id=' + item_1.id" :underline="false" target="_blank">
-				<el-card :body-style="{ padding: '10px'}" shadow="never">
+				<!-- <el-card :body-style="{ padding: '10px'}" shadow="never"> -->
+				<div>
 					<div class="img" style="overflow: hidden;">
 						<img :src="item_1.img_url" />
 					</div>
@@ -39,7 +40,8 @@
 							</el-link> -->
 						</div>
 					</div>
-				</el-card>
+				</div>
+				<!-- </el-card> -->
 			</el-link>
 		</el-col>
 	</el-row>
