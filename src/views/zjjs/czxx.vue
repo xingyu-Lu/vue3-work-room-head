@@ -12,7 +12,7 @@
 		<el-breadcrumb-item>出诊信息</el-breadcrumb-item>
 	</el-breadcrumb>
 	
-	<h2 style="color: rgb(51, 127, 229); text-align: center;">院本部</h2>
+	<!-- <h2 style="color: rgb(51, 127, 229); text-align: center;">院本部</h2>
 	<el-table :data="res_data" stripe style="width: 100%">
 	    <el-table-column prop="office_name" label="科室名称" />
 		<el-table-column prop="type" label="上下午">
@@ -48,7 +48,9 @@
 		<el-table-column prop="friday" label="周五" />
 		<el-table-column prop="saturday" label="周六" />
 		<el-table-column prop="sunday" label="周日" />
-	</el-table>
+	</el-table> -->
+	
+	<div v-if="res_data" v-html="res_data.content"></div>
 </template>
 
 <script>
@@ -76,7 +78,7 @@
 			
 			const state = reactive({
 				res_data: [],
-				res_data_1: [],
+				// res_data_1: [],
 			})
 			
 			onMounted(() => {
@@ -84,21 +86,17 @@
 			})
 			
 			const get_data = () => {
-				axios.get('/api/head/offices/ksmz', {
-					params: {
-						yq_type: 0
-					}
-				}).then(res => {
+				axios.get('/api/head/offices/ksmz').then(res => {
 					state.res_data = res.data
 				})
 				
-				axios.get('/api/head/offices/ksmz', {
-					params: {
-						yq_type: 1
-					}
-				}).then(res => {
-					state.res_data_1 = res.data
-				})
+				// axios.get('/api/head/offices/ksmz', {
+				// 	params: {
+				// 		yq_type: 1
+				// 	}
+				// }).then(res => {
+				// 	state.res_data_1 = res.data
+				// })
 			}
 			
 			return {
