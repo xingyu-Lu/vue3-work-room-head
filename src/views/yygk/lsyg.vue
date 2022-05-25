@@ -21,7 +21,14 @@
 			<el-row :gutter="20" justify="space-around" style="margin-bottom: 20px;" v-for="(item, index) in res_data.lryz">
 				<el-col :sm="6" v-for="(item_1, index_1) in item">
 					<el-card :body-style="{ padding: '0px' }">
-						<img :src="item_1.img_url" style="width: 100%;" />
+						<!-- <img :src="item_1.img_url" style="width: 100%;" /> -->
+						<el-image
+						      style="width: 100%"
+						      :src="item_1.img_url"
+						      :preview-src-list="res_data.lryz_src"
+						      :initial-index="item_1.id-1"
+						      fit="cover"
+						    />
 						<div style="padding: 14px; line-height: 36px; font-size: 14px;">
 							<div style="display: flex; justify-content: space-around">
 								<div style="list-style: none;">
@@ -37,8 +44,15 @@
 			<el-row :gutter="20" justify="space-around" style="margin-bottom: 20px;" v-for="(item, index) in res_data.lszp">
 				<el-col :sm="6" v-for="(item_1, index_1) in item">
 					<el-card :body-style="{ padding: '0px' }">
-						<img :src="item_1.img_url"
-							style="width: 100%;" />
+						<!-- <img :src="item_1.img_url"
+							style="width: 100%;" /> -->
+							<el-image
+							      style="width: 100%"
+							      :src="item_1.img_url"
+							      :preview-src-list="res_data.lszp_src"
+							      :initial-index="item_1.id-1"
+							      fit="cover"
+							    />
 						<div style="padding: 14px; line-height: 36px; font-size: 14px;">
 							<div style="display: flex; justify-content: space-around">
 								<div style="list-style: none;">
@@ -72,7 +86,9 @@
 				res_data: {
 					lsyg: '',
 					lryz: '',
+					lryz_src: [],
 					lszp: [],
+					lszp_src: [],
 				}
 			})
 			
@@ -84,7 +100,9 @@
 				axios.get('/api/head/briefs/lsyg').then(res => {
 					state.res_data.lsyg = res.data.history
 					state.res_data.lryz = res.data.history_leader
+					state.res_data.lryz_src = res.data.src_list.history_leader
 					state.res_data.lszp = res.data.history_pic
+					state.res_data.lszp_src = res.data.src_list.history_pic
 				})
 			}
 			
