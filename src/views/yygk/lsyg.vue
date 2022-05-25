@@ -28,6 +28,7 @@
 						      :preview-src-list="res_data.lryz_src"
 						      :initial-index="item_1.id-1"
 						      fit="cover"
+							  :hide-on-click-modal=true
 						    />
 						<div style="padding: 14px; line-height: 36px; font-size: 14px;">
 							<div style="display: flex; justify-content: space-around">
@@ -52,6 +53,7 @@
 							      :preview-src-list="res_data.lszp_src"
 							      :initial-index="item_1.id-1"
 							      fit="cover"
+								  :hide-on-click-modal=true
 							    />
 						<div style="padding: 14px; line-height: 36px; font-size: 14px;">
 							<div style="display: flex; justify-content: space-around">
