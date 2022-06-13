@@ -4,14 +4,14 @@
 		<el-col :span="24">
 			<div
 				style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
-				<strong>医院新闻</strong>
+				<strong>新闻动态</strong>
 			</div>
 		</el-col>
 	</el-row>
 
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item>医院新闻</el-breadcrumb-item>
+		<el-breadcrumb-item>新闻动态</el-breadcrumb-item>
 	</el-breadcrumb>
 
 	<el-card class="box-card">

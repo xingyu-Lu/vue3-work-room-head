@@ -6,51 +6,53 @@
 			<el-header style="width: 100%; margin: 0 auto;">
 				<el-menu :default-active="currentPath" :router=true mode="horizontal">
 					<el-menu-item index="/introduce">首页</el-menu-item>
-					<el-sub-menu index="2">
+					<el-menu-item index="/yyjj">工作室简介</el-menu-item>
+<!-- 					<el-sub-menu index="2">
 						<template #title>医院概况</template>
 						<el-menu-item index="/yyjj">医院简介</el-menu-item>
 						<el-menu-item index="/ldtd">领导团队</el-menu-item>
 						<el-menu-item index="/yywh">医院文化</el-menu-item>
 						<el-menu-item index="/lsyg">历史沿革</el-menu-item>
 						<el-menu-item index="/zzjg">组织机构</el-menu-item>
-						<!-- <el-menu-item index="/yyry">医院荣誉</el-menu-item>
-						<el-menu-item index="/wlzw">未来展望</el-menu-item> -->
-					</el-sub-menu>
-					<el-sub-menu index="3">
+						<el-menu-item index="/yyry">医院荣誉</el-menu-item>
+						<el-menu-item index="/wlzw">未来展望</el-menu-item>
+					</el-sub-menu> -->
+					<el-menu-item index="/yyxw">新闻动态</el-menu-item>
+					<!-- <el-sub-menu index="3">
 						<template #title>新闻动态</template>
 						<el-menu-item index="/yyxw">医院新闻</el-menu-item>
 						<el-menu-item index="/spxw">视频新闻</el-menu-item>
 						<el-menu-item index="/yygg">医院公告</el-menu-item>
-					</el-sub-menu>
-					<el-menu-item index="/ksjs">科室介绍</el-menu-item>
+					</el-sub-menu> -->
+					<el-menu-item index="/ksjs">部门介绍</el-menu-item>
 					<el-sub-menu index="4">
 						<template #title>专家介绍</template>
 						<el-menu-item index="/zjjs">专家介绍</el-menu-item>
 						<el-menu-item index="/expert-czxx">出诊信息</el-menu-item>
 					</el-sub-menu>
 					<!-- <el-menu-item index="/kyjx">科研教学</el-menu-item> -->
-					<el-sub-menu index="5">
+					<!-- <el-sub-menu index="5">
 						<template #title>科研教学</template>
 						<el-menu-item index="/kydt">科研动态</el-menu-item>
 						<el-menu-item index="/xkjs">学科建设</el-menu-item>
 						<el-menu-item index="/jxjy">继续教育</el-menu-item>
-					</el-sub-menu>
+					</el-sub-menu> -->
 					<el-sub-menu index="6">
 						<template #title>患者服务</template>
-						<el-menu-item index="/mzlc">门诊流程</el-menu-item>
-						<el-menu-item index="/zylc">住院流程</el-menu-item>
+						<el-menu-item index="/mzlc">挂号方式</el-menu-item>
+						<el-menu-item index="/zylc">住院方式</el-menu-item>
 						<!-- <el-menu-item index="/czxx">出诊信息</el-menu-item> -->
-						<el-menu-item index="/jcxz">检查须知</el-menu-item>
-						<el-menu-item index="/jktj">健康体检</el-menu-item>
-						<el-menu-item index="/ybzn">医保指南</el-menu-item>
-						<el-menu-item index="/azb">艾滋病暴露前后预防</el-menu-item>
+						<!-- <el-menu-item index="/jcxz">检查须知</el-menu-item> -->
+						<!-- <el-menu-item index="/jktj">健康体检</el-menu-item> -->
+						<!-- <el-menu-item index="/ybzn">医保指南</el-menu-item> -->
+						<!-- <el-menu-item index="/azb">艾滋病暴露前后预防</el-menu-item> -->
 						<el-menu-item index="/lyfb">楼宇分布</el-menu-item>
 						<el-menu-item index="/lxwm">联系我们</el-menu-item>
 						<!-- <el-menu-item index="/yzxx">院长信箱</el-menu-item> -->
-						<el-menu-item index="/hlyd">护理园地</el-menu-item>
-						<el-menu-item index="/jkcj">健康促进</el-menu-item>
+						<!-- <el-menu-item index="/hlyd">护理园地</el-menu-item> -->
+						<el-menu-item index="/jkcj">健康科普</el-menu-item>
 					</el-sub-menu>
-					<el-sub-menu index="7">
+					<!-- <el-sub-menu index="7">
 						<template #title>党建之窗</template>
 						<el-menu-item index="/dwgl">党务管理</el-menu-item>
 						<el-menu-item index="/dyjy">党员教育</el-menu-item>
@@ -58,12 +60,12 @@
 						<el-menu-item index="/ygzj">员工之家</el-menu-item>
 						<el-menu-item index="/ydyf">医德医风</el-menu-item>
 						<el-menu-item index="/qnjyz">青年加油站</el-menu-item>
-					</el-sub-menu>
-					<el-sub-menu index="8">
+					</el-sub-menu> -->
+					<!-- <el-sub-menu index="8">
 						<template #title>人才招聘</template>
 						<el-menu-item index="/zpxx">招聘信息</el-menu-item>
 						<el-menu-item index="/yplc">应聘流程</el-menu-item>
-					</el-sub-menu>
+					</el-sub-menu> -->
 					<!-- <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;"> -->
 						<!-- <el-input placeholder="请输入~" class="input-with-select">
 							<template #append>
@@ -71,12 +73,12 @@
 							</template>
 						</el-input> -->
 					<!-- </div> -->
-					<el-menu-item index="/employee-article">员工之声</el-menu-item>
+					<!-- <el-menu-item index="/employee-article">员工之声</el-menu-item> -->
 					<el-menu-item index="/login" v-if="is_login == false">登录</el-menu-item>
 					<el-menu-item index="/register" v-if="is_login == false">注册</el-menu-item>
 					<el-menu-item index="" v-if="is_login == true" @click="logout">退出登录</el-menu-item>
 					<el-menu-item index="/change-password" v-if="is_login == true">修改密码</el-menu-item>
-					<el-menu-item index="/employee-my-file" v-if="is_login == true">我的云盘</el-menu-item>
+					<!-- <el-menu-item index="/employee-my-file" v-if="is_login == true">我的云盘</el-menu-item> -->
 					<!-- <el-menu-item index="/update_log">更新记录</el-menu-item> -->
 					<div style="margin-top: 10px; margin-left: 10px; width: 210px;">
 						<el-input v-model="input3" placeholder="请输入关键词" class="input-with-select" size="default">

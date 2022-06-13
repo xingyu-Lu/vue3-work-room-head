@@ -9,8 +9,8 @@
 	
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item :to="{ path: '/kssz', query: {id: id} }">科室设置</el-breadcrumb-item>
-		<el-breadcrumb-item>科室成员</el-breadcrumb-item>
+		<el-breadcrumb-item :to="{ path: '/kssz', query: {id: id} }">部门设置</el-breadcrumb-item>
+		<el-breadcrumb-item>部门成员</el-breadcrumb-item>
 	</el-breadcrumb>
 	
 	<el-card style="min-height: 100%;">

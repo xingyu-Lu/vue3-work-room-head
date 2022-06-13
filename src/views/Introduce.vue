@@ -130,7 +130,7 @@
 			<el-card class="box-card" shadow="hover">
 				<template #header>
 					<div class="card-header">
-						<strong>医院新闻</strong>
+						<strong>新闻动态</strong>
 						<el-link style="font-size: 12px;" href="/yyxw" target="_blank" type="primary" :underline="false"
 							:icon="Plus">更多</el-link>
 					</div>
@@ -182,7 +182,7 @@
 		<el-skeleton :rows="5" animated />
 	</el-row>
 
-	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="start">
+	<!-- <el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="start">
 		<el-col :sm="12">
 			<el-card class="box-card" shadow="hover">
 				<template #header>
@@ -194,7 +194,7 @@
 				</template>
 				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in news_gg"
 					justify="space-between" align="top">
-					<!-- <el-col :md="4" v-if="item.img_url">
+					<el-col :md="4" v-if="item.img_url">
 						<div style="display: flex; justify-content: start;">
 							<el-link :underline="false" :href="'/yygg_detail?id=' + item.id" target="_blank">
 								<el-image v-if="item.img_url" style="width: 100%;" :src="item.img_url"
@@ -202,7 +202,7 @@
 								</el-image>
 							</el-link>
 						</div>
-					</el-col> -->
+					</el-col>
 					<el-col :sm="24">
 						<div
 							style="line-height: 16px; margin-left: 20px; display: flex; justify-content: space-between;">
@@ -226,7 +226,7 @@
 				</template>
 				<el-row :gutter="20" style="margin-bottom: 20px;" v-for="(item,index) in job" justify="space-between"
 					align="top">
-					<!-- <el-col :md="4" v-if="item.img_url">
+					<el-col :md="4" v-if="item.img_url">
 						<div style="display: flex; justify-content: start;">
 							<el-link :underline="false" :href="'/zpxx_detail?id=' + item.id" target="_blank">
 								<el-image v-if="item.img_url" style="width: 100%;" :src="item.img_url"
@@ -234,7 +234,7 @@
 								</el-image>
 							</el-link>
 						</div>
-					</el-col> -->
+					</el-col>
 					<el-col :sm="24">
 						<div
 							style="line-height: 16px; margin-left: 20px; display: flex; justify-content: space-between;">
@@ -250,20 +250,20 @@
 	</el-row>
 	<el-row v-else>
 		<el-skeleton :rows="5" animated />
-	</el-row>
+	</el-row> -->
 	
 	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="space-around">
 		<el-col :sm="24">
 			<el-card class="box-card" shadow="hover">
 				<template #header>
 					<div class="card-header">
-						<strong>科室导航</strong>
+						<strong>部门导航</strong>
 						<el-link style="font-size: 12px;" href="/ksjs" target="_blank" type="primary" :underline="false"
 							:icon="Plus">更多</el-link>
 					</div>
 				</template>
 				
-				<strong>临床部门</strong>
+				<!-- <strong>临床部门</strong> -->
 				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="start" v-for="(item, index) in office_arr_0">
 					<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
 						<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
@@ -271,22 +271,22 @@
 						<!-- </el-card> -->
 					</el-col>
 				</el-row>
-				<strong>医技部门</strong>
+				<!-- <strong>医技部门</strong>
 				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="start" v-for="(item, index) in office_arr_1">
 					<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
-						<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
+						<el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">
 								<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
-						<!-- </el-card> -->
+						</el-card>
 					</el-col>
 				</el-row>
 				<strong>保障部门</strong>
 				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="start" v-for="(item, index) in office_arr_2">
 					<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
-						<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
+						<el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">
 								<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
-						<!-- </el-card> -->
+						</el-card>
 					</el-col>
-				</el-row>
+				</el-row> -->
 	
 				<!-- <el-row v-for="(item,index) in office_arr" justify=" start"
 					style="color: #409EFF; line-height: 38px; list-style: none;">
@@ -357,27 +357,27 @@
 		<el-row :gutter="20" justify="space-around" style="margin-bottom: 20px;">
 			<el-col :sm="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/mzlc')">
+					style="justify-content: center; display: flex; cursor: pointer; border-style: none;" @click="go_detail('/mzlc')">
 					<img src="/src/assets/img/link_01.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
 						<el-link style="font-size: 12px;" href="/mzlc" target="_blank" type="primary" :underline="false"
-							:icon="Plus">门诊流程</el-link>
+							:icon="Plus">挂号方式</el-link>
 					</div>
 				</el-card>
 			</el-col>
 			<el-col :sm="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/zylc')">
+					style="justify-content: center; display: flex; cursor: pointer; border-style: none;" @click="go_detail('/zylc')">
 					<img src="/src/assets/img/link_02.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
 						<el-link style="font-size: 12px;" href="/zylc" target="_blank" type="primary" :underline="false"
-							:icon="Plus">住院流程</el-link>
+							:icon="Plus">住院方式</el-link>
 					</div>
 				</el-card>
 			</el-col>
 			<el-col :sm="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/expert-czxx')">
+					style="justify-content: center; display: flex; cursor: pointer; border-style: none;" @click="go_detail('/expert-czxx')">
 					<img src="/src/assets/img/link_03.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
 						<el-link style="font-size: 12px;" href="/expert-czxx" target="_blank" type="primary" :underline="false"
@@ -387,6 +387,16 @@
 			</el-col>
 			<el-col :sm="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
+					style="justify-content: center; display: flex; cursor: pointer; border-style: none;" @click="go_detail('/lxwm')">
+					<img src="/src/assets/img/link_06.png" style="width: 100%;" />
+					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
+						<el-link style="font-size: 12px;" href="/lxwm" target="_blank" type="primary" :underline="false"
+							:icon="Plus">联系我们</el-link>
+					</div>
+				</el-card>
+			</el-col>
+			<!-- <el-col :sm="4">
+				<el-card :body-style="{ padding: '0px' }" shadow="hover"
 					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/azb')">
 					<img src="/src/assets/img/link_04.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
@@ -394,10 +404,10 @@
 							:icon="Plus">艾滋病</el-link>
 					</div>
 				</el-card>
-			</el-col>
+			</el-col> -->
 			<el-col :sm="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
-					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/lyfb')">
+					style="justify-content: center; display: flex; cursor: pointer; border-style: none;" @click="go_detail('/lyfb')">
 					<img src="/src/assets/img/link_05.png" style="width: 100%;" />
 					<div style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
 						<el-link style="font-size: 12px;" href="/lyfb" target="_blank" type="primary" :underline="false"
@@ -406,7 +416,7 @@
 				</el-card>
 			</el-col>
 		</el-row>
-		<el-row :gutter="20" justify="space-around" style="margin-bottom: 20px;">
+		<!-- <el-row :gutter="20" justify="space-around" style="margin-bottom: 20px;">
 			<el-col :sm="4">
 				<el-card :body-style="{ padding: '0px' }" shadow="hover"
 					style="justify-content: center; display: flex; cursor: pointer;" @click="go_detail('/lxwm')">
@@ -457,7 +467,7 @@
 					</div>
 				</el-card>
 			</el-col>
-		</el-row>
+		</el-row> -->
 	</el-card>
 	<el-row v-else>
 		<el-skeleton :rows="5" animated />
@@ -466,7 +476,7 @@
 	<el-card v-if="flag" style="margin-top: 20px; margin-bottom: 20px;" shadow="hover">
 		<template #header>
 			<div class="card-header">
-				<strong>健康促进</strong>
+				<strong>健康科普</strong>
 				<el-link style="font-size: 12px;" href="/jkcj" target="_blank" type="primary" :underline="false"
 					:icon="Plus">更多</el-link>
 			</div>

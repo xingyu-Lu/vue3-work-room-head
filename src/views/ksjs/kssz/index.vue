@@ -9,7 +9,7 @@
 	
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item>科室设置</el-breadcrumb-item>
+		<el-breadcrumb-item>部门设置</el-breadcrumb-item>
 	</el-breadcrumb>
 	
 <!-- 	<el-row :gutter="24" justify="space-between" align="middle" style="line-height: 36px; margin-bottom: 20px;">

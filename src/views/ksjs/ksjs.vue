@@ -2,14 +2,14 @@
 	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
 		<el-col :span="24">
 			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
-				<strong>科室设置</strong>
+				<strong>部门设置</strong>
 			</div>
 		</el-col>
 	</el-row>
 	
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item>科室设置</el-breadcrumb-item>
+		<el-breadcrumb-item>部门设置</el-breadcrumb-item>
 	</el-breadcrumb>
 	
 	<span style="color: #999;">索引：</span>
@@ -21,34 +21,34 @@
 	</el-space>
 	
 	<div v-if="res_data && res_data.index == 'all'">
-		<strong>临床部门</strong>
-		<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="flex-start" v-for="(item, index) in res_data.office_0">
+		<!-- <strong>临床部门</strong> -->
+		<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="start" v-for="(item, index) in res_data.office_0">
 			<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
 				<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
 						<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
 				<!-- </el-card> -->
 			</el-col>
 		</el-row>
-		<strong>医技部门</strong>
+		<!-- <strong>医技部门</strong>
 		<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="flex-start" v-for="(item, index) in res_data.office_1">
 			<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
-				<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
+				<el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">
 						<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
-				<!-- </el-card> -->
+				</el-card>
 			</el-col>
-		</el-row>
-		<strong>保障部门</strong>
+		</el-row> -->
+		<!-- <strong>保障部门</strong>
 		<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="flex-start" v-for="(item, index) in res_data.office_2">
 			<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
-				<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
+				<el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">
 						<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
-				<!-- </el-card> -->
+				</el-card>
 			</el-col>
-		</el-row>
+		</el-row> -->
 	</div>
 	
 	<div v-if="res_data && res_data.index != 'all'">
-		<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 20px;" justify="flex-start" v-for="(item, index) in res_data.search">
+		<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 20px;" justify="start" v-for="(item, index) in res_data.search">
 			<el-col :sm="4" v-for="(item_1, index_1) in item">
 				<!-- <el-card shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
 					<!-- <template #header> -->

@@ -2,14 +2,14 @@
 	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
 		<el-col :span="24">
 			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
-				<strong>健康促进</strong>
+				<strong>健康科普</strong>
 			</div>
 		</el-col>
 	</el-row>
 	
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item>健康促进</el-breadcrumb-item>
+		<el-breadcrumb-item>健康科普</el-breadcrumb-item>
 	</el-breadcrumb>
 	
 	<el-card>

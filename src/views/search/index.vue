@@ -5,9 +5,9 @@
 			<div>
 				<el-select v-model="type" placeholder="请选择" filterable>
 					<el-option value="0" label="新闻"></el-option>
-					<el-option value="1" label="公告"></el-option>
-					<el-option value="2" label="专家"></el-option>
-					<el-option value="3" label="招聘"></el-option>
+					<!-- <el-option value="1" label="公告"></el-option> -->
+					<!-- <el-option value="2" label="专家"></el-option> -->
+					<!-- <el-option value="3" label="招聘"></el-option> -->
 				</el-select>
 				<el-input style="width: 200px; margin-top: 20px; margin-right: 10px; margin-left: 10px;" placeholder="请输入" v-model="keyword" :clearable=true />
 				<el-button type="primary" @click="handleOption">搜索</el-button>

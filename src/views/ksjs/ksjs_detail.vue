@@ -9,7 +9,7 @@
 
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
-		<el-breadcrumb-item>科室介绍</el-breadcrumb-item>
+		<el-breadcrumb-item>部门介绍</el-breadcrumb-item>
 	</el-breadcrumb>
 	
 	<!-- <el-row :gutter="24" justify="space-around" align="middle" style="line-height: 36px; margin-bottom: 20px;">
@@ -45,7 +45,7 @@
 	
 	<el-row v-if="is_login && is_self" :gutter="24" justify="start" align="middle" style="line-height: 36px; margin-bottom: 20px;">
 		<el-col :sm="3">
-			<el-button type="primary" @click="go_detail('/kssz?id=' + id)">科室设置</el-button>
+			<el-button type="primary" @click="go_detail('/kssz?id=' + id)">部门设置</el-button>
 		</el-col>
 	</el-row>
 
