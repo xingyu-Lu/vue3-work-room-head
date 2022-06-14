@@ -4,7 +4,7 @@
 			<el-card>
 				<div
 					style="justify-content: center; display: flex; font-size: 28px; color: #1BAEAE; font-weight: bold; margin-bottom: 20px;">
-					宜宾市第三人民医院</div>
+					名医工作室</div>
 				<el-form label-position="top" :rules="rules" :model="loginModel" ref="loginRef">
 					<el-form-item label="姓名" prop="name">
 						<el-input type="text" v-model.trim="loginModel.name" autocomplete="off" placeholder="请输入姓名">

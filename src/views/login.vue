@@ -2,7 +2,7 @@
 	<el-row style="min-height: 100%;" justify="space-around" align="middle">
 		<el-col :sm="7">
 			<el-card>
-				<div style="justify-content: center; display: flex; font-size: 28px; color: #1BAEAE; font-weight: bold; margin-bottom: 20px;">宜宾市第三人民医院</div>
+				<div style="justify-content: center; display: flex; font-size: 28px; color: #1BAEAE; font-weight: bold; margin-bottom: 20px;">名医工作室</div>
 				<el-form label-position="top" :rules="rules" :model="loginModel" ref="loginRef">
 					<el-form-item label="手机号" prop="mobile">
 						<el-input type="text" v-model.trim="loginModel.mobile" autocomplete="off"></el-input>
