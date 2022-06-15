@@ -74,6 +74,8 @@
 						</el-input> -->
 					<!-- </div> -->
 					<!-- <el-menu-item index="/employee-article">员工之声</el-menu-item> -->
+					<el-menu-item index="/mzlc" v-if="is_login == false">挂号方式</el-menu-item>
+					<el-menu-item index="/zylc" v-if="is_login == false">住院方式</el-menu-item>
 					<el-menu-item index="/login" v-if="is_login == false">登录</el-menu-item>
 					<el-menu-item index="/register" v-if="is_login == false">注册</el-menu-item>
 					<el-menu-item index="" v-if="is_login == true" @click="logout">退出登录</el-menu-item>
