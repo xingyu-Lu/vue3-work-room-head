@@ -39,8 +39,8 @@
 					</el-sub-menu> -->
 					<el-sub-menu index="6">
 						<template #title>患者服务</template>
-						<el-menu-item index="/mzlc">挂号方式</el-menu-item>
-						<el-menu-item index="/zylc">住院方式</el-menu-item>
+						<!-- <el-menu-item index="/mzlc">挂号方式</el-menu-item> -->
+						<!-- <el-menu-item index="/zylc">住院方式</el-menu-item> -->
 						<!-- <el-menu-item index="/czxx">出诊信息</el-menu-item> -->
 						<!-- <el-menu-item index="/jcxz">检查须知</el-menu-item> -->
 						<!-- <el-menu-item index="/jktj">健康体检</el-menu-item> -->
