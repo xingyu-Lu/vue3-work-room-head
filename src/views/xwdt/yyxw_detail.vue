@@ -2,14 +2,14 @@
 	<el-row justify="center" align="middle" style="background: linear-gradient(135deg, rgb(36 205 103 / 95%) 0%, rgb(56 150 226 / 95%) 100% ); margin-bottom: 20px; margin-top: -10px;">
 		<el-col :span="24">
 			<div style="float: right; height: 150px; align-items: center; display: flex; font-size: 36px; letter-spacing: 0.2em; color: #fff;">
-				<strong>医院新闻</strong>
+				<strong>新闻动态</strong>
 			</div>
 		</el-col>
 	</el-row>
 
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">三江名医工作室</el-breadcrumb-item>
-		<el-breadcrumb-item>医院新闻</el-breadcrumb-item>
+		<el-breadcrumb-item>新闻动态</el-breadcrumb-item>
 	</el-breadcrumb>
 	
 	<div style="display: flex; justify-content: center;"><h1 style="font-size: 30px; color: #333; font-weight: bold;" v-html="res_data.title"></h1></div>

@@ -9,7 +9,7 @@
 	
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
 		<el-breadcrumb-item :to="{ path: '/' }">三江名医工作室</el-breadcrumb-item>
-		<el-breadcrumb-item>科室医生</el-breadcrumb-item>
+		<el-breadcrumb-item>部门医生</el-breadcrumb-item>
 	</el-breadcrumb>
 	
 	<el-row v-for="(item, index) in column_list" :gutter="20" justify="start" align="middle" style="line-height: 36px; margin-bottom: 20px;">
