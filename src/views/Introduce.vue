@@ -1,9 +1,9 @@
 <template>
 	<el-row v-if="flag" style="margin-bottom: 20px;" justify="center">
 		<el-col :sm="12">
-			<el-carousel>
+			<el-carousel height="450">
 				<el-carousel-item v-for="item in news_rotate" :key="item" indicator-position="none">
-					<el-image style="height: 100%; cursor: pointer;" fit="fill" :key=item.img_url
+					<el-image style="display: flex; justify-content: center; cursor: pointer;" fit="fill" :key=item.img_url
 						:src=item.img_url @click="go_detail('/yyxw_detail?id=' + item.id)">
 					</el-image>
 				</el-carousel-item>
