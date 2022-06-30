@@ -10,7 +10,7 @@
 	</el-row>
 
 	<el-breadcrumb separator="/" style="margin-bottom: 20px;">
-		<el-breadcrumb-item :to="{ path: '/' }">宜宾市第三人民医院</el-breadcrumb-item>
+		<el-breadcrumb-item :to="{ path: '/' }">三江名医工作室</el-breadcrumb-item>
 		<el-breadcrumb-item>联系我们</el-breadcrumb-item>
 	</el-breadcrumb>
 

@@ -1,9 +1,9 @@
 <template>
-	<el-row v-if="flag" style="margin-bottom: 20px;">
-		<el-col :sm="24">
+	<el-row v-if="flag" style="margin-bottom: 20px;" justify="center">
+		<el-col :sm="12">
 			<el-carousel height="450px">
 				<el-carousel-item v-for="item in news_rotate" :key="item" indicator-position="none">
-					<el-image style="width: 100%; height: 100%; cursor: pointer;" fit="fill" :key=item.img_url
+					<el-image style="height: 100%; cursor: pointer;" fit="fill" :key=item.img_url
 						:src=item.img_url @click="go_detail('/yyxw_detail?id=' + item.id)">
 					</el-image>
 				</el-carousel-item>
@@ -22,6 +22,60 @@
 	<el-row v-else>
 		<el-skeleton :rows="5" animated />
 	</el-row>
+	
+	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="space-around">
+		<el-col :sm="24">
+			<el-card class="box-card" shadow="hover">
+				<template #header>
+					<div class="card-header">
+						<strong>部门导航</strong>
+						<el-link style="font-size: 12px;" href="/ksjs" target="_blank" type="primary" :underline="false"
+							:icon="Plus">更多</el-link>
+					</div>
+				</template>
+				
+				<!-- <strong>临床部门</strong> -->
+				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="start" v-for="(item, index) in office_arr_0">
+					<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
+						<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
+								<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
+						<!-- </el-card> -->
+					</el-col>
+				</el-row>
+				<!-- <strong>医技部门</strong>
+				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="start" v-for="(item, index) in office_arr_1">
+					<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
+						<el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">
+								<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
+						</el-card>
+					</el-col>
+				</el-row>
+				<strong>保障部门</strong>
+				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="start" v-for="(item, index) in office_arr_2">
+					<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
+						<el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">
+								<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
+						</el-card>
+					</el-col>
+				</el-row> -->
+	
+				<!-- <el-row v-for="(item,index) in office_arr" justify=" start"
+					style="color: #409EFF; line-height: 38px; list-style: none;">
+					<li v-for="(item_1, index_1) in item">
+						<el-button>
+							<el-link :href="'/ksjs_detail?id=' + item_1.id" target="_blank" :underline="false">
+								{{ item_1.name }}
+							</el-link>
+						</el-button>
+					</li>
+				</el-row> -->
+			</el-card>
+		</el-col>
+	</el-row>
+	<el-row v-else>
+		<el-skeleton :rows="5" animated />
+	</el-row>
+	
 	<!-- <el-card class="account-container">
 		<el-row>
 			<el-col>
@@ -130,7 +184,7 @@
 			<el-card class="box-card" shadow="hover">
 				<template #header>
 					<div class="card-header">
-						<strong>新闻动态</strong>
+						<strong>工作室动态</strong>
 						<el-link style="font-size: 12px;" href="/yyxw" target="_blank" type="primary" :underline="false"
 							:icon="Plus">更多</el-link>
 					</div>
@@ -251,59 +305,6 @@
 	<el-row v-else>
 		<el-skeleton :rows="5" animated />
 	</el-row> -->
-	
-	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="space-around">
-		<el-col :sm="24">
-			<el-card class="box-card" shadow="hover">
-				<template #header>
-					<div class="card-header">
-						<strong>部门导航</strong>
-						<el-link style="font-size: 12px;" href="/ksjs" target="_blank" type="primary" :underline="false"
-							:icon="Plus">更多</el-link>
-					</div>
-				</template>
-				
-				<!-- <strong>临床部门</strong> -->
-				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="start" v-for="(item, index) in office_arr_0">
-					<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
-						<!-- <el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)"> -->
-								<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
-						<!-- </el-card> -->
-					</el-col>
-				</el-row>
-				<!-- <strong>医技部门</strong>
-				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="start" v-for="(item, index) in office_arr_1">
-					<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
-						<el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">
-								<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
-						</el-card>
-					</el-col>
-				</el-row>
-				<strong>保障部门</strong>
-				<el-row :gutter="20" style="margin-bottom: 10px; margin-top: 10px;" justify="start" v-for="(item, index) in office_arr_2">
-					<el-col :sm="4" :md="4" v-for="(item_1, index_1) in item">
-						<el-card body-style="border" shadow="hover" style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">
-								<strong style="margin-bottom: 20px; cursor: pointer; color: #409eff;" @click="go_detail('/ksjs_detail?id=' + item_1.id)">{{ item_1.name }}</strong>
-						</el-card>
-					</el-col>
-				</el-row> -->
-	
-				<!-- <el-row v-for="(item,index) in office_arr" justify=" start"
-					style="color: #409EFF; line-height: 38px; list-style: none;">
-					<li v-for="(item_1, index_1) in item">
-						<el-button>
-							<el-link :href="'/ksjs_detail?id=' + item_1.id" target="_blank" :underline="false">
-								{{ item_1.name }}
-							</el-link>
-						</el-button>
-					</li>
-				</el-row> -->
-			</el-card>
-		</el-col>
-	</el-row>
-	<el-row v-else>
-		<el-skeleton :rows="5" animated />
-	</el-row>
 	
 	<el-row v-if="flag" :gutter="20" style="margin-bottom: 20px;" justify="space-around">
 		<el-col :sm="24">

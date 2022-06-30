@@ -206,6 +206,10 @@
 	section {
 		min-height: 100%;
 	}
+	
+	:root {
+		--el-color-primary: #3399CC;
+	}
 
 	/* :root {
 		--el-color-primary: #303133;
