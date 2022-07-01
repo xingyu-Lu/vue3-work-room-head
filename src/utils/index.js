@@ -33,7 +33,7 @@ export const uploadImgsServer = config[import.meta.env.MODE].baseUrl + '/api/hea
 export const pathMap = {
 	login: '登录',
 	register: '注册',
-	introduce: '名医工作室',
+	introduce: '三江名医工作室',
 	// 医院概况
 	yyjj: '工作室简介',
 	ldtd: '领导团队',
@@ -44,7 +44,7 @@ export const pathMap = {
 	wlzw: '未来展望',
 	// 新闻动态
 	yyxw: '新闻动态',
-	yyxw_detail: '医院新闻',
+	yyxw_detail: '新闻动态',
 	spxw: '视频新闻',
 	spxw_detail: '视频新闻',
 	yygg: '医院公告',
