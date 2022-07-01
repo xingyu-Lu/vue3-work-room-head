@@ -474,7 +474,7 @@
 		<el-skeleton :rows="5" animated />
 	</el-row>
 
-	<el-card v-if="flag" style="margin-top: 20px; margin-bottom: 20px;" shadow="hover">
+	<!-- <el-card v-if="flag" style="margin-top: 20px; margin-bottom: 20px;" shadow="hover">
 		<template #header>
 			<div class="card-header">
 				<strong>健康科普</strong>
@@ -503,7 +503,7 @@
 	</el-card>
 	<el-row v-else>
 		<el-skeleton :rows="5" animated />
-	</el-row>
+	</el-row> -->
 </template>
 
 <script>
