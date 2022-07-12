@@ -139,8 +139,8 @@
 					</el-col>
 				</el-row>
 
-				<!-- <el-row :gutter="24" style="background: #516071; color: #CCC;">
-					<el-col :sm="4" style="display: flex; justify-content: center; align-items: center;">
+				<el-row justify="center" style="background: #516071; color: #CCC;">
+					<!-- <el-col :sm="4" style="display: flex; justify-content: center; align-items: center;">
 						<div style="margin-right: 40px;">
 							<a href="http://bszs.conac.cn/sitename?method=show&id=1354A7487A5C32CFE053012819ACA802"
 								target="_blank">
@@ -154,28 +154,28 @@
 								<img style="height: 70px;" src="/src/assets/img/police.png" alt="">
 							</a>
 						</div>
-					</el-col>
-					<el-col :sm="7" style="justify-content: center; align-items: center;">
+					</el-col> -->
+					<el-col span="24" style="justify-content: center; align-items: center;">
 						<ul style="list-style: none; line-height: 36px;">
-							<li>版权所有：@宜宾市第三人民医院</li>
-							<li>蜀ICP备12031661号-1</li>
-							<li><a href="https://beian.miit.gov.cn/" type="info" target="_blank"
+							<li>版权所有：@三江名医工作室</li>
+							<li><a style="color: #ccc; text-decoration: none;" href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备12031661号-3</a></li>
+							<!-- <li><a href="https://beian.miit.gov.cn/" type="info" target="_blank"
 									style="color: #ccc; text-decoration: none;">宜网备案号：51150002020011</a></li>
 							<li><img style="width: 20px; height: 20px;" src="/src/assets/img/c_police.png" alt=""><a
 									href="http://www.beian.gov.cn/portal/registerSy%20stemInfo?%20recordcode=51150202000042"
 									target="_blank" style="color: #ccc; text-decoration: none;">川公网安备51150202000042号</a>
-							</li>
+							</li> -->
 						</ul>
 					</el-col>
-					<el-col :sm="7" style="justify-content: center; align-items: center;">
+					<!-- <el-col :sm="7" style="justify-content: center; align-items: center;">
 						<ul style="list-style: none; line-height: 36px;">
 							<li>医院邮箱：ybsdsrmyy@163.com</li>
 							<li>联系电话：0831-8224806</li>
 							<li>医院地址：四川省宜宾市翠屏区将军街58号</li>
 							<li>邮编：644000</li>
 						</ul>
-					</el-col>
-					<el-col :sm="6" style="display: flex; justify-content: center; align-items: center;">
+					</el-col> -->
+<!-- 					<el-col :sm="6" style="display: flex; justify-content: center; align-items: center;">
 						<div style="margin-right: 40px;">
 							<img style="height: 100px; margin-right: 20px;" src="/src/assets/img/wxgzh.png" alt="">
 							<p style="margin-left: 20px;">官方微信</p>
@@ -184,8 +184,8 @@
 							<img style="height: 100px; margin-right: 20px;" src="/src/assets/img/wb.png" alt="">
 							<p style="margin-left: 20px;">官方微博</p>
 						</div>
-					</el-col>
-				</el-row> -->
+					</el-col> -->
+				</el-row>
 			</el-footer>
 		</el-container>
 		<el-container v-else>
