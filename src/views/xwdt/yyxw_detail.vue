@@ -84,5 +84,38 @@
 	:deep() table th {
 	 border-bottom: 2px solid #ccc;
 	  text-align: center;
+	  background-color: #f5f2f0
+	}
+	
+	/* blockquote 样式 */
+	:deep() blockquote {
+	  display: block;
+	  border-left: 8px solid #d0e5f2;
+	  padding: 5px 10px;
+	  margin: 10px 0;
+	  line-height: 1.4;
+	  font-size: 100%;
+	  background-color: #f5f2f0;
+	}
+	
+	/* code 样式 */
+	:deep() code {
+	  display: inline-block;
+	  background-color: #f5f2f0;
+	  border-radius: 3px;
+	  padding: 3px 5px;
+	  margin: 0 3px;
+	}
+	:deep() pre code {
+	  display: block;
+	}
+	
+	/* ul ol 样式 */
+	:deep() ul, ol {
+	  margin: 10px 0 10px 20px;
+	}
+	
+	:deep() input[type="checkbox"] {
+	  margin-right: 5px;
 	}
 </style>
