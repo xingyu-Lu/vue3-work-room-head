@@ -24,8 +24,8 @@
 			<el-link :href="'/zjjs_detail?id=' + item_1.id" :underline="false" target="_blank">
 				<!-- <el-card :body-style="{ padding: '10px'}" shadow="never"> -->
 				<div>
-					<div class="img" style="overflow: hidden;">
-						<img :src="item_1.img_url" />
+					<div class="img" style="overflow: hidden;text-align: center;">
+						<img style='width: 100%; height:auto;' :src="item_1.img_url" />
 					</div>
 	
 					<div style="padding: 14px; line-height: 36px; font-size: 14px; text-align: center;">

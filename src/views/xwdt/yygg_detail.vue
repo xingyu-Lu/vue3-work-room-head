@@ -115,4 +115,8 @@
 	:deep() ol {
 	  margin: 10px 0 10px 20px;
 	}
+	
+	:deep() div[data-w-e-type="video"] {
+		text-align: center;
+	}
 </style>

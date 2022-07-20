@@ -83,4 +83,7 @@
 	 border-bottom: 2px solid #ccc;
 	  text-align: center;
 	}
+	:deep() div[data-w-e-type="video"] {
+		text-align: center;
+	}
 </style>
