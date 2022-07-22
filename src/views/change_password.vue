@@ -4,6 +4,10 @@
 			<h1 style="text-align: center; color: #409eff;">修改密码</h1>
 		</template>
 		
+		<el-descriptions title="提示">
+		    <el-descriptions-item label="">密码需包含小写字母, 大写字母, 及数字, 长度6~16位</el-descriptions-item>
+		</el-descriptions>
+		
 		<el-form :model="Form" :rules="rules" label-width="100px" ref="Ref">
 			<el-form-item label="新密码" prop="password">
 				<el-input v-model="Form.password" placeholder="请输入密码" type="password"></el-input>

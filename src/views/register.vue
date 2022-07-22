@@ -31,7 +31,7 @@
 							</el-col>
 						</el-row>
 					</el-form-item>
-					<el-form-item label="密码" prop="password">
+					<el-form-item label="密码(密码需包含小写字母, 大写字母, 及数字长度6~16位)" prop="password">
 						<el-input type="password" v-model.trim="loginModel.password" autocomplete="off"
 							placeholder="请输入密码"></el-input>
 					</el-form-item>
